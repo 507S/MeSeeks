@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../../styles/user styles/user modules/UserSideLoginImage.module.css";
+import classes from "../../../styles/user styles/user modules/UserSideLoginImage.module.css";
 
 export default function UserRegistrationSideImage({ className }) {
   return <div className={classes.infinity_image_container}></div>;

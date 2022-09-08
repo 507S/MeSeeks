@@ -1,5 +1,5 @@
 import React from "react";
-import projectLogo from "../../assets/global assets/projectLogo.png";
+import projectLogo from "../../../assets/global assets/projectLogo.png";
 
 export default function UserLoginHeaderImage() {
   return (
