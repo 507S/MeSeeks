@@ -1,6 +1,6 @@
 import React from "react";
-import UserLoginLayout from "../../components/user components/user auth components/UserLoginLayout";
+import UserLoginFormLayout from "../../components/user components/user authentication components/UserLoginFormLayout";
 
 export default function UserLoginPage() {
-  return <UserLoginLayout />;
+  return <UserLoginFormLayout />;
 }

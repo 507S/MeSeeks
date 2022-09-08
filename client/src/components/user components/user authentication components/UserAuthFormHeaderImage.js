@@ -1,7 +1,7 @@
 import React from "react";
 import projectLogo from "../../../assets/global assets/projectLogo.png";
 
-export default function UserLoginHeaderImage() {
+export default function UserAuthFormHeaderImage() {
   return (
     // <!-- Company Logo -->
     <div className="text-center mb-3 mt-5">

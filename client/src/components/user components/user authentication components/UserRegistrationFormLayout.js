@@ -9,7 +9,7 @@ import UserLoginTextInput from "./UserLoginTextInput";
 import UserRegistrationLink from "./UserRegistrationLink";
 import UserRegistrationSideImage from "./UserRegistrationSideImage";
 //hello
-export default function UserRegistrationLayout() {
+export default function UserRegistrationFormLayout() {
   return (
     <div className="container-fluid">
       <div className="row">

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserLoginHeadline({ headline }) {
+export default function UserAuthFormHeadline({ headline }) {
   return (
     <div className="text-center mb-4">
       <h4>{headline}</h4>

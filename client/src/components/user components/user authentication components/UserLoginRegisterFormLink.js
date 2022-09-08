@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserRegistrationLink({
+export default function UserLoginRegisterFormLink({
   linkQueryText,
   registrationLinkText,
   link,

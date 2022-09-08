@@ -1,18 +1,18 @@
 import React from "react";
 import "../../../styles/global/user global/UserLoginForm.css";
 import UserAuthenticationLinks from "./UserAuthenticationLinks";
+import UserLoginForm from "./UserAuthForm";
+import UserLoginButton from "./UserAuthFormButton";
+import UserLoginHeaderImage from "./UserAuthFormHeaderImage";
+import UserLoginHeadline from "./UserAuthFormHeadline";
+import UserLoginTextInput from "./UserAuthFormTextInputCredentials";
 import UserForgetPasswordLink from "./UserForgetPasswordLink";
-import UserLoginButton from "./UserLoginButton";
 import UserLoginCheckbox from "./UserLoginCheckbox";
 import UserLoginCheckBoxLabel from "./UserLoginCheckBoxLabel";
-import UserLoginForm from "./UserLoginForm";
-import UserLoginHeaderImage from "./UserLoginHeaderImage";
-import UserLoginHeadline from "./UserLoginHeadline";
-import UserLoginSideImage from "./UserLoginSideImage";
-import UserLoginTextInput from "./UserLoginTextInput";
-import UserRegistrationLink from "./UserRegistrationLink";
+import UserLoginSideImage from "./UserLoginFormSideImage";
+import UserRegistrationLink from "./UserLoginRegisterFormLink";
 
-export default function UserLoginLayout() {
+export default function UserLoginFormLayout() {
   return (
     <div className="container-fluid">
       <div className="row">

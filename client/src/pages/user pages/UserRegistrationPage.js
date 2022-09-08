@@ -1,6 +1,6 @@
 import React from "react";
-import UserRegistrationLayout from "../../components/user components/UserRegistrationLayout";
+import UserRegistrationFormLayout from "../../components/user components/UserRegistrationFormLayout";
 
 export default function UserRegistrationPage() {
-  return <UserRegistrationLayout />;
+  return <UserRegistrationFormLayout />;
 }

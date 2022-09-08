@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserLoginTextInput({
+export default function UserAuthFormTextInputCredentials({
   className,
   type,
   name,
