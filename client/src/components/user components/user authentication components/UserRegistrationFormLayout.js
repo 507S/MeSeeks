@@ -1,13 +1,15 @@
 import React from "react";
-import "../../styles/global/user global/UserLoginForm.css";
+import "../../../styles/global/user global/UserLoginForm.css";
 import UserAuthenticationLinks from "./UserAuthenticationLinks";
-import UserLoginButton from "./UserLoginButton";
-import UserLoginForm from "./UserLoginForm";
-import UserLoginHeaderImage from "./UserLoginHeaderImage";
-import UserLoginHeadline from "./UserLoginHeadline";
-import UserLoginTextInput from "./UserLoginTextInput";
-import UserRegistrationLink from "./UserRegistrationLink";
-import UserRegistrationSideImage from "./UserRegistrationSideImage";
+import UserAuthForm from "./UserAuthForm";
+import UserAuthFormButton from "./UserAuthFormButton";
+import UserAuthFormHeaderImage from "./UserAuthFormHeaderImage";
+import UserAuthFormHeadline from "./UserAuthFormHeadline";
+import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials";
+
+import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
+
+import UserRegistrationSideImage from "./UserRegistrationFormSideImage";
 //hello
 export default function UserRegistrationFormLayout() {
   return (
@@ -18,18 +20,18 @@ export default function UserRegistrationFormLayout() {
         </div>
         <div className="col-lg-5 col-md-4 infinity-form-container">
           <div className="col-lg-9 col-md-12 col-sm-8 col-xs-12 infinity-form">
-            <UserLoginHeaderImage />
-            <UserLoginHeadline headline="Create an account " />
-            <UserLoginForm className="px-3" method="POST">
+            <UserAuthFormHeaderImage />
+            <UserAuthFormHeadline headline="Create an account " />
+            <UserAuthForm className="px-3" method="POST">
               {/* <!-- Input Box --> */}
-              <UserLoginTextInput
+              <UserAuthFormTextInputCredentials
                 className="fa fa-envelope"
                 type="email"
                 name="email"
                 placeholder="Email Address"
                 tabIndex="10"
               />
-              <UserLoginTextInput
+              <UserAuthFormTextInputCredentials
                 className="fa fa-phone "
                 type="email"
                 name="email"
@@ -37,7 +39,7 @@ export default function UserRegistrationFormLayout() {
                 tabIndex="10"
                 style={{ fontSize: "20px" }}
               />
-              <UserLoginTextInput
+              <UserAuthFormTextInputCredentials
                 className="fa fa-lock"
                 type="password"
                 name="password"
@@ -48,7 +50,7 @@ export default function UserRegistrationFormLayout() {
               {/* <!--Remember Checkbox --> */}
 
               {/* <!-- Login Button --> */}
-              <UserLoginButton type="submit" buttonText="Register" />
+              <UserAuthFormButton type="submit" buttonText="Register" />
 
               {/* Other Credentials */}
               <div className="text-center mb-2">
@@ -58,27 +60,30 @@ export default function UserRegistrationFormLayout() {
                 {/* #Other Authentication links */}
                 {/* <!-- Facebook Button --> */}
                 <UserAuthenticationLinks
+                  redirectLink="facebook"
                   className="btn btn-social btn-facebook"
                   authenticationLinkText="Facebook"
                 />
                 {/* <!-- Google Button --> */}
                 <UserAuthenticationLinks
+                  redirectLink="google"
                   className="btn btn-social btn-google"
                   authenticationLinkText="Google"
                 />
                 {/* <!-- Twitter Button --> */}
                 <UserAuthenticationLinks
+                  redirectLink="twitter"
                   className="btn btn-social btn-twitter"
                   authenticationLinkText="Twitter"
                 />
               </div>
               {/* #Registration link */}
-              <UserRegistrationLink
+              <UserLoginRegisterFormLink
                 linkQueryText="Already have an account?"
                 registrationLinkText="Login here"
-                link="login.html"
+                redirectLink="/Login"
               />
-            </UserLoginForm>
+            </UserAuthForm>
           </div>
           {/* <!-- FORM END --> */}
         </div>

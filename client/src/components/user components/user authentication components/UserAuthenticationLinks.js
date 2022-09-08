@@ -1,14 +1,16 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function UserAuthenticationLinks({
+  redirectLink,
   className,
   authenticationLinkText,
 }) {
   return (
     <>
-      <a href="#" className={className}>
+      <NavLink to={redirectLink} className={className}>
         {authenticationLinkText}
-      </a>
+      </NavLink>
     </>
   );
 }

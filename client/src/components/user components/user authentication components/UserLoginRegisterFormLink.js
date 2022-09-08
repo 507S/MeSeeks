@@ -1,17 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function UserLoginRegisterFormLink({
   linkQueryText,
   registrationLinkText,
-  link,
+  redirectLink,
 }) {
   return (
     <div className="text-center mb-5" style={{ color: "#777" }}>
       {/* Don't have an account? */}
       {linkQueryText}
-      <a className="register-link" href={link}>
+      <NavLink className="register-link" to={redirectLink}>
         &nbsp;{registrationLinkText}
-      </a>
+      </NavLink>
     </div>
   );
 }

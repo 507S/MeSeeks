@@ -1,16 +1,16 @@
 import React from "react";
 import "../../../styles/global/user global/UserLoginForm.css";
 import UserAuthenticationLinks from "./UserAuthenticationLinks";
-import UserLoginForm from "./UserAuthForm";
-import UserLoginButton from "./UserAuthFormButton";
-import UserLoginHeaderImage from "./UserAuthFormHeaderImage";
+import UserAuthForm from "./UserAuthForm";
+import UserAuthFormButton from "./UserAuthFormButton";
+import UserAuthFormHeaderImage from "./UserAuthFormHeaderImage";
 import UserLoginHeadline from "./UserAuthFormHeadline";
-import UserLoginTextInput from "./UserAuthFormTextInputCredentials";
+import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials";
 import UserForgetPasswordLink from "./UserForgetPasswordLink";
 import UserLoginCheckbox from "./UserLoginCheckbox";
 import UserLoginCheckBoxLabel from "./UserLoginCheckBoxLabel";
 import UserLoginSideImage from "./UserLoginFormSideImage";
-import UserRegistrationLink from "./UserLoginRegisterFormLink";
+import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
 
 export default function UserLoginFormLayout() {
   return (
@@ -21,18 +21,18 @@ export default function UserLoginFormLayout() {
         </div>
         <div className="col-lg-5 col-md-4 infinity-form-container">
           <div className="col-lg-9 col-md-12 col-sm-8 col-xs-12 infinity-form">
-            <UserLoginHeaderImage />
+            <UserAuthFormHeaderImage />
             <UserLoginHeadline headline="Login " />
-            <UserLoginForm className="px-3" method="POST">
+            <UserAuthForm className="px-3" method="POST">
               {/* <!-- Input Box --> */}
-              <UserLoginTextInput
+              <UserAuthFormTextInputCredentials
                 className="fa fa-envelope"
                 type="email"
                 name="email"
                 placeholder="Email Address"
                 tabIndex="10"
               />
-              <UserLoginTextInput
+              <UserAuthFormTextInputCredentials
                 className="fa fa-lock"
                 type="password"
                 name="password"
@@ -57,7 +57,7 @@ export default function UserLoginFormLayout() {
                 </div>
               </div>
               {/* <!-- Login Button --> */}
-              <UserLoginButton type="submit" buttonText="submit" />
+              <UserAuthFormButton type="submit" buttonText="submit" />
               {/* <!-- Forget Password --> */}
               <UserForgetPasswordLink
                 className="forget-link"
@@ -71,23 +71,30 @@ export default function UserLoginFormLayout() {
                 {/* #Other Authentication links */}
                 {/* <!-- Facebook Button --> */}
                 <UserAuthenticationLinks
+                  redirectLink="facebook"
                   className="btn btn-social btn-facebook"
                   authenticationLinkText="Facebook"
                 />
                 {/* <!-- Google Button --> */}
                 <UserAuthenticationLinks
+                  redirectLink="google"
                   className="btn btn-social btn-google"
                   authenticationLinkText="Google"
                 />
                 {/* <!-- Twitter Button --> */}
                 <UserAuthenticationLinks
+                  redirectLink="twitter"
                   className="btn btn-social btn-twitter"
                   authenticationLinkText="Twitter"
                 />
               </div>
               {/* #Registration link */}
-              <UserRegistrationLink registrationLinkText="Register here" />
-            </UserLoginForm>
+              <UserLoginRegisterFormLink
+                linkQueryText="Don't have an account?"
+                registrationLinkText="Register here"
+                redirectLink="/Registration"
+              />
+            </UserAuthForm>
           </div>
           {/* <!-- FORM END --> */}
         </div>
