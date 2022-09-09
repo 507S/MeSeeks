@@ -11,9 +11,15 @@ function App() {
         <Routes>
           {/* <Route path="/Tasks" element={<UserTasks />} /> */}
           <Route path="/" element={<UserHomePage />} />
-          <Route path="/Login" element={<UserLoginPage />} />
-          <Route path="/Registration" element={<UserRegistrationPage />} />
-          <Route path="/ResetPassword" element={<UserPasswordResetPage />} />
+          <Route path="/users-login" element={<UserLoginPage />} />
+          <Route
+            path="/users-registration"
+            element={<UserRegistrationPage />}
+          />
+          <Route
+            path="/users-reset-password"
+            element={<UserPasswordResetPage />}
+          />
           {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
         </Routes>
       </Router>

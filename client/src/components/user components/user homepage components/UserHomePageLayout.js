@@ -5,7 +5,7 @@ export default function UserHomePageLayout() {
   return (
     <>
       <h2>Welcome to Homepage</h2>
-      <NavLink to="/Login">Click here to login</NavLink>
+      <NavLink to="/users-login">Click here to login</NavLink>
     </>
   );
 }

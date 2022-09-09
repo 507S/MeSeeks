@@ -81,7 +81,7 @@ export default function UserRegistrationFormLayout() {
               <UserLoginRegisterFormLink
                 linkQueryText="Already have an account?"
                 registrationLinkText="Login here"
-                redirectLink="/Login"
+                redirectLink="/users-login"
               />
             </UserAuthForm>
           </div>
