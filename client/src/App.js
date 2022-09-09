@@ -3,6 +3,7 @@ import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
 
 import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
+import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
 function App() {
   return (
     <>
@@ -12,11 +13,12 @@ function App() {
           <Route path="/" element={<UserHomePage />} />
           <Route path="/Login" element={<UserLoginPage />} />
           <Route path="/Registration" element={<UserRegistrationPage />} />
+          <Route path="/ResetPassword" element={<UserPasswordResetPage />} />
           {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
         </Routes>
       </Router>
       {/* <UserLoginPage /> */}
-      {/* <UserRegistrationPage /> */}
+      {/* <UserRegistra                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    tionPage /> */}
     </>
   );
 }

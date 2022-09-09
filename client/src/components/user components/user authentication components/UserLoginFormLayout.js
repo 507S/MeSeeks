@@ -60,6 +60,7 @@ export default function UserLoginFormLayout() {
               <UserAuthFormButton type="submit" buttonText="submit" />
               {/* <!-- Forget Password --> */}
               <UserForgetPasswordLink
+                redirectLink="/ResetPassword"
                 className="forget-link"
                 linkText="Forgot password?"
               />
