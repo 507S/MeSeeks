@@ -43,6 +43,7 @@ export default function UserPasswordResetFormLayout() {
                 <UserAuthFormButton
                   type="submit"
                   buttonText="Send Reset Link"
+                  onClick
                 />
 
                 {/* Other Credentials */}
@@ -65,6 +66,21 @@ export default function UserPasswordResetFormLayout() {
       </div>
       {/* <ScriptTag
         isHydrating={true}
+        type="text/javascript"
+        src="../../../external js files/user dom/user auth dom/UserPostPasswordResetInterface.js"
+      /> */}
+      {/* const Demo = props =&gt; (
+      <ScriptTag
+        type="text/javascript"
+        src="../../../external js files/user dom/user auth dom/UserPostPasswordResetInterface.js"
+      />
+      ) */}
+      {/* <ScriptTag
+        isHydrating={true}
+        type="text/javascript"
+        src="../../../external js files/user dom/user auth dom/UserPostPasswordResetInterface.js"
+      /> */}
+      {/* <ScriptTag
         type="text/javascript"
         src="../../../external js files/user dom/user auth dom/UserPostPasswordResetInterface.js"
       /> */}
