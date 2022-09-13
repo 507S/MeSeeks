@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function UserForgetPasswordLink({
   redirectLink,
@@ -7,9 +8,9 @@ export default function UserForgetPasswordLink({
 }) {
   return (
     <div className="text-center mb-2">
-      <a href={redirectLink} className={className}>
+      <NavLink to={redirectLink} className={className}>
         {linkText}
-      </a>
+      </NavLink>
     </div>
   );
 }
