@@ -20,7 +20,7 @@ export default function AdminDashboardSideBarNavList({
         >
           <i
             className={sideBarNavListIconClassName}
-            style={{ fontSize: "13px" }}
+            style={{ fontSize: "15px" }}
           ></i>
           &nbsp;
           {sideBarNavListText}
