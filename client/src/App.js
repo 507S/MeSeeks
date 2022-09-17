@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 
 import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
@@ -20,7 +21,8 @@ function App() {
             path="/users-reset-password"
             element={<UserPasswordResetPage />}
           />
-          {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
+
+          <Route path="/dashboard" element={<AdminDashboardPage />} />
         </Routes>
       </Router>
       {/* <UserLoginPage /> */}
