@@ -3,6 +3,7 @@ import React from "react";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
+import classes from "../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../styles/global/admin global/AdminDashboardStyles.css";
 import "../../../styles/global/admin global/bootstrap.min.css";
@@ -50,8 +51,8 @@ export default function AdminDashboardLayout() {
         <div className="row">
           {/* //sidebar starts */}
           <nav
-            id="sidebarMenu"
-            className="col-md-3 col-lg-2 d-md-block bg-dark sidebar-sticky "
+            id={classes["sidebarMenu"]}
+            className="col-md-3 col-lg-2 d-md-block  bg-dark sidebar-sticky "
           >
             <div className="position-absolute pt-3">
               <ul className="nav flex-column">
@@ -73,7 +74,23 @@ export default function AdminDashboardLayout() {
             </div>
 
             {/* //card sections starts*/}
-            <div className="row row-cols-1 row-cols-md-4 g-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4">
+              <AdminDashboardCardContent
+                cardContentText="Total Customers"
+                cardContentDatabaseFetchedData="20"
+              />
+              <AdminDashboardCardContent
+                cardContentText="Total Customers"
+                cardContentDatabaseFetchedData="20"
+              />
+              <AdminDashboardCardContent
+                cardContentText="Total Customers"
+                cardContentDatabaseFetchedData="20"
+              />
+              <AdminDashboardCardContent
+                cardContentText="Total Customers"
+                cardContentDatabaseFetchedData="20"
+              />
               <AdminDashboardCardContent
                 cardContentText="Total Customers"
                 cardContentDatabaseFetchedData="20"
