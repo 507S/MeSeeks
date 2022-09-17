@@ -58,7 +58,7 @@ export default function AdminDashboardLayout() {
                 {/* //sidebarNavlist starts */}
                 <AdminDashboardSideBarNavListPartials />
 
-                <AdminDashboardSideBarNavListEndSection sideBarNavListEndSectionColor="rgb(255, 255, 255)" />
+                <AdminDashboardSideBarNavListEndSection />
               </ul>
             </div>
           </nav>

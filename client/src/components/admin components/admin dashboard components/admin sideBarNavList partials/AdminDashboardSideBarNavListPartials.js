@@ -31,7 +31,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListTextColor="white"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Current Services"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -40,7 +40,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListTextColor="white"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Ongoing Works"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -49,7 +49,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListTextColor="white"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Revenues"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -57,7 +57,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Regions"
         ariaCurrent="page"
       />
       {/* //second category */}
@@ -75,8 +75,8 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListIconClassName="bx bxs-user-circle"
+        sideBarNavListText="Customer List"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -92,7 +92,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Ratings"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -100,7 +100,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Reviews"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -108,7 +108,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Messages"
         ariaCurrent="page"
       />
 
@@ -128,7 +128,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Workers"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -136,15 +136,15 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Banned List"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListIconClassName="bx bx-edit-alt"
+        sideBarNavListText="Appeal Messages"
         ariaCurrent="page"
       />
 
@@ -161,7 +161,15 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Compose message"
+        ariaCurrent="page"
+      />
+      <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="#"
+        sideBarNavListIconClassName="bx bx-briefcase"
+        sideBarNavListText="Add Service"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -169,7 +177,15 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Remove Service"
+        ariaCurrent="page"
+      />
+      <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="#"
+        sideBarNavListIconClassName="bx bx-user-plus"
+        sideBarNavListText="Add Worker"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -177,7 +193,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Ban Worker"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -185,7 +201,15 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Remove Ban"
+        ariaCurrent="page"
+      />
+      <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="#"
+        sideBarNavListIconClassName="bx bxs-location-plus"
+        sideBarNavListText="Add Region"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -193,31 +217,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
-        ariaCurrent="page"
-      />
-      <AdminDashboardSideBarNavList
-        sideBarNavListClassName="nav-item"
-        sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
-        ariaCurrent="page"
-      />
-      <AdminDashboardSideBarNavList
-        sideBarNavListClassName="nav-item"
-        sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
-        ariaCurrent="page"
-      />
-      <AdminDashboardSideBarNavList
-        sideBarNavListClassName="nav-item"
-        sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListText="Remove Region"
         ariaCurrent="page"
       />
     </>

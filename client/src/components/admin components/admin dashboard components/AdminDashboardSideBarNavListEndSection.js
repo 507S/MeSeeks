@@ -1,11 +1,9 @@
 import React from "react";
 
-export default function AdminDashboardSideBarNavListEndSection({
-  sideBarNavListEndSectionColor,
-}) {
+export default function AdminDashboardSideBarNavListEndSection() {
   return (
     <>
-      <hr style={{ color: { sideBarNavListEndSectionColor } }} />
+      <hr style={{ color: "rgb(255, 255, 255)" }} />
     </>
   );
 }
