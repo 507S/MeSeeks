@@ -8,7 +8,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard"
         sideBarNavListIconClassName="bx bxs-dashboard"
         sideBarNavListText="Dashboard"
         ariaCurrent="page"
@@ -133,9 +133,9 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/dashboard-worker-banlist"
         sideBarNavListIconClassName="bx bxs-user-x"
-        sideBarNavListText="Banned List"
+        sideBarNavListText="Ban List"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList

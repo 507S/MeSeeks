@@ -1,4 +1,4 @@
 #sidebarMenu {
-  margin-bottom: -5000px;
-  padding-bottom: 1000px;
+  margin-bottom: 90px; /* any large number will do */
+  padding-bottom: 90px;
 }

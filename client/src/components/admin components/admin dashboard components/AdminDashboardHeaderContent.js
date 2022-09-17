@@ -1,15 +1,15 @@
 import React from "react";
-import AdminDashboardHeaderContentIcon from "./admin dashboard headerContentIcon Partials/AdminDashboardHeaderConentIcon";
+import AdminDashboardHeaderContentIcon from "./admin dashboard headerContentIcon Partials/AdminDashboardHeaderContentIcon";
 
 export default function AdminDashboardHeaderContent({
   adminHeaderContentText,
 }) {
   return (
     <>
-      <h1 className="h2">
+      <h4 className="h4">
         <AdminDashboardHeaderContentIcon />
         &nbsp;{adminHeaderContentText}
-      </h1>
+      </h4>
     </>
   );
 }

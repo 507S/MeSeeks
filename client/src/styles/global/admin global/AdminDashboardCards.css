@@ -18,7 +18,7 @@
 }
 
 /* Responsive columns */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 450px) {
   .column {
     width: 100%;
     display: none;

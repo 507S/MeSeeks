@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
+import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 
 import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
@@ -10,7 +11,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          {/* <Route path="/Tasks" element={<UserTasks />} /> */}
+          {/* //User Pages */}
           <Route path="/" element={<UserHomePage />} />
           <Route path="/users-login" element={<UserLoginPage />} />
           <Route
@@ -22,11 +23,14 @@ function App() {
             element={<UserPasswordResetPage />}
           />
 
-          <Route path="/dashboard" element={<AdminDashboardPage />} />
+          {/* //Admin Pages */}
+          <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
+          <Route
+            path="/dashboard-worker-banlist"
+            element={<AdminDashboardWorkerBanListPage />}
+          />
         </Routes>
       </Router>
-      {/* <UserLoginPage /> */}
-      {/* <UserRegistra                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    tionPage /> */}
     </>
   );
 }
