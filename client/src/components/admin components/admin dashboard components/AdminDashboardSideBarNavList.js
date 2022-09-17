@@ -18,7 +18,7 @@ export default function AdminDashboardSideBarNavList({
           aria-current={ariaCurrent}
           to={sideBarNavListRedirectLink}
         >
-          <i className={sideBarNavListIconClassName}></i>
+          <i className={sideBarNavListIconClassName}></i>&nbsp;
           {sideBarNavListText}
         </NavLink>
       </li>

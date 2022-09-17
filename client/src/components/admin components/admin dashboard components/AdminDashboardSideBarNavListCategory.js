@@ -3,7 +3,6 @@ import React from "react";
 export default function AdminDashboardSideBarNavListCategory({
   sideBarNavListCategorySectionStartLineColor,
   sideBarNavListCategorySectionClassName,
-  sideBarNavListCategoryTextColor,
   sideBarNavListCategoryText,
   sideBarNavListCategoryIconClassName,
   sideBarNavKListButtonTextInBetweenSpace,
@@ -11,10 +10,10 @@ export default function AdminDashboardSideBarNavListCategory({
 }) {
   return (
     <>
-      <hr style={{ color: { sideBarNavListCategorySectionStartLineColor } }} />
+      <hr style={{ color: "rgb(255, 255, 255)" }} />
       <h6
         className={sideBarNavListCategorySectionClassName}
-        style={{ color: { sideBarNavListCategoryTextColor } }}
+        style={{ color: "aqua" }}
       >
         <span>
           {sideBarNavListCategoryText} {sideBarNavKListButtonTextInBetweenSpace}
@@ -22,7 +21,7 @@ export default function AdminDashboardSideBarNavListCategory({
         </span>
       </h6>
 
-      <hr style={{ color: { sideBarNavListCategorySectionEndLineColor } }} />
+      <hr style={{ color: "rgb(255, 255, 255)" }} />
     </>
   );
 }

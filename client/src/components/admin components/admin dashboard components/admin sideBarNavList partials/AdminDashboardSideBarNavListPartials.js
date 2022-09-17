@@ -18,7 +18,6 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="rgb(255, 255, 255)"
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
-        sideBarNavListCategoryTextColor="aqua"
         sideBarNavListCategoryText="Active reports"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
@@ -29,6 +28,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
+        sideBarNavListTextColor="white"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
         sideBarNavListText="Dashboard"
@@ -37,6 +37,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
+        sideBarNavListTextColor="white"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
         sideBarNavListText="Dashboard"
@@ -45,6 +46,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
+        sideBarNavListTextColor="white"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-dashboard"
         sideBarNavListText="Dashboard"
@@ -62,7 +64,6 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="rgb(255, 255, 255)"
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
-        sideBarNavListCategoryTextColor="aqua"
         sideBarNavListCategoryText="Customer Information"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
@@ -82,8 +83,8 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-dashboard"
-        sideBarNavListText="Dashboard"
+        sideBarNavListIconClassName="bx bx-note"
+        sideBarNavListText="Complaint List"
         ariaCurrent="page"
       />
       <AdminDashboardSideBarNavList
@@ -115,7 +116,6 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="rgb(255, 255, 255)"
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
-        sideBarNavListCategoryTextColor="aqua"
         sideBarNavListCategoryText="Worker Information"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
@@ -152,7 +152,6 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavListCategory
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
         sideBarNavListCategoryText="AAdditional Tasks"
-        sideBarNavListCategoryTextColor="aqua"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
         sideBarNavListCategoryIcon="bx bxs-right-arrow"
