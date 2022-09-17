@@ -7,7 +7,7 @@ export default function AdminDashboardSideBarNavListCategory({
   sideBarNavListCategoryText,
   sideBarNavListCategoryIconClassName,
   sideBarNavKListButtonTextInBetweenSpace,
-  ...rest
+  sideBarNavListCategorySectionEndLineColor,
 }) {
   return (
     <>
@@ -17,12 +17,12 @@ export default function AdminDashboardSideBarNavListCategory({
         style={{ color: { sideBarNavListCategoryTextColor } }}
       >
         <span>
-          Active reports {sideBarNavKListButtonTextInBetweenSpace}
+          {sideBarNavListCategoryText} {sideBarNavKListButtonTextInBetweenSpace}
           <i className={sideBarNavListCategoryIconClassName}></i>
         </span>
       </h6>
 
-      <hr style={{ color: { ...rest } }} />
+      <hr style={{ color: { sideBarNavListCategorySectionEndLineColor } }} />
     </>
   );
 }
