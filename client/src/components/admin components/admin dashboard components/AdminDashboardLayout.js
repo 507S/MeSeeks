@@ -54,7 +54,7 @@ export default function AdminDashboardLayout() {
             id={classes["sidebarMenu"]}
             className="col-md-3 col-lg-2 d-md-block  bg-dark sidebar-sticky "
           >
-            <div className="position-absolute pt-4">
+            <div className="position-absolute pt-3">
               <ul className="nav flex-column">
                 {/* //sidebarNavlist starts */}
                 <AdminDashboardSideBarNavListPartials />
