@@ -6,6 +6,7 @@
 .pnp.js
 
 
+/prefiles/
 # testing
 /coverage
 
@@ -24,4 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #hidden folder
-../prefiles
+
