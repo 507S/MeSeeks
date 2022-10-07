@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AdminDashboardAddServiceCategoryPage from "./pages/admin pages/AdminDashboardAddServiceCategoryPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
@@ -28,6 +29,10 @@ function App() {
           <Route
             path="/dashboard-worker-banlist"
             element={<AdminDashboardWorkerBanListPage />}
+          />
+          <Route
+            path="/dashboard-add-service-category"
+            element={<AdminDashboardAddServiceCategoryPage />}
           />
           <Route
             path="/dashboard-add-service"

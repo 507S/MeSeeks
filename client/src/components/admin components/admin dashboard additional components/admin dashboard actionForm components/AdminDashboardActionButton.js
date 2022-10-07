@@ -8,7 +8,8 @@ export default function AdminDashboardActionButton({
 }) {
   return (
     <button className={adminActionButtonClassName} type={buttonType}>
-      <i className={adminActionButtonIcon}></i>&nbsp;{adminActionButtonText}
+      {adminActionButtonText}
+      &nbsp; <i className={adminActionButtonIcon}></i>
     </button>
   );
 }

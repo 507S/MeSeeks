@@ -166,6 +166,14 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/dashboard-add-service-category"
+        sideBarNavListIconClassName="bx bx-folder-plus"
+        sideBarNavListText="Service Category"
+        ariaCurrent="page"
+      />
+      <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/dashboard-add-service"
         sideBarNavListIconClassName="bx bx-briefcase"
         sideBarNavListText="Add Service"

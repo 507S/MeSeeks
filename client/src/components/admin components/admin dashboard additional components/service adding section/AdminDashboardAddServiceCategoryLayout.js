@@ -17,10 +17,8 @@ import AdminDashboardSideBarHeaderSection from "../../admin dashboard components
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
-import ChooseServiceImage from "../admin dashboard actionForm components/ChooseServiceImage";
-import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
-export default function AdminDashboardAddServiceLayout() {
+export default function AdminDashboardAddServiceCategoryLayout() {
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -71,38 +69,28 @@ export default function AdminDashboardAddServiceLayout() {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               {/* //button test */}
-              <AdminDashboardHeaderContent adminHeaderContentText="Add Service" />
+              <AdminDashboardHeaderContent adminHeaderContentText="Add Service Category" />
               <div className="btn-toolbar mb-2 mb-md-0"></div>
             </div>
 
             {/* //Form starts */}
 
-            <div class="card w-100" style={{ height: "auto" }}>
+            <div class="card w-100 mt-5" style={{ height: "auto" }}>
               <div class=" card-body w-100" style={{ height: "auto" }}>
                 {/* <form method="POST" enctype="multipart/form-data"> */}
-                <AdminDashboardActionForm
-                  method="POST"
-                  enctype="multipart/form-data"
-                >
-                  <SelectAreaInput
-                    selectName="selectServiceCategory"
-                    labelName="Select Service Category :"
-                  />
+                <AdminDashboardActionForm method="POST">
                   <TextAreaInput
-                    labelName="Service Name : "
+                    labelName="Service Category : "
                     type="text"
-                    inputName="serviceName"
-                    placeholder="Provide a new Service name"
+                    inputName="serviceCategoryName"
+                    placeholder="Provide a new Service Category"
                   />
-                  <ChooseServiceImage
-                    type="file"
-                    labelName="Choose Service Image :"
-                  />
+
                   <div class="col-md-4 col-lg-2 w-100 ">
                     <AdminDashboardActionButton
                       adminActionButtonClassName="btn btn-info w-100"
-                      adminActionButtonIcon="fa fa-wrench"
-                      adminActionButtonText="Add Service"
+                      adminActionButtonIcon="fa fa-briefcase"
+                      adminActionButtonText="Add Service Category"
                       type="submit"
                     />
                   </div>
