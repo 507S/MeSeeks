@@ -9,7 +9,9 @@ export default function UserHomePageLayout() {
         Click here to see user authentication pages
       </NavLink>
       <br />
-      <NavLink to="/dashboard">Click here to see admin dashboard pages</NavLink>
+      <NavLink to="/admin-dashboard">
+        Click here to see admin dashboard pages
+      </NavLink>
     </>
   );
 }
