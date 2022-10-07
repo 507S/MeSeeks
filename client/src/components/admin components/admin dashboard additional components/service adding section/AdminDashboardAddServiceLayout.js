@@ -31,7 +31,7 @@ export default function AdminDashboardWorkerBanListLayout() {
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
-            aria-label="search"
+            aria-label="Search"
           />
         </AdminDashboardNavBarSearchForm>
         <div className="navbar-nav">
