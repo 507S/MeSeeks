@@ -7,6 +7,7 @@ import AdminDashboardAddServiceCategoryPage from "./pages/admin pages/AdminDashb
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
+import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
 import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
@@ -49,6 +50,7 @@ function App() {
           {/* //Worker Pages end */}
 
           {/* //Admin Pages */}
+          <Route path="/admins/login" element={<AdminLoginPage />} />
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
           <Route
             path="/admin-dashboard/active-service-category"
