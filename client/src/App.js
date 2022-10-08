@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AdminDashboardCustomerListLayout from "./components/admin components/admin dashboard additional components/admin dashboard customer section/AdminDashboardCustomerListLayout";
 import AdminDashboardActiveServiceCategoryPage from "./pages/admin pages/AdminDashboardActiveServiceCategoryPage";
 import AdminDashboardActiveServiceRegionsPage from "./pages/admin pages/AdminDashboardActiveServiceRegionsPage";
 import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboardActiveServicesPage";
@@ -40,6 +41,10 @@ function App() {
           <Route
             path="/admin-dashboard/active-service-regions"
             element={<AdminDashboardActiveServiceRegionsPage />}
+          />
+          <Route
+            path="/admin-dashboard/customer-list"
+            element={<AdminDashboardCustomerListLayout />}
           />
           <Route
             path="/admin-dashboard/worker-banlist"

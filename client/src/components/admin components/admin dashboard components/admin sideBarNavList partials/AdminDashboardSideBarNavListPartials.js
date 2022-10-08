@@ -82,7 +82,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard/customer-list"
         sideBarNavListIconClassName="bx bxs-user-circle"
         sideBarNavListText="Customer List"
         ariaCurrent="page"

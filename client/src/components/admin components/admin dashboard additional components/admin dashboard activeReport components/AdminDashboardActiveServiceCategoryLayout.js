@@ -19,6 +19,8 @@ import AdminDashboardDataTableColumnHeaderContent from "../admin dashboard data 
 import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDashboardDataTableLayout";
 import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
 import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
+import ModalButton from "../admin dashboard popup components/ModalButton";
+import ServiceDescriptionModal from "../admin dashboard popup components/ServiceDescriptionModal";
 export default function AdminDashboardActiveServiceCategoryLayout() {
   return (
     <>
@@ -94,6 +96,10 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                           tableColumnClassName="col"
                           tableColumnHeaderText="Added Date"
                         />
+                        <AdminDashboardDataTableColumnHeaderContent
+                          tableColumnClassName="col"
+                          tableColumnHeaderText="Category Information"
+                        />
 
                         {/* <AdminDashboardDataTableColumnHeaderContent
                           tableColumnClassName="col"
@@ -118,6 +124,25 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                         <AdminDashboardDataTableRowContent>
                           {"22/08/22"}
                         </AdminDashboardDataTableRowContent>
+                        <AdminDashboardDataTableRowContent>
+                          {
+                            <>
+                              <ModalButton
+                                modalButtonText="Open"
+                                modalButtonType="button"
+                                modalButtonClassName="btn btn-dark w-25 "
+                                modalPopUpButtonIcon="fa fa-info-circle"
+                              />
+                              <ServiceDescriptionModal
+                                serviceTitle="Home Appliances"
+                                serviceTitleIcon="fa fa-file"
+                                serviceDescription="Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."
+                                modalClosingButtonText="Close"
+                                modalClosingButtonIcon="fa fa-close"
+                              />
+                            </>
+                          }
+                        </AdminDashboardDataTableRowContent>
 
                         {/* <AdminDashboardDataTableRowContent>
                           <AdminDashboardActionForm actionFormClassName="form-floating">
@@ -141,6 +166,25 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                         </AdminDashboardDataTableRowContent>
                         <AdminDashboardDataTableRowContent>
                           {"22/08/22"}
+                        </AdminDashboardDataTableRowContent>
+                        <AdminDashboardDataTableRowContent>
+                          {
+                            <>
+                              <ModalButton
+                                modalButtonText="Open"
+                                modalButtonType="button"
+                                modalButtonClassName="btn btn-dark w-25 "
+                                modalPopUpButtonIcon="fa fa-info-circle"
+                              />
+                              <ServiceDescriptionModal
+                                serviceTitle="cc"
+                                serviceTitleIcon="fa fa-wrench"
+                                serviceDescription="Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."
+                                modalClosingButtonText="Close"
+                                modalClosingButtonIcon="fa fa-close"
+                              />
+                            </>
+                          }
                         </AdminDashboardDataTableRowContent>
                       </AdminDashboardDataTableRowSection>
                       {/* <AdminDashboardDataTableRowContent>
