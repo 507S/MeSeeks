@@ -33,7 +33,7 @@ export default function WorkerLoginFormLayout() {
               workerAuthFormButtonType="submit"
             />
             <WorkerAuthFormForgetPasswordLink
-              redirectLink="#"
+              redirectLink="/workers/forget-password"
               redirectLinkHeadline="Forgot "
               redirectLinkText="Password ?"
             />
