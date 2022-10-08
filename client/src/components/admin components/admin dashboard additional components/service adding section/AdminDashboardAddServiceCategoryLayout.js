@@ -18,6 +18,7 @@ import AdminDashboardSideBarNavListEndSection from "../../admin dashboard compon
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
+import TextInput from "../admin dashboard actionForm components/TextInput";
 export default function AdminDashboardAddServiceCategoryLayout() {
   return (
     <>
@@ -79,11 +80,18 @@ export default function AdminDashboardAddServiceCategoryLayout() {
               <div class=" card-body w-100" style={{ height: "auto" }}>
                 {/* <form method="POST" enctype="multipart/form-data"> */}
                 <AdminDashboardActionForm method="POST">
-                  <TextAreaInput
+                  <TextInput
                     labelName="Service Category : "
                     type="text"
                     inputName="serviceCategoryName"
                     placeholder="Provide a new Service Category"
+                  />
+                  <TextAreaInput
+                    labelName="Service Category Description :"
+                    placeholder="Add a description..."
+                    inputName="serviceCategoryDescription"
+                    textAreaInputRow="4"
+                    style={{ reSize: "none" }}
                   />
 
                   <div class="col-md-4 col-lg-2 w-100 ">

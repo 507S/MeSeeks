@@ -20,6 +20,7 @@ import AdminDashboardActionForm from "../admin dashboard actionForm components/A
 import ChooseServiceImage from "../admin dashboard actionForm components/ChooseServiceImage";
 import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
+import TextInput from "../admin dashboard actionForm components/TextInput";
 export default function AdminDashboardAddServiceLayout() {
   return (
     <>
@@ -88,7 +89,7 @@ export default function AdminDashboardAddServiceLayout() {
                     selectName="selectServiceCategory"
                     labelName="Select Service Category :"
                   />
-                  <TextAreaInput
+                  <TextInput
                     labelName="Service Name : "
                     type="text"
                     inputName="serviceName"
@@ -97,6 +98,13 @@ export default function AdminDashboardAddServiceLayout() {
                   <ChooseServiceImage
                     type="file"
                     labelName="Choose Service Image :"
+                  />
+                  <TextAreaInput
+                    labelName="Service Description :"
+                    placeholder="Add a description..."
+                    inputName="serviceDescription"
+                    textAreaInputRow="4"
+                    style={{ reSize: "none" }}
                   />
                   <div class="col-md-4 col-lg-2 w-100 ">
                     <AdminDashboardActionButton
