@@ -11,6 +11,7 @@ import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
 import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
 import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
+import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 function App() {
   return (
     <>
@@ -27,6 +28,9 @@ function App() {
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
+
+          {/* //Worker Pages */}
+          <Route path="/workers/login" element={<WorkerLoginPage />} />
 
           {/* //Admin Pages */}
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />

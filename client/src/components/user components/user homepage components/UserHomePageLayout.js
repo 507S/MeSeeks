@@ -12,6 +12,8 @@ export default function UserHomePageLayout() {
       <NavLink to="/admin-dashboard">
         Click here to see admin dashboard pages
       </NavLink>
+      <br />
+      <NavLink to="/workers/login">Click here to see worker pages</NavLink>
     </>
   );
 }
