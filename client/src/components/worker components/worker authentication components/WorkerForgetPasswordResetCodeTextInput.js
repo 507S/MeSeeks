@@ -8,13 +8,13 @@ export default function WorkerForgetPasswordResetCodeTextInput({
   ...rest
 }) {
   return (
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">
-        <i class={inputFieldIcon}></i>
+    <div className="input-group mb-3">
+      <span className="input-group-text" id="basic-addon1">
+        <i className={inputFieldIcon}></i>
       </span>
       <input
         type={inputFieldType}
-        class="form-control"
+        className="form-control"
         placeholder={placeholder}
         name="resetPasswordCode"
         aria-label={inputName}

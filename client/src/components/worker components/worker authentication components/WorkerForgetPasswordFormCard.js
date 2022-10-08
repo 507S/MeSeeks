@@ -2,21 +2,21 @@ import React from "react";
 
 export default function WorkerForgetPasswordFormCard() {
   return (
-    <div class="card text-center">
-      <div class="card-header ">Reset Password</div>
-      <div class="card-body">
-        <p class="card-title">
+    <>
+      <div className="card-header ">Reset Password</div>
+      <div className="card-body">
+        <p className="card-title">
           Provide the reset password code that has been sent to your provided
           mobile number
         </p>
-        <p class="card-text">
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="fa fa-code"></i>
+        <p className="card-text">
+          <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon1">
+              <i className="fa fa-code"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Reset Password code"
               name="resetPasswordCode"
               aria-label="Username"
@@ -29,6 +29,6 @@ export default function WorkerForgetPasswordFormCard() {
           Verify&nbsp;&nbsp; <i class="fa fa-send-o"></i>
         </button>
       </div>
-    </div>
+    </>
   );
 }

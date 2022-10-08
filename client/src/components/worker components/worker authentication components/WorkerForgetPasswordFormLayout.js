@@ -11,14 +11,14 @@ export default function WorkerForgetPasswordFormLayout() {
         <div className="wrap-login">
           <WorkerForgetPasswordFormImage />
           <WorkerAuthForm className="login-form">
-            <div class="card text-center">
-              <div class="card-header ">Reset Password</div>
-              <div class="card-body">
-                <p class="card-title">
+            <div className="card text-center">
+              <div className="card-header ">Reset Password</div>
+              <div className="card-body">
+                <p className="card-title">
                   Provide the reset password code that has been sent to your
                   provided mobile number
                 </p>
-                <p class="card-text">
+                <p className="card-text">
                   <WorkerForgetPasswordResetCodeTextInput
                     inputFieldIcon="fa fa-code"
                     inputFieldType="text"
