@@ -3,7 +3,10 @@ import WorkerForgetPasswordFormImage from "../../../assets/worker assets/images/
 export default function WorkerLoginFormImage() {
   return (
     <div className="login-pic">
-      <img src={WorkerForgetPasswordFormImage} alt="workerLoginFormImage" />
+      <img
+        src={WorkerForgetPasswordFormImage}
+        alt="WorkerForgetPasswordFormImage"
+      />
     </div>
   );
 }
