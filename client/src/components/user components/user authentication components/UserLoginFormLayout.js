@@ -60,7 +60,7 @@ export default function UserLoginFormLayout() {
               <UserAuthFormButton type="submit" buttonText="submit" />
               {/* <!-- Forget Password --> */}
               <UserForgetPasswordLink
-                redirectLink="/users-reset-password"
+                redirectLink="/users/reset-password"
                 className="forget-link"
                 linkText="Forgot password?"
               />
@@ -93,7 +93,7 @@ export default function UserLoginFormLayout() {
               <UserLoginRegisterFormLink
                 linkQueryText="Don't have an account?"
                 registrationLinkText="Register here"
-                redirectLink="/users-registration"
+                redirectLink="/users/registration"
               />
             </UserAuthForm>
           </div>

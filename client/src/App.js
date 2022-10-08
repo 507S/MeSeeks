@@ -14,28 +14,28 @@ function App() {
         <Routes>
           {/* //User Pages */}
           <Route path="/" element={<UserHomePage />} />
-          <Route path="/users-login" element={<UserLoginPage />} />
+          <Route path="/users/login" element={<UserLoginPage />} />
           <Route
-            path="/users-registration"
+            path="/users/registration"
             element={<UserRegistrationPage />}
           />
           <Route
-            path="/users-reset-password"
+            path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
 
           {/* //Admin Pages */}
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
           <Route
-            path="/dashboard-worker-banlist"
+            path="/admin-dashboard/worker-banlist"
             element={<AdminDashboardWorkerBanListPage />}
           />
           <Route
-            path="/dashboard-add-service-category"
+            path="/admin-dashboard/add-service-category"
             element={<AdminDashboardAddServiceCategoryPage />}
           />
           <Route
-            path="/dashboard-add-service"
+            path="/admin-dashboard/add-service"
             element={<AdminDashboardAddServicePage />}
           />
         </Routes>

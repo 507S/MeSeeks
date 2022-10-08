@@ -133,7 +133,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/dashboard-worker-banlist"
+        sideBarNavListRedirectLink="/admin-dashboard/worker-banlist"
         sideBarNavListIconClassName="bx bxs-user-x"
         sideBarNavListText="Ban List"
         ariaCurrent="page"
@@ -166,7 +166,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/dashboard-add-service-category"
+        sideBarNavListRedirectLink="/admin-dashboard/add-service-category"
         sideBarNavListIconClassName="bx bx-folder-plus"
         sideBarNavListText="Service Category"
         ariaCurrent="page"
@@ -174,7 +174,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/dashboard-add-service"
+        sideBarNavListRedirectLink="/admin-dashboard/add-service"
         sideBarNavListIconClassName="bx bx-briefcase"
         sideBarNavListText="Add Service"
         ariaCurrent="page"
