@@ -12,6 +12,7 @@ import UserLoginPage from "./pages/user pages/UserLoginPage";
 import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
 import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
 import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
+import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 function App() {
   return (
     <>
@@ -31,6 +32,11 @@ function App() {
 
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
+          <Route
+            path="/workers/registration"
+            element={<WorkerRegistrationPage />}
+          />
+          {/* //Worker Pages end */}
 
           {/* //Admin Pages */}
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />

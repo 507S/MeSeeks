@@ -2,19 +2,30 @@ import React from "react";
 import "../../../styles/global/worker global/WorkerLoginForm.css";
 import WorkerAuthForm from "./WorkerAuthForm";
 import WorkerAuthFormButton from "./WorkerAuthFormButton";
-import WorkerAuthFormForgetPasswordLink from "./WorkerAuthFormForgetPasswordLink";
 import WorkerAuthFormTextInputCredentials from "./WorkerAuthFormTextInputCredentials";
 import WorkerAuthFormTitle from "./WorkerAuthFormTitle";
-import WorkerLoginFormImage from "./WorkerLoginFormImage";
 import WorkerLoginRegistrationRedirectLink from "./WorkerLoginRegistrationRedirectLink";
+import WorkerRegistrationFormImage from "./WorkerRegistrationFormImage";
 export default function WorkerLoginFormLayout() {
   return (
     <div className="Main-container">
       <div className="container-login">
         <div className="wrap-login">
-          <WorkerLoginFormImage />
+          <WorkerRegistrationFormImage />
           <WorkerAuthForm className="login-form">
-            <WorkerAuthFormTitle workerAuthFormTitleText="Login" />
+            <WorkerAuthFormTitle workerAuthFormTitleText="Registration" />
+            <WorkerAuthFormTextInputCredentials
+              inputType="text"
+              inputName="username"
+              placeholder="Username"
+              inputFieldIconClassName="fa fa-user-circle"
+            />
+            <WorkerAuthFormTextInputCredentials
+              inputType="email"
+              inputName="email"
+              placeholder="Email"
+              inputFieldIconClassName="fa fa-envelope"
+            />
             <WorkerAuthFormTextInputCredentials
               inputType="text"
               inputName="phoneNumber"
@@ -28,19 +39,19 @@ export default function WorkerLoginFormLayout() {
               inputFieldIconClassName="fa fa-lock"
             />
             <WorkerAuthFormButton
-              workerAuthFormButtonText="Login"
-              workerAuthFormButtonIconClassName="fa fa-key"
+              workerAuthFormButtonText="Registration"
+              workerAuthFormButtonIconClassName="fa fa-unlock-alt"
               workerAuthFormButtonType="submit"
             />
-            <WorkerAuthFormForgetPasswordLink
+            {/* <WorkerAuthFormForgetPasswordLink
               redirectLink="#"
               redirectLinkHeadline="Forgot "
               redirectLinkText="Password ?"
-            />
+            /> */}
             <WorkerLoginRegistrationRedirectLink
-              redirectLink="/workers/registration"
-              redirectLinkText="Create Your Account"
-              redirectLinkIconClassName="fa fa-unlock"
+              redirectLink="/workers/login"
+              redirectLinkText="Already have an account ?"
+              redirectLinkIconClassName="fa fa-key"
             />
           </WorkerAuthForm>
         </div>

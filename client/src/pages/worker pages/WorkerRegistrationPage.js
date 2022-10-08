@@ -1,5 +1,5 @@
 import React from "react";
-import WorkerLoginFormLayout from "../../components/worker components/worker authentication components/WorkerLoginFormLayout";
+import WorkerRegistrationFormLayout from "../../components/worker components/worker authentication components/WorkerRegistrationFormLayout";
 export default function WorkerRegistrationPage() {
-  return <WorkerLoginFormLayout />;
+  return <WorkerRegistrationFormLayout />;
 }
