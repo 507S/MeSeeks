@@ -22,7 +22,7 @@ export default function AdminDashboardSideBarNavList({
             className={sideBarNavListIconClassName}
             style={{ fontSize: "15px" }}
           ></i>
-          &nbsp;
+          &nbsp;&nbsp;
           {sideBarNavListText}
         </NavLink>
       </li>

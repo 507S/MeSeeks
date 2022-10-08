@@ -28,7 +28,16 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard/active-service-category"
+        sideBarNavListIconClassName="fa fa-database"
+        sideBarNavListText="Service Categories"
+        ariaCurrent="page"
+      />
+      <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListTextColor="white"
+        sideBarNavListRedirectLink="/admin-dashboard/active-services"
         sideBarNavListIconClassName="bx bxs-megaphone"
         sideBarNavListText="Current Services"
         ariaCurrent="page"
@@ -54,7 +63,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard/active-service-regions"
         sideBarNavListIconClassName="bx bxs-map-pin"
         sideBarNavListText="Regions"
         ariaCurrent="page"
