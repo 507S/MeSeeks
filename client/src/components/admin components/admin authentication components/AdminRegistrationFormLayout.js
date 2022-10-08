@@ -6,9 +6,8 @@ import AdminAuthFormHeaderImage from "./AdminAuthFormHeaderImage";
 import AdminAuthFormHeaderText from "./AdminAuthFormHeaderText";
 import AdminAuthFormTextInput from "./AdminAuthFormTextInput";
 import AdminAuthFormTitle from "./AdminAuthFormTitle";
-import AdminLoginFormSideImage from "./AdminLoginFormSideImage";
 import AdminLoginRegisterRedirectLink from "./AdminLoginRegisterRedirectLink";
-import AdminPrivateCodeFormLink from "./AdminPrivateCodeFormLink";
+import AdminRegistrationFormSideImage from "./AdminRegistrationFormSideImage";
 export default function AdminLoginFormLayout() {
   return (
     <main>
@@ -29,29 +28,35 @@ export default function AdminLoginFormLayout() {
                   placeholder="Enter Username"
                 />
                 <AdminAuthFormTextInput
+                  labelName="Email"
+                  inputType="text"
+                  inputName="email"
+                  placeholder="Enter Email"
+                />
+                {/* <AdminAuthFormTextInput
                   labelName="Private Code"
                   inputType="text"
                   inputName="privateKey"
                   placeholder="Enter Private Code"
-                />
+                /> */}
                 <AdminAuthFormButton
                   adminAuthButtonType="submit"
-                  adminAuthButtonText="Login"
-                  adminAuthButtonIconClassName="fa fa-key"
+                  adminAuthButtonText="Register"
+                  adminAuthButtonIconClassName="fa fa-lock"
                 />
               </AdminAuthForm>
-              <AdminPrivateCodeFormLink
+              {/* <AdminPrivateCodeFormLink
                 adminPrivateCodeFormLink="#"
                 adminPrivateCodeFormLinkText="Forgot Private Code ?"
-              />
+              /> */}
               <AdminLoginRegisterRedirectLink
-                adminLoginRegisterRedirectLinkHeadline="  Don't have an account ?"
-                adminLoginRegisterRedirectLink="/admins/registration"
-                adminLoginRegisterRedirectLinkText="Register here"
+                adminLoginRegisterRedirectLinkHeadline="   Already have an account ?"
+                adminLoginRegisterRedirectLink="/admins/login"
+                adminLoginRegisterRedirectLinkText="Login here"
               />
             </div>
           </div>
-          <AdminLoginFormSideImage />
+          <AdminRegistrationFormSideImage />
         </div>
       </div>
     </main>
