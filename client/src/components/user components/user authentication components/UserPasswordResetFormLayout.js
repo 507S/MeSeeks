@@ -6,7 +6,7 @@ import UserAuthFormHeaderImage from "./UserAuthFormHeaderImage";
 import UserAuthFormHeadline from "./UserAuthFormHeadline";
 import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials";
 
-import UserPasswordResetFormSideImage from "./UserPasswordResetFormSideImage";
+import UserResetPasswordFormSideImage from ".//UserResetPasswordFormSideImage";
 import UserPasswordResetInstructionHeadline from "./UserPasswordResetInstructionHeadline";
 //hello
 export default function UserPasswordResetFormLayout() {
@@ -15,7 +15,7 @@ export default function UserPasswordResetFormLayout() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-7 col-md-8 d-none d-md-block">
-            <UserPasswordResetFormSideImage />
+            <UserResetPasswordFormSideImage />
           </div>
           <div className="col-lg-5 col-md-4 infinity-form-container">
             <div className="col-lg-9 col-md-12 col-sm-8 col-xs-12 infinity-form">
@@ -23,17 +23,24 @@ export default function UserPasswordResetFormLayout() {
               <UserAuthFormHeadline headline="Reset Your password " />
               <UserPasswordResetInstructionHeadline
                 className="mb-3"
-                passwordResetInstructionText="Please enter your email address and we will send you a password reset
+                passwordResetInstructionText="Please enter your new password and youse it for further login sessions
               link."
                 style={{ color: "#777" }}
               />
               <UserAuthForm className="px-3" method="POST">
                 {/* <!-- Input Box --> */}
                 <UserAuthFormTextInputCredentials
-                  className="fa fa-envelope"
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
+                  className="fa fa-key"
+                  type="password"
+                  name="newPassword"
+                  placeholder="New Password"
+                  tabIndex="10"
+                />
+                <UserAuthFormTextInputCredentials
+                  className="fa fa-repeat"
+                  type="password"
+                  name="newPassword"
+                  placeholder="Repeat new Password"
                   tabIndex="10"
                 />
 
@@ -42,7 +49,7 @@ export default function UserPasswordResetFormLayout() {
                 {/* <!-- Login Button --> */}
                 <UserAuthFormButton
                   type="submit"
-                  buttonText="Send Reset Link"
+                  buttonText="Change Password"
                   onClick
                 />
 
@@ -53,13 +60,13 @@ export default function UserPasswordResetFormLayout() {
             </div>
             {/* <!-- FORM END --> */}
             {/* <!-- PASSWORD CONFIRMATION --> */}
-            <div className="reset-confirmation d-none px-3">
+            {/* <div className="reset-confirmation d-none px-3">
               <UserPasswordResetInstructionHeadline
                 resetPasswordConfirmationHeadline="Link was sent"
                 resetPasswordInstructionText="Please, check your inbox for a password reset link."
                 style={{ color: "#777" }}
               />
-            </div>
+            </div> */}
           </div>
           {/* <!-- FORM CONTAINER END --> */}
         </div>

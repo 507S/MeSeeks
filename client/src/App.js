@@ -9,6 +9,8 @@ import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
+import TestaPageLayout from "./pages/user pages/TestaPage";
+import UserForgotPasswordPage from "./pages/user pages/UserForgotPasswordPage";
 import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
 import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
@@ -23,16 +25,21 @@ function App() {
       <Router>
         <Routes>
           {/* //User Pages */}
-          <Route path="/" element={<UserHomePage />} />
+          <Route path="/" element={<TestaPageLayout />} />
           <Route path="/users/login" element={<UserLoginPage />} />
           <Route
             path="/users/registration"
             element={<UserRegistrationPage />}
           />
           <Route
+            path="/users/forgot-password"
+            element={<UserForgotPasswordPage />}
+          />
+          <Route
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
+          <Route path="/users/homepage" element={<UserHomePage />} />
 
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />

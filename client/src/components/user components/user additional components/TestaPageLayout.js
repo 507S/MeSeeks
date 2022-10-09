@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function UserHomePageLayout() {
+export default function TestaPageLayout() {
   return (
     <>
       <h2>Welcome to Homepage</h2>
