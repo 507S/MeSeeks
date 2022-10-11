@@ -97,7 +97,7 @@ h3 {
 }
 
 h4 {
-  /* color: var(--gray-color); */
+  color: var(--gray-color);
   font-family: var(--base-font-family);
   font-size: var(--p-font-size);
   letter-spacing: 1px;
@@ -272,7 +272,8 @@ a:focus {
 .nav-link:hover {
   color: var(--dark-color);
 }
-.nav-link.active {
+.nav-link.active
+ {
   color: var(--dark-color);
 }
 
