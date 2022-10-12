@@ -10,8 +10,44 @@ import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials
 import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
 
 import UserRegistrationSideImage from "./UserRegistrationFormSideImage";
+import axios from "axios"
 //hello
 export default function UserRegistrationFormLayout() {
+
+  const[formData, setFormData] = React.useState({
+    firstname:"",
+    lastname:"",
+    username:"",
+    email: "",
+    password: "",
+    confirmPassword:"",
+    rememberMe: "False",
+  })
+
+  function handleEvent(event){
+      const {name, value, type, checked} = event.target;
+      setFormData(prevState=>{
+          return{
+              ...prevState,
+              [name] : type === "checkbox" ? checked : value
+          }
+
+      })
+  }
+
+  async function submitHandler(event){
+      event.preventDefault()
+      const response = await axios.post('http://localhost:1337/api/register', formData);
+      // console.log(response)
+      // const data = await response.json()
+      // console.log(data)
+      if(response.data){
+          alert("success")
+          window.location.href("/login")
+      }
+  }
+
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -24,7 +60,56 @@ export default function UserRegistrationFormLayout() {
             <UserAuthFormHeadline headline="Create an account " />
             <UserAuthForm className="px-3" method="POST">
               {/* <!-- Input Box --> */}
-              <UserAuthFormTextInputCredentials
+              <input
+                type = "text"
+                placeholder="First Name"
+                name="firstname"
+                value={formData.firstname}
+                onChange={handleEvent}
+            />
+            <br/>
+            <input
+                type = "text"
+                placeholder="Last Name"
+                name="lastname"
+                value={formData.lastname}
+                onChange={handleEvent}
+            />
+            <br/>
+            <input
+                type = "text"
+                placeholder="username"  
+                name="username"
+                value={formData.username}
+                onChange={handleEvent}
+            />
+            <br/>
+            <input
+                type="email"
+                placeholder="Enter Email"
+                name = "email"
+                value = {formData.email}
+                onChange={handleEvent}
+            />
+            <br/>
+            <input
+                type = "password"
+                placeholder="Enter Password"
+                name="password"
+                value={formData.password}
+                onChange={handleEvent}
+            />
+            <br/>
+            <input
+                type = "password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleEvent}
+            />
+            <br/>  
+            <button onClick={submitHandler}>Register</button>
+              {/* <UserAuthFormTextInputCredentials
                 className="fa fa-envelope"
                 type="email"
                 name="email"
@@ -45,12 +130,12 @@ export default function UserRegistrationFormLayout() {
                 name="password"
                 placeholder="Password"
                 tabIndex="10"
-              />
+              /> */}
 
               {/* <!--Remember Checkbox --> */}
 
               {/* <!-- Login Button --> */}
-              <UserAuthFormButton type="submit" buttonText="Register" />
+              {/* <UserAuthFormButton type="submit" buttonText="Register"/> */}
 
               {/* Other Credentials */}
               <div className="text-center mb-2">

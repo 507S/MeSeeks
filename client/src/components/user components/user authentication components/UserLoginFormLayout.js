@@ -11,8 +11,49 @@ import UserLoginCheckbox from "./UserLoginCheckbox";
 import UserLoginCheckBoxLabel from "./UserLoginCheckBoxLabel";
 import UserLoginSideImage from "./UserLoginFormSideImage";
 import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
+import axios from "axios";
+
 
 export default function UserLoginFormLayout() {
+
+  const[formData, setFormData] = React.useState({
+    email: "",
+    password: "",
+    checkbox: "False",
+  })
+  
+  function handleEvent(event){
+    const {name, value, type, checked} = event.target;
+    setFormData(prevState=>{
+        return{
+            ...prevState,
+            [name] : type === "checkbox" ? checked : value
+        }
+  
+    })
+  }
+  
+  async function submitHandler(event){
+    event.preventDefault()
+    console.log(formData)
+    const response = await axios.post('http://localhost:1337/api/login', formData);
+    
+    console.log(response.data)
+  
+    if(response.data){
+      console.log("Login Successful")
+        alert('Login Successful')
+        window.location.href = '/'
+    }
+    else{
+        console.log("Invalid Credentials")
+        alert('Invalid credentials')
+    }
+  
+    console.log(response);  
+  }
+
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -25,39 +66,43 @@ export default function UserLoginFormLayout() {
             <UserLoginHeadline headline="Login " />
             <UserAuthForm className="px-3" method="POST">
               {/* <!-- Input Box --> */}
-              <UserAuthFormTextInputCredentials
-                className="fa fa-envelope"
+              <input
+                className="input-group mb-3"
                 type="email"
                 name="email"
                 placeholder="Email Address"
                 tabIndex="10"
+                value={formData.email}
+                onChange={handleEvent}
               />
-              <UserAuthFormTextInputCredentials
+              <input
                 className="fa fa-lock"
                 type="password"
                 name="password"
                 placeholder="Password"
                 tabIndex="10"
+                value={formData.password}
+                onChange={handleEvent}
               />
 
               {/* <!--Remember Checkbox --> */}
               <div class="row mb-3">
                 <div class="col-auto d-flex align-items-center">
                   <div class="custom-control custom-checkbox">
-                    <UserLoginCheckbox
+                    <input
                       type="checkbox"
                       className="custom-control-input"
-                      id="cb1"
+                      id="checkbox"
+                      name="checkbox"
+                      checked={formData.checked}
+                      onChange={handleEvent}
                     />
-                    <UserLoginCheckBoxLabel
-                      className="custom-control-label"
-                      labelText="Remember me"
-                    />
+                    <label htmlFor="checkbox" >Remember Me?</label>
                   </div>
                 </div>
               </div>
               {/* <!-- Login Button --> */}
-              <UserAuthFormButton type="submit" buttonText="submit" />
+              <button onClick={submitHandler} type="submit"> Log in </button>
               {/* <!-- Forget Password --> */}
               <UserForgetPasswordLink
                 redirectLink="/users/forgot-password"
