@@ -188,22 +188,30 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListText="Add Service"
         ariaCurrent="page"
       />
-      <AdminDashboardSideBarNavList
+      {/* <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-folder-minus"
+        sideBarNavListText="Remove Category"
+        ariaCurrent="page"
+      /> */}
+      <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/admin-dashboard/remove-service"
+        sideBarNavListIconClassName="fa fa-wrench"
         sideBarNavListText="Remove Service"
         ariaCurrent="page"
       />
-      <AdminDashboardSideBarNavList
+      {/* <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bx-user-plus"
         sideBarNavListText="Add Worker"
         ariaCurrent="page"
-      />
+      /> */}
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"

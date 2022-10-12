@@ -6,6 +6,7 @@ import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboard
 import AdminDashboardAddServiceCategoryPage from "./pages/admin pages/AdminDashboardAddServiceCategoryPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
+import AdminDashboardRemoveServiceDeletionPage from "./pages/admin pages/AdminDashboardRemoveServicePage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
@@ -91,6 +92,10 @@ function App() {
           <Route
             path="/admin-dashboard/add-service"
             element={<AdminDashboardAddServicePage />}
+          />
+          <Route
+            path="/admin-dashboard/remove-service"
+            element={<AdminDashboardRemoveServiceDeletionPage />}
           />
         </Routes>
       </Router>
