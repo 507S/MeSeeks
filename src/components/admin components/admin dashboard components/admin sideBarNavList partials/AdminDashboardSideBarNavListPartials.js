@@ -13,6 +13,14 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListText="Dashboard"
         ariaCurrent="page"
       />
+       <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/admin-dashboard/profile"
+        sideBarNavListIconClassName="bx bxs-user"
+        sideBarNavListText="Profile"
+        ariaCurrent="page"
+      />
 
       <AdminDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="rgb(255, 255, 255)"

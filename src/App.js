@@ -6,6 +6,7 @@ import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboard
 import AdminDashboardAddServiceCategoryPage from "./pages/admin pages/AdminDashboardAddServiceCategoryPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
+import AdminDashboardProfilePage from "./pages/admin pages/AdminDashboardProfilePage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
@@ -62,6 +63,10 @@ function App() {
           <Route
             path="/admins/registration"
             element={<AdminRegistrationPage />}
+          />
+           <Route
+            path="/admin-dashboard/profile"
+            element={<AdminDashboardProfilePage />}
           />
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
           <Route
