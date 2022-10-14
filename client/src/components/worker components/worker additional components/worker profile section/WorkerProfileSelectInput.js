@@ -3,7 +3,7 @@ import React from "react";
 export default function WorkerProfileSelectInput({
   selectNamesFetchedFromDatabase,
   labelName,
-
+  labelIconClassName,
   labelFor,
 
   ...rest
@@ -11,7 +11,9 @@ export default function WorkerProfileSelectInput({
   return (
     <div class="col-md-6">
       <label for={labelFor} class="form-label">
-        <h5>{labelName}</h5>
+        <h5>
+          <i className={labelIconClassName}></i>&nbsp;{labelName}
+        </h5>
       </label>
 
       <select className="form-select">

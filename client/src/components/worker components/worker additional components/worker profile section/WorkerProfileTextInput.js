@@ -3,6 +3,7 @@ import React from "react";
 export default function WorkerProfileTextInput({
   labelFor,
   labelName,
+  labelIconClassName,
   textInputType,
   inputName,
   value,
@@ -12,7 +13,9 @@ export default function WorkerProfileTextInput({
   return (
     <div class="col-md-6">
       <label for={labelFor} className="form-label ">
-        <h5>{labelName}</h5>
+        <h5>
+          <i className={labelIconClassName}></i>&nbsp;{labelName}
+        </h5>
       </label>
       <input
         type={textInputType}

@@ -3,7 +3,7 @@ import React from "react";
 export default function WorkerProfileTextAreaInput({
   labelFor,
   labelName,
-
+  labelIconClassName,
   textInputRow,
   inputName,
   value,
@@ -13,7 +13,9 @@ export default function WorkerProfileTextAreaInput({
   return (
     <div className="col-12">
       <label for={labelFor} style={{ fontWeight: "lighter" }}>
-        <h5>{labelName}</h5>
+        <h5>
+          <i className={labelIconClassName}></i>&nbsp;{labelName}
+        </h5>
       </label>
       <textarea
         name={inputName}

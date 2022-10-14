@@ -52,48 +52,56 @@ export default function WorkerProfileLayout() {
               <form class="row g-3 " action="post">
                 <WorkerProfileTextInput
                   labelFor="username"
+                  labelIconClassName="fa fa-user"
                   labelName="Username"
                   textInputType="text"
                   inputName="username"
                   value=""
-                  placeholder="Username..."
+                  // placeholder="Username..."
                 />
                 <WorkerProfileTextInput
                   labelFor="email"
+                  labelIconClassName="fa fa-envelope"
                   labelName="Email"
                   textInputType="email"
                   inputName="email"
                   value=""
-                  placeholder="Email..."
+                  // placeholder="Email..."
                 />
                 <WorkerProfileTextInput
                   labelFor="phoneNumber"
+                  labelIconClassName="fa fa-phone"
                   labelName="Phone Number"
                   textInputType="text"
                   inputName="phoneNumber"
                   value=""
-                  placeholder="Phone Number..."
+                  // placeholder="Phone Number..."
                 />
                 <WorkerProfileTextInput
                   labelFor="workerType"
+                  labelIconClassName="fa fa-wrench"
                   labelName="Worker Genre"
                   textInputType="text"
                   inputName="workerType"
                   value=""
-                  placeholder="Worker Type..."
+                  // placeholder="Worker Type..."
                 />
                 <WorkerProfileSelectInput
-                  labelFor="phone"
+                  labelFor="areaSelection"
+                  labelIconClassName="bx bxs-map"
                   labelName="Select Working Area"
                   selectNamesFetchedFromDatabase="Uttara"
                 />
                 <WorkerProfileSelectInput
                   labelFor="workingShift"
+                  labelIconClassName="fa fa-clock-o"
                   labelName="Select Working Shift"
                   selectNamesFetchedFromDatabase="Day"
                 />
 
-                <h5>Your Work Experience</h5>
+                <h5 className="mt-3">
+                  <i className="fa fa-briefcase"></i>&nbsp;Your Work Experience
+                </h5>
                 {workExperienceList.map((singleService, index) => (
                   <div key={index} className="services">
                     <div className="first-division">
@@ -135,6 +143,7 @@ export default function WorkerProfileLayout() {
                           >
                             {/* <span>Add New Experience</span> */}
                             <span>
+                              Add New Experience &nbsp;
                               <i className="fa fa-plus"></i>
                             </span>
                           </button>
@@ -149,7 +158,8 @@ export default function WorkerProfileLayout() {
                         >
                           {/* <span>Remove</span> */}
                           <span>
-                            <i className="fa fa-minus"></i>
+                            Remove&nbsp;
+                            {/* <i className="fa fa-minus"></i> */}
                           </span>
                         </button>
                       )}
@@ -158,6 +168,7 @@ export default function WorkerProfileLayout() {
                 ))}
                 <WorkerProfileTextAreaInput
                   labelFor="address"
+                  labelIconClassName="fa fa-home"
                   labelName="Address"
                   textInputRow="3"
                   inputName="address"
