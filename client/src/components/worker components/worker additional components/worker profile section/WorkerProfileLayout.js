@@ -22,7 +22,7 @@ export default function WorkerProfileLayout() {
           </div>
           <div className="col-sm-9">
             <div className="" id="messages">
-              <h2></h2>
+              {/* <h2></h2> */}
 
               <hr />
 
