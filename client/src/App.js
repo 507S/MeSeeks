@@ -18,6 +18,7 @@ import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
 import WorkerForgetPasswordPage from "./pages/worker pages/WorkerForgetPasswordPage";
 import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
+import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 function App() {
   return (
@@ -54,6 +55,10 @@ function App() {
           <Route
             path="/workers/reset-password"
             element={<WorkerPasswordResetPage />}
+          />
+          <Route
+            path="/workers/profile-setup"
+            element={<WorkerProfilePage />}
           />
           {/* //Worker Pages end */}
 
