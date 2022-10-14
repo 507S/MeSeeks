@@ -3,7 +3,7 @@ import "../../../../styles/global/worker global/WorkerProfileDynamicInputFieldSt
 
 export default function WorkerProfileWorkExperienceDurationInput({
   labelName,
-
+  inputValue,
   inputName,
   inputType,
   minDateInCalender,
@@ -22,7 +22,7 @@ export default function WorkerProfileWorkExperienceDurationInput({
           placeholder="MM-DD-YYYY "
           id=""
           name={inputName}
-          value=""
+          value={inputValue}
           min={minDateInCalender}
           max={maxDateInCalender}
           {...rest}

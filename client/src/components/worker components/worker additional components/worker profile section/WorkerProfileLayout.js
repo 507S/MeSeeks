@@ -9,23 +9,25 @@ import WorkerProfileTextAreaInput from "./WorkerProfileTextAreaInput";
 import WorkerProfileTextInput from "./WorkerProfileTextInput";
 import WorkerProfileWorkExperienceDurationInput from "./WorkerProfileWorkExperienceDurationInput";
 export default function WorkerProfileLayout() {
-  const [serviceList, setServiceList] = useState([{ service: "" }]);
+  const [workExperienceList, setWorkExperienceList] = useState([
+    { experienceList: "" },
+  ]);
 
-  const handleServiceChange = (e, index) => {
+  const handleExperienceChange = (e, index) => {
     const { name, value } = e.target;
-    const list = [...serviceList];
+    const list = [...workExperienceList];
     list[index][name] = value;
-    setServiceList(list);
+    setWorkExperienceList(list);
   };
 
-  const handleServiceRemove = (index) => {
-    const list = [...serviceList];
+  const handleExperienceRemove = (index) => {
+    const list = [...workExperienceList];
     list.splice(index, 1);
-    setServiceList(list);
+    setWorkExperienceList(list);
   };
 
-  const handleServiceAdd = () => {
-    setServiceList([...serviceList, { service: "" }]);
+  const handleExperienceAdd = () => {
+    setWorkExperienceList([...workExperienceList, { experienceList: "" }]);
   };
 
   return (
@@ -92,16 +94,16 @@ export default function WorkerProfileLayout() {
                 />
 
                 <h5>Your Work Experience</h5>
-                {serviceList.map((singleService, index) => (
+                {workExperienceList.map((singleService, index) => (
                   <div key={index} className="services">
                     <div className="first-division">
                       <label>Company name : </label>
                       <input
-                        name="service"
+                        name="experienceList"
                         type="text"
                         id="service"
-                        value={singleService.service}
-                        onChange={(e) => handleServiceChange(e, index)}
+                        value={singleService.experienceList}
+                        onChange={(e) => handleExperienceChange(e, index)}
                         required
                       />
                       {/* <label>Duration : </label> */}
@@ -110,25 +112,25 @@ export default function WorkerProfileLayout() {
                           labelName="Check In"
                           inputName="startDate"
                           inputType="date"
-                          value=""
+                          // value="startDate"
                           minDateInCalender="2001-01-01"
                           maxDateInCalender="2050-01-01"
                         />
                         <WorkerProfileWorkExperienceDurationInput
                           labelName="Check Out"
                           inputName="endDate"
-                          value=""
+                          // value="endDate"
                           inputType="date"
                           minDateInCalender="2001-01-01"
                           maxDateInCalender="2050-01-01"
                         />
                       </div>
 
-                      {serviceList.length - 1 === index &&
-                        serviceList.length < 5 && (
+                      {workExperienceList.length - 1 === index &&
+                        workExperienceList.length < 5 && (
                           <button
                             type="button"
-                            onClick={handleServiceAdd}
+                            onClick={handleExperienceAdd}
                             className="add-btn"
                           >
                             {/* <span>Add New Experience</span> */}
@@ -139,10 +141,10 @@ export default function WorkerProfileLayout() {
                         )}
                     </div>
                     <div className="second-division">
-                      {serviceList.length !== 1 && (
+                      {workExperienceList.length !== 1 && (
                         <button
                           type="button"
-                          onClick={() => handleServiceRemove(index)}
+                          onClick={() => handleExperienceRemove(index)}
                           className="remove-btn"
                         >
                           {/* <span>Remove</span> */}
