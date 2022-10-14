@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import "../../../../styles/global/worker global/WorkerProfileDynamicInputFieldStyle.css";
 import WorkerProfileActionButton from "./WorkerProfileActionButton";
 import WorkerProfileFormSideImage from "./WorkerProfileFormSideImage";
 import WorkerProfileHeaderImage from "./WorkerProfileHeaderImage";
@@ -6,7 +7,27 @@ import WorkerProfileHeadline from "./WorkerProfileHeadline";
 import WorkerProfileSelectInput from "./WorkerProfileSelectInput";
 import WorkerProfileTextAreaInput from "./WorkerProfileTextAreaInput";
 import WorkerProfileTextInput from "./WorkerProfileTextInput";
+import WorkerProfileWorkExperienceDurationInput from "./WorkerProfileWorkExperienceDurationInput";
 export default function WorkerProfileLayout() {
+  const [serviceList, setServiceList] = useState([{ service: "" }]);
+
+  const handleServiceChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...serviceList];
+    list[index][name] = value;
+    setServiceList(list);
+  };
+
+  const handleServiceRemove = (index) => {
+    const list = [...serviceList];
+    list.splice(index, 1);
+    setServiceList(list);
+  };
+
+  const handleServiceAdd = () => {
+    setServiceList([...serviceList, { service: "" }]);
+  };
+
   return (
     <>
       <WorkerProfileHeaderImage />
@@ -69,14 +90,70 @@ export default function WorkerProfileLayout() {
                   labelName="Select Working Shift"
                   selectNamesFetchedFromDatabase="Day"
                 />
-                <WorkerProfileTextAreaInput
-                  labelFor="workExperience"
-                  labelName="Work Experience"
-                  textInputRow="3"
-                  inputName="workExperience"
-                  value=""
-                  placeholder="Your working Experiences..."
-                />
+
+                <h5>Your Work Experience</h5>
+                {serviceList.map((singleService, index) => (
+                  <div key={index} className="services">
+                    <div className="first-division">
+                      <label>Company name : </label>
+                      <input
+                        name="service"
+                        type="text"
+                        id="service"
+                        value={singleService.service}
+                        onChange={(e) => handleServiceChange(e, index)}
+                        required
+                      />
+                      {/* <label>Duration : </label> */}
+                      <div className="row mt-3">
+                        <WorkerProfileWorkExperienceDurationInput
+                          labelName="Check In"
+                          inputName="startDate"
+                          inputType="date"
+                          value=""
+                          minDateInCalender="2001-01-01"
+                          maxDateInCalender="2050-01-01"
+                        />
+                        <WorkerProfileWorkExperienceDurationInput
+                          labelName="Check Out"
+                          inputName="endDate"
+                          value=""
+                          inputType="date"
+                          minDateInCalender="2001-01-01"
+                          maxDateInCalender="2050-01-01"
+                        />
+                      </div>
+
+                      {serviceList.length - 1 === index &&
+                        serviceList.length < 5 && (
+                          <button
+                            type="button"
+                            onClick={handleServiceAdd}
+                            className="add-btn"
+                          >
+                            {/* <span>Add New Experience</span> */}
+                            <span>
+                              <i className="fa fa-plus"></i>
+                            </span>
+                          </button>
+                        )}
+                    </div>
+                    <div className="second-division">
+                      {serviceList.length !== 1 && (
+                        <button
+                          type="button"
+                          onClick={() => handleServiceRemove(index)}
+                          className="remove-btn"
+                        >
+                          {/* <span>Remove</span> */}
+                          <span>
+                            <i className="fa fa-minus"></i>
+                          </span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                ))}
                 <WorkerProfileTextAreaInput
                   labelFor="address"
                   labelName="Address"
