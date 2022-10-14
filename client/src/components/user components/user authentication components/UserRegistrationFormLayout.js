@@ -21,7 +21,6 @@ export default function UserRegistrationFormLayout() {
     email: "",
     password: "",
     confirmPassword:"",
-    rememberMe: "False",
   })
 
   function handleEvent(event){
@@ -60,82 +59,67 @@ export default function UserRegistrationFormLayout() {
             <UserAuthFormHeadline headline="Create an account " />
             <UserAuthForm className="px-3" method="POST">
               {/* <!-- Input Box --> */}
-              <input
+              <UserAuthFormTextInputCredentials
                 type = "text"
                 placeholder="First Name"
                 name="firstname"
+                tabIndex="10"
                 value={formData.firstname}
                 onChange={handleEvent}
             />
             <br/>
-            <input
+            <UserAuthFormTextInputCredentials
                 type = "text"
                 placeholder="Last Name"
                 name="lastname"
+                tabIndex="10"
                 value={formData.lastname}
                 onChange={handleEvent}
             />
             <br/>
-            <input
+            <UserAuthFormTextInputCredentials
                 type = "text"
                 placeholder="username"  
                 name="username"
+                tabIndex="10"
                 value={formData.username}
                 onChange={handleEvent}
             />
             <br/>
-            <input
+            <UserAuthFormTextInputCredentials
                 type="email"
                 placeholder="Enter Email"
                 name = "email"
+                tabIndex="10"
                 value = {formData.email}
                 onChange={handleEvent}
             />
             <br/>
-            <input
+            <UserAuthFormTextInputCredentials
                 type = "password"
                 placeholder="Enter Password"
                 name="password"
+                tabIndex="10"
                 value={formData.password}
                 onChange={handleEvent}
             />
             <br/>
-            <input
+            <UserAuthFormTextInputCredentials
                 type = "password"
                 placeholder="Confirm Password"
                 name="confirmPassword"
+                tabIndex="10"
                 value={formData.confirmPassword}
                 onChange={handleEvent}
             />
             <br/>  
-            <button onClick={submitHandler}>Register</button>
-              {/* <UserAuthFormTextInputCredentials
-                className="fa fa-envelope"
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                tabIndex="10"
-              />
-              <UserAuthFormTextInputCredentials
-                className="fa fa-phone "
-                type="email"
-                name="email"
-                placeholder="Mobile Number"
-                tabIndex="10"
-                style={{ fontSize: "20px" }}
-              />
-              <UserAuthFormTextInputCredentials
-                className="fa fa-lock"
-                type="password"
-                name="password"
-                placeholder="Password"
-                tabIndex="10"
-              /> */}
+            {/* <button onClick={submitHandler}>Register</button>
+            <br/> */}
 
               {/* <!--Remember Checkbox --> */}
 
               {/* <!-- Login Button --> */}
-              {/* <UserAuthFormButton type="submit" buttonText="Register"/> */}
+              <UserAuthFormButton type="submit" buttonText="Register" onClick={submitHandler}/>
 
               {/* Other Credentials */}
               <div className="text-center mb-2">

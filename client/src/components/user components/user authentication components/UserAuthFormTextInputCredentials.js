@@ -6,6 +6,7 @@ export default function UserAuthFormTextInputCredentials({
   name,
   placeholder,
   tabindex,
+  onChange,
   ...rest
 }) {
   return (
@@ -18,6 +19,7 @@ export default function UserAuthFormTextInputCredentials({
         name={name}
         placeholder={placeholder}
         tabindex={tabindex}
+        onChange={onChange}
         required
       />
     </div>
