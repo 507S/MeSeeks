@@ -33,7 +33,7 @@ export default function WorkerProfileLayout() {
                   textInputType="text"
                   inputName="username"
                   value=""
-                  // placeholder="Username"
+                  placeholder="Username..."
                 />
                 <WorkerProfileTextInput
                   labelFor="email"
@@ -41,7 +41,7 @@ export default function WorkerProfileLayout() {
                   textInputType="email"
                   inputName="email"
                   value=""
-                  // placeholder="Email"
+                  placeholder="Email..."
                 />
                 <WorkerProfileTextInput
                   labelFor="phoneNumber"
@@ -49,7 +49,7 @@ export default function WorkerProfileLayout() {
                   textInputType="text"
                   inputName="phoneNumber"
                   value=""
-                  // placeholder="Phone Number"
+                  placeholder="Phone Number..."
                 />
                 <WorkerProfileTextInput
                   labelFor="workerType"
@@ -57,7 +57,7 @@ export default function WorkerProfileLayout() {
                   textInputType="text"
                   inputName="workerType"
                   value=""
-                  // placeholder="Worker Type"
+                  placeholder="Worker Type..."
                 />
                 <WorkerProfileSelectInput
                   labelFor="phone"
@@ -70,12 +70,12 @@ export default function WorkerProfileLayout() {
                   selectNamesFetchedFromDatabase="Day"
                 />
                 <WorkerProfileTextAreaInput
-                  labelFor="workingExperience"
-                  labelName="Work Experiences"
+                  labelFor="workExperience"
+                  labelName="Work Experience"
                   textInputRow="3"
-                  inputName="workingExperience"
+                  inputName="workExperience"
                   value=""
-                  // placeholder="Your working Experiences..."
+                  placeholder="Your working Experiences..."
                 />
                 <WorkerProfileTextAreaInput
                   labelFor="address"
@@ -83,7 +83,7 @@ export default function WorkerProfileLayout() {
                   textInputRow="3"
                   inputName="address"
                   value=""
-                  // placeholder="Your Address..."
+                  placeholder="Your Address..."
                 />
                 <WorkerProfileActionButton
                   buttonType="submit"
