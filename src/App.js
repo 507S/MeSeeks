@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminDashboardCustomerListLayout from "./components/admin components/admin dashboard additional components/admin dashboard customer section/AdminDashboardCustomerListLayout";
+import AdminDashboardAddServiceCategoryLayout from "./components/admin components/admin dashboard additional components/service adding section/AdminDashboardAddServiceCategoryLayout";
 import AdminDashboardActiveServiceCategoryPage from "./pages/admin pages/AdminDashboardActiveServiceCategoryPage";
 import AdminDashboardActiveServiceRegionsPage from "./pages/admin pages/AdminDashboardActiveServiceRegionsPage";
 import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboardActiveServicesPage";
-import AdminDashboardAddServiceCategoryPage from "./pages/admin pages/AdminDashboardAddServiceCategoryPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 import AdminDashboardProfilePage from "./pages/admin pages/AdminDashboardProfilePage";
@@ -91,7 +91,7 @@ function App() {
           />
           <Route
             path="/admin-dashboard/add-service-category"
-            element={<AdminDashboardAddServiceCategoryPage />}
+            element={<AdminDashboardAddServiceCategoryLayout />}
           />
           <Route
             path="/admin-dashboard/add-service"

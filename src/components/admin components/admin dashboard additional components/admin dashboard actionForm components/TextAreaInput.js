@@ -4,6 +4,7 @@ export default function TextAreaInput({
   labelName,
   textAreaInputRow,
   inputName,
+  value,
   placeholder,
   ...rest
 }) {
@@ -18,6 +19,7 @@ export default function TextAreaInput({
         rows={textAreaInputRow}
         placeholder={placeholder}
         name={inputName}
+     {...rest}
       ></textarea>
     </div>
   );

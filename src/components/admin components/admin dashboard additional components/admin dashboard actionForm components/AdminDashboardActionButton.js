@@ -5,9 +5,10 @@ export default function AdminDashboardActionButton({
   buttonType,
   adminActionButtonIcon,
   adminActionButtonText,
+  ...rest
 }) {
   return (
-    <button className={adminActionButtonClassName} type={buttonType}>
+    <button className={adminActionButtonClassName} type={buttonType} {...rest}>
       {adminActionButtonText}
       &nbsp; <i className={adminActionButtonIcon}></i>
     </button>

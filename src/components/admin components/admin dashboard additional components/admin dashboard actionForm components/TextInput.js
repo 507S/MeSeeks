@@ -18,6 +18,7 @@ export default function TextInput({
         name={inputName}
         id="exampleFormControlInput1"
         placeholder={placeholder}
+        {...rest}
       />
     </div>
   );
