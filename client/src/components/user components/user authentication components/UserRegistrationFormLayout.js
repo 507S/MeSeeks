@@ -36,14 +36,21 @@ export default function UserRegistrationFormLayout() {
 
   async function submitHandler(event){
       event.preventDefault()
-      const response = await axios.post('http://localhost:1337/api/register', formData);
+      try{
+          const response = await axios.post('http://localhost:1337/api/register', formData);
+          if(response.data){
+            alert("success")
+            window.location.href("/login")
+        } 
+      }
+      catch(err){
+        console.log(err.response.data)
+        alert(err.response.data)
+      }
       // console.log(response)
       // const data = await response.json()
       // console.log(data)
-      if(response.data){
-          alert("success")
-          window.location.href("/login")
-      }
+      
   }
 
 
