@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../../../styles/global/user global/aos.css";
 import "../../../../styles/global/worker global/WorkerProfileDynamicInputFieldStyle.css";
 import WorkerProfileActionButton from "./WorkerProfileActionButton";
 import WorkerProfileFormSideImage from "./WorkerProfileFormSideImage";
@@ -40,7 +41,7 @@ export default function WorkerProfileLayout() {
         </div>
 
         <div className="row">
-          <div className="col-sm-3">
+          <div className="col-sm-3 ">
             <WorkerProfileFormSideImage />
           </div>
           <div className="col-sm-9">

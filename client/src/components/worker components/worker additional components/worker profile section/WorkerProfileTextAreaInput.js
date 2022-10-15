@@ -11,7 +11,7 @@ export default function WorkerProfileTextAreaInput({
   ...rest
 }) {
   return (
-    <div className="col-12">
+    <div className="col-12 ">
       <label for={labelFor} style={{ fontWeight: "lighter" }}>
         <h5>
           <i className={labelIconClassName}></i>&nbsp;{labelName}
