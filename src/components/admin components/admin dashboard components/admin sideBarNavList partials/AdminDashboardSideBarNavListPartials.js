@@ -13,7 +13,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListText="Dashboard"
         ariaCurrent="page"
       />
-       <AdminDashboardSideBarNavList
+      <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/admin-dashboard/profile"
@@ -231,7 +231,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard/add-region"
         sideBarNavListIconClassName="bx bxs-location-plus"
         sideBarNavListText="Add Region"
         ariaCurrent="page"

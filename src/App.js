@@ -4,6 +4,7 @@ import AdminDashboardAddServiceCategoryLayout from "./components/admin component
 import AdminDashboardActiveServiceCategoryPage from "./pages/admin pages/AdminDashboardActiveServiceCategoryPage";
 import AdminDashboardActiveServiceRegionsPage from "./pages/admin pages/AdminDashboardActiveServiceRegionsPage";
 import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboardActiveServicesPage";
+import AdminDashboardAddRegionPage from "./pages/admin pages/AdminDashboardAddRegionPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 import AdminDashboardProfilePage from "./pages/admin pages/AdminDashboardProfilePage";
@@ -64,7 +65,7 @@ function App() {
             path="/admins/registration"
             element={<AdminRegistrationPage />}
           />
-           <Route
+          <Route
             path="/admin-dashboard/profile"
             element={<AdminDashboardProfilePage />}
           />
@@ -96,6 +97,10 @@ function App() {
           <Route
             path="/admin-dashboard/add-service"
             element={<AdminDashboardAddServicePage />}
+          />
+          <Route
+            path="/admin-dashboard/add-region"
+            element={<AdminDashboardAddRegionPage />}
           />
         </Routes>
       </Router>
