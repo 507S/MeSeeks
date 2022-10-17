@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function TextInput({
+export default function   TextInput({
+  name,
   labelName,
   type,
-  inputName,
   placeholder,
+  onChange,
   ...rest
 }) {
   return (
@@ -13,11 +14,13 @@ export default function TextInput({
         {labelName}
       </label>
       <input
+        name={name}
         type={type}
         class="form-control"
-        name={inputName}
         id="exampleFormControlInput1"
         placeholder={placeholder}
+        onChange={onChange}
+        // value={value}
       />
     </div>
   );

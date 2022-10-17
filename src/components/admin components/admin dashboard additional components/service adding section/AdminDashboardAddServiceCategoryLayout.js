@@ -26,14 +26,53 @@ export default function AdminDashboardAddServiceCategoryLayout() {
   
   const navigate = useNavigate();
 
+  // const [name, setName] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [error, setError] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  
+
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  //     try {
+  //       const config = {
+  //         headers: {
+  //           "Content-type": "application/json",
+  //         },
+  //       };
+
+  //       setLoading(true);
+
+  //       const { data } = await axios.post(
+  //         "/api/services/addservice",
+  //         {
+  //           name,
+  //           description
+  //         },
+  //         config
+  //       )
+  //       .then(res => {
+  //         console.log(res);
+  //       });
+
+  //       console.log(data);
+  //       localStorage.setItem("userInfo", JSON.stringify(data));
+  //       setLoading(false);
+  //       window.location.href = "/";
+  //     } catch (error) {
+  //       setError(error.response.data.message);
+  //     }
+  //   }
+
   const [inpval, setINP] = useState({
     name: "",
     description: "",
 })
 
 const setdata = (e) => {
-    console.log(e.target.value);
     const { name, value } = e.target;
+    console.log(name)
+    console.log(value)
     setINP((preval) => {
         return {
             ...preval,
@@ -41,47 +80,32 @@ const setdata = (e) => {
         }
     })
 }
-
 const addinpdata = async(e) =>{
-  console.log("lol")
-    e.preventDefault();
+  e.preventDefault();
 
-    const {name,description} = inpval;
-
-    // const res = await fetch("/api/services/addservice",{
-    //     method:"POST",
-    //     headers:{
-    //         "Content-Type":"application/json"
-    //     },
-    //     body:JSON.stringify({
-    //       name,description
-    //     })
-    // });
-    const post = {
-      name,
-      description
-    }
-    try{
-    console.log(post);
-    const res = await axios.post("http://localhost:8003/api/services/addservice",post);
-    //  const data = await res.json();
+   try{
+    console.log(inpval)
+    const res = await axios.post("http://localhost:8003/api/services/addservice", inpval);
+    // console.log(res)
+    // const data = await res.json();
     console.log(res);
-    //  console.log(data);
-     if(res.status === 422 || !res){
-      alert("error");
-      console.log("error ");
-  }
-  else{
-      alert("data added");
-      console.log("data added");
-      navigate("/", { replace: true });
-  }
+  
+    if(res.status === 422){
+        alert("error");
+        console.log("error");
     }
-    catch(e){
-      console.log(e);
+    else{
+        alert("data added");
+        console.log("data added");
+        navigate("/", { replace: true });
     }
+   }
+   catch(error){
+    alert(error)
+   }
+  
 }
-  return (
+return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
@@ -140,30 +164,28 @@ const addinpdata = async(e) =>{
             <div class="card w-100 mt-5" style={{ height: "auto" }}>
               <div class=" card-body w-100" style={{ height: "auto" }}>
                 {/* <form method="POST" enctype="multipart/form-data"> */}
-                {/* <AdminDashboardActionForm method="POST">
+                <AdminDashboardActionForm method="POST" >
                   <TextInput
+                    name="name"
                     labelName="Service Category : "
                     type="text"
-                    // inputName="serviceCategoryName"
                     placeholder="Provide a new Service Category"
                     value={inpval.name} 
                     onChange={setdata} 
-                    name="name"
                   />
                   <TextAreaInput
+                    name="description"
+                    type="text"
                     labelName="Service Category Description :"
                     placeholder="Add a description..."
-                    // inputName="serviceCategoryDescription"
                     textAreaInputRow="4"
                     value={inpval.description}
                     onChange={setdata} 
-                    name="description"
                     style={{ reSize: "none" }}
                   />
-                  <input type="submit" value="Submit" onClick={addinpdata}></input> */}
 
 
-                  {/* <div class="col-md-4 col-lg-2 w-100 ">
+                  <div class="col-md-4 col-lg-2 w-100 ">
                     <AdminDashboardActionButton
                       adminActionButtonClassName="btn btn-info w-100"
                       adminActionButtonIcon="fa fa-briefcase"
@@ -171,21 +193,8 @@ const addinpdata = async(e) =>{
                       type="submit"
                       onClick={addinpdata}
                     />
-                  </div> */}
-                  <form method="POST">
-                  <input
-                  placeholder="service name"
-                  value={inpval.name}
-                  name="name"
-                  onChange={setdata}></input><br></br>
-                  <input
-                  placeholder="service description"
-                  value={inpval.description}
-                  name="description"
-                  onChange={setdata}></input> <br></br>
-                  <input type="submit" value="Submit" onClick={addinpdata}></input>
-                  </form>
-                {/* </AdminDashboardActionForm> */}
+                  </div>
+                </AdminDashboardActionForm>
               </div>
             </div>
           </main>

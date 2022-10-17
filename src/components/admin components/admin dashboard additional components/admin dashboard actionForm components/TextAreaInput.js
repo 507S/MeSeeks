@@ -1,10 +1,11 @@
 import React from "react";
 
 export default function TextAreaInput({
+  name,
   labelName,
   textAreaInputRow,
-  inputName,
   placeholder,
+  onChange,
   ...rest
 }) {
   return (
@@ -13,11 +14,12 @@ export default function TextAreaInput({
         {labelName}
       </label>
       <textarea
+        name={name}
         class="form-control"
         id="exampleFormControlTextarea1"
         rows={textAreaInputRow}
         placeholder={placeholder}
-        name={inputName}
+        onChange={onChange}
       ></textarea>
     </div>
   );
