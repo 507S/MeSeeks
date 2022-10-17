@@ -1,8 +1,6 @@
 import React from "react";
 // import "../../../styles/global/admin global/AdminDashboardCards.css";
-// import "../../../styles/global/admin global/AdminDashboardStyles.css";
-// import "../../../styles/global/admin global/bootstrap.min.css";
-// import "../../../styles/global/admin global/bootstrap.min.css.map";
+
 import classes from "../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../styles/global/admin global/AdminDashboardStyles.css";
@@ -70,7 +68,12 @@ export default function WorkerDashboardLayout() {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               {/* //button test */}
-              <WorkerDashboardHeaderContent adminHeaderContentText="Dashboard" />
+              <WorkerDashboardHeaderContent
+                adminHeaderContentText="Dashboard"
+                workerDashboardHeaderContentImage="bx bxs-dashboard"
+              />
+              {/* <FontAwesomeIcon icon="fa-solid fa-grid-2" /> */}
+
               <div className="btn-toolbar mb-2 mb-md-0"></div>
             </div>
 
