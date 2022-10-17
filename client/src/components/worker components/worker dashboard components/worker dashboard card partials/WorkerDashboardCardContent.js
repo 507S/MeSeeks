@@ -1,10 +1,12 @@
 import React from "react";
-import AdminDashboardCardContentIcon from "../../../../assets/admin assets/customer.png";
+import cardCustomerIcon from "../../../../assets/worker assets/images/salary.png";
 export default function WorkerDashboardCardContent({
   cardContentText,
+  // cardIcon,
 
   cardContentDatabaseFetchedData,
 }) {
+  // import img from {cardCustomerIcon}
   return (
     <div className="col">
       <div className="card">
@@ -12,7 +14,7 @@ export default function WorkerDashboardCardContent({
           <h5 className="card-title">
             {cardContentText}
             <img
-              src={AdminDashboardCardContentIcon}
+              src={cardCustomerIcon}
               height="50px"
               width="50px"
               style={{ float: "right" }}

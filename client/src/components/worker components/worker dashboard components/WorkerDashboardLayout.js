@@ -8,8 +8,6 @@ import "../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../styles/global/admin global/AdminDashboardStyles.css";
 import "../../../styles/global/admin global/bootstrap.min.css";
 import WorkerDashboardCardContent from "./worker dashboard card partials/WorkerDashboardCardContent";
-import WorkerDashboardGraphCanvas from "./worker dashboard graph/WorkerDashboardGraphCanvas";
-import WorkerDashboardGraphHeaderContent from "./worker dashboard graph/WorkerDashboardGraphHeaderContent";
 import WorkerDashboardSideBarNavListPartials from "./worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
 import WorkerDashboardAuthenticationButton from "./WorkerDashboardAuthenticationButton";
 import WorkerDashboardHeaderContent from "./WorkerDashboardHeaderContent";
@@ -52,10 +50,10 @@ export default function WorkerDashboardLayout() {
           {/* //sidebar starts */}
           <nav
             id={classes["sidebarMenu"]}
-            className="col-md-3 col-lg-2 d-md-block  sidebar-sticky  "
+            className="col-md-2 col-sm-2 d-md-block  sidebar-sticky  "
             // style={{ backgroundColor: " #91b5e7" }}
-            // style={{ backgroundColor: " #2ab7ca" }}
-            style={{ backgroundColor: "#91b5e7" }}
+            style={{ backgroundColor: " #2ab7ca" }}
+            // style={{ backgroundColor: "#91b5e7" }}
           >
             <div className="position-absolute pt-3">
               <ul className="nav flex-column">
@@ -79,40 +77,41 @@ export default function WorkerDashboardLayout() {
             {/* //card sections starts*/}
             <div className="row row-cols-1 row-cols-md-3 g-3">
               <WorkerDashboardCardContent
-                cardContentText="Total Customers"
+                cardContentText="Completed Works"
+                cardContentDatabaseFetchedData="20"
+                cardIcon="../../../../assets/admin assets/customer.png"
+              />
+              <WorkerDashboardCardContent
+                cardContentText="Work Notifications"
                 cardContentDatabaseFetchedData="20"
               />
               <WorkerDashboardCardContent
-                cardContentText="Total Customers"
+                cardContentText="Average Rating"
                 cardContentDatabaseFetchedData="20"
               />
               <WorkerDashboardCardContent
-                cardContentText="Total Customers"
+                cardContentText="Grace Points"
                 cardContentDatabaseFetchedData="20"
               />
               <WorkerDashboardCardContent
-                cardContentText="Total Customers"
+                cardContentText="Message"
                 cardContentDatabaseFetchedData="20"
               />
               <WorkerDashboardCardContent
-                cardContentText="Total Customers"
+                cardContentText="Total Earnings"
                 cardContentDatabaseFetchedData="20"
               />
-              <WorkerDashboardCardContent
+              {/* <WorkerDashboardCardContent
                 cardContentText="Total Customers"
                 cardContentDatabaseFetchedData="20"
-              />
-              <WorkerDashboardCardContent
-                cardContentText="Total Customers"
-                cardContentDatabaseFetchedData="20"
-              />
+              /> */}
             </div>
 
             {/* //statistical container starts */}
-            <div className="container">
+            {/* <div className="container">
               <WorkerDashboardGraphHeaderContent dashboardGraphHeaderContentText="Statistics" />
               <WorkerDashboardGraphCanvas />
-            </div>
+            </div> */}
           </main>
         </div>
       </div>
