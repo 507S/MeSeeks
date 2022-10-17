@@ -15,7 +15,7 @@ import WorkerDashboardNavBarSearchTextInput from "../../worker dashboard compone
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
-export default function WorkerDashboardProfileLayout() {
+export default function WorkerDashboardComplainMessageLayout() {
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -71,13 +71,18 @@ export default function WorkerDashboardProfileLayout() {
               {/* //button test */}
 
               <WorkerDashboardHeaderContent
-                adminHeaderContentText="Worker Profile"
-                workerDashboardHeaderContentImage="fa-solid fa-helmet-safety"
+                adminHeaderContentText="Complain Message"
+                workerDashboardHeaderContentImage="bx bxs-message-rounded-error"
               />
-
+              {/* <i class='bx bxs-message-rounded-error' ></i> */}
+              {/* <i class="fa-sharp fa-solid fa-messages-question"></i> */}
+              {/* <i class="fa-sharp fa-solid fa-message-question"></i> */}
+              {/* <i class='bx bxs-message-alt-error' ></i> */}
+              {/* <i class="fa-sharp fa-solid fa-message-exclamation"></i> */}
               <div className="btn-toolbar mb-2 mb-md-0"></div>
             </div>
-
+            {/* <i class="fa-sharp fa-solid fa-envelope-open-text"></i> */}
+            {/* <i class="fa-sharp fa-solid fa-screwdriver-wrench"></i> */}
             {/* //statistical container starts */}
             {/* <div className="container">
               <WorkerDashboardGraphHeaderContent dashboardGraphHeaderContentText="Statistics" />

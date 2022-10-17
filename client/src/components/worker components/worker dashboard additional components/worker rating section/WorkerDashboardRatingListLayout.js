@@ -15,7 +15,7 @@ import WorkerDashboardNavBarSearchTextInput from "../../worker dashboard compone
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
-export default function WorkerDashboardProfileLayout() {
+export default function WorkerDashboardRatingListLayout() {
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -71,10 +71,9 @@ export default function WorkerDashboardProfileLayout() {
               {/* //button test */}
 
               <WorkerDashboardHeaderContent
-                adminHeaderContentText="Worker Profile"
-                workerDashboardHeaderContentImage="fa-solid fa-helmet-safety"
+                adminHeaderContentText="Rating List"
+                workerDashboardHeaderContentImage="fa fa-star"
               />
-
               <div className="btn-toolbar mb-2 mb-md-0"></div>
             </div>
 

@@ -45,9 +45,9 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="/worker-dashboard/average-rating"
+        sideBarNavListRedirectLink="/worker-dashboard/rating-list"
         sideBarNavListIconClassName="fa fa-star"
-        sideBarNavListText="Average Ratings"
+        sideBarNavListText="Rating List"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
@@ -63,9 +63,9 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="/worker-dashboard/total-earnings"
+        sideBarNavListRedirectLink="/worker-dashboard/revenue-list"
         sideBarNavListIconClassName="bx bx-money"
-        sideBarNavListText="Earnings"
+        sideBarNavListText="Revenues"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
@@ -212,25 +212,26 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/worker-dashboard/compose-message"
-        sideBarNavListIconClassName="bx bxs-message-alt-edit"
+        // sideBarNavListIconClassName="bx bxs-message-alt-edit"
+        sideBarNavListIconClassName="fa fa-paper-plane"
         sideBarNavListText="Compose message"
         ariaCurrent="page"
       />
-      <WorkerDashboardSideBarNavList
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/worker-dashboard/complain-message"
         sideBarNavListIconClassName="fa fa-paper-plane"
         sideBarNavListText="Complain Message"
         ariaCurrent="page"
-      />
+      /> */}
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/worker-dashboard/claim-message"
+        sideBarNavListRedirectLink="/worker-dashboard/appeal-message"
         sideBarNavListIconClassName="fa fa-hand-paper-o	
         "
-        sideBarNavListText="Claim Message"
+        sideBarNavListText="Appeal Message"
         ariaCurrent="page"
       />
 
