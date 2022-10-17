@@ -21,7 +21,48 @@ import AdminDashboardDataTableRowContent from "../admin dashboard data table/Adm
 import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
 import ModalButton from "../admin dashboard popup components/ModalButton";
 import ServiceDescriptionModal from "../admin dashboard popup components/ServiceDescriptionModal";
+import { useState, useEffect } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import axios from "axios";
 export default function AdminDashboardActiveServiceCategoryLayout() {
+  const [getServicedata, setServicedata] = useState([])
+  useEffect(() => {
+    fetch("http://localhost:8003/api/services/getservice").then(res => {
+        return res.json();
+    }).then(jsonResponse => setServicedata(jsonResponse));
+}, []);
+  // const getdata = async (e) => {
+  //   try{
+  //     axios.get("http://localhost:8003/api/services/getservice")
+  //    .then(res=>setServicedata(res) )
+  //    .catch(err=>console.log(err))
+      // const res = await axios.get("http://localhost:8003/api/services/getservice");
+    //   const res = await fetch("http://localhost:8003/api/services/getservice",{
+    //     method:"GET",
+    //     headers:{
+    //         "Content-Type":"application/json"
+    //     },
+    // });
+    // const data = await res.json();
+    // console.log(res);
+  
+    //   if (res.status === 422) {
+    //     alert("error");
+    //     console.log("error ");
+    //   }
+    //   else {
+    //     setServicedata(res);
+    //     console.log("got data");
+    //   }
+  //   }
+  //   catch(error){
+  //     alert(error);
+  //   }
+    
+  // }
+  // useEffect(() => {
+  //   getdata();
+  // }, []);
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -113,16 +154,27 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                     /> */}
                     {/* //table data body starts */}
                     <tbody>
+                      {
+                        getServicedata.map((element,id) => {
+                          return (
+                    <>
+                    
+                    {/* <td>{element._id}</td>
+                    <td>{element.name}</td>
+                    <td>{element.createdAt}</td> */}
+
                       <AdminDashboardDataTableRowSection>
-                        {/* //get your fetch data here by loop*/}
+                        
                         <AdminDashboardDataTableRowContent>
-                          {"10001"}
+                          {id+1}
                         </AdminDashboardDataTableRowContent>
                         <AdminDashboardDataTableRowContent>
-                          {"Home Appliances"}
+                          {element.name}
                         </AdminDashboardDataTableRowContent>
+                        {/* const date= new Date(element.createdAt)
+                        res = date..toLocaleDateString(); */}
                         <AdminDashboardDataTableRowContent>
-                          {"22/08/22"}
+                          {Date(element.createdAt).slice(0,16)}
                         </AdminDashboardDataTableRowContent>
                         <AdminDashboardDataTableRowContent>
                           {
@@ -134,59 +186,34 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                                 modalPopUpButtonIcon="fa fa-info-circle"
                               />
                               <ServiceDescriptionModal
-                                serviceTitle="Home Appliances"
-                                serviceTitleIcon="fa fa-file"
-                                serviceDescription="Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."
+                                serviceTitle={element.name}
+                                serviceTitleIcon="fa fa-wrench"
+                                serviceDescription={element.description}
                                 modalClosingButtonText="Close"
                                 modalClosingButtonIcon="fa fa-close"
                               />
                             </>
                           }
+                          
                         </AdminDashboardDataTableRowContent>
 
-                        {/* <AdminDashboardDataTableRowContent>
-                          <AdminDashboardActionForm actionFormClassName="form-floating">
+                        {/* <AdminDashboardDataTableRowContent> */}
+                          {/* <AdminDashboardActionForm actionFormClassName="form-floating">
                             <AdminDashboardActionButton
                               adminActionButtonClassName="btn btn-danger"
                               buttonType="submit"
                               adminActionButtonIcon="bx bxs-send"
                               adminActionButtonText="Ban"
                             />
-                          </AdminDashboardActionForm>
-                        </AdminDashboardDataTableRowContent> */}
+                          </AdminDashboardActionForm> */}
+                        {/* </AdminDashboardDataTableRowContent> */}
+                       
                       </AdminDashboardDataTableRowSection>
-
-                      <AdminDashboardDataTableRowSection>
-                        {/* //get your fetch data here by loop*/}
-                        <AdminDashboardDataTableRowContent>
-                          {"10002"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"Office Appliances"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"22/08/22"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {
-                            <>
-                              <ModalButton
-                                modalButtonText="Open"
-                                modalButtonType="button"
-                                modalButtonClassName="btn btn-dark w-25 "
-                                modalPopUpButtonIcon="fa fa-info-circle"
-                              />
-                              <ServiceDescriptionModal
-                                serviceTitle="cc"
-                                serviceTitleIcon="fa fa-wrench"
-                                serviceDescription="Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."
-                                modalClosingButtonText="Close"
-                                modalClosingButtonIcon="fa fa-close"
-                              />
-                            </>
-                          }
-                        </AdminDashboardDataTableRowContent>
-                      </AdminDashboardDataTableRowSection>
+                      </>
+                        
+                        )
+                      })
+                    }
                       {/* <AdminDashboardDataTableRowContent>
                           <AdminDashboardActionForm actionFormClassName="form-floating">
                             <AdminDashboardActionButton

@@ -5,6 +5,7 @@ export default function ModalButton({
   modalButtonType,
   modalButtonClassName,
   modalPopUpButtonIcon,
+  onClick,
 
   ...rest
 }) {
@@ -12,6 +13,7 @@ export default function ModalButton({
     <button
       type={modalButtonType}
       class={modalButtonClassName}
+      onClick={onClick}
       data-bs-toggle="modal"
       data-bs-target="#staticBackdrop"
     >
