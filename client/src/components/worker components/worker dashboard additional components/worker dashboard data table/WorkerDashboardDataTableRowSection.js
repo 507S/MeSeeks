@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AdminDashboardDataTableRowSection({ children }) {
+export default function WorkerDashboardDataTableRowSection({ children }) {
   return (
     <>
       <tr>{children}</tr>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AdminDashboardDataTableColumnHeaderContent({
+export default function WorkerDashboardDataTableColumnHeaderContent({
   tableColumnClassName,
   tableColumnHeaderText,
 }) {

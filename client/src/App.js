@@ -18,7 +18,6 @@ import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
 import WorkerDashboardAdminMessageListPage from "./pages/worker pages/WorkerDashboardAdminMessageListPage";
 import WorkerDashboardAppealMessagePage from "./pages/worker pages/WorkerDashboardAppealMessagePage";
 import WorkerDashboardComplainMessagePage from "./pages/worker pages/WorkerDashboardComplainMessagePage";
-import WorkerDashboardCompletedWorkListPage from "./pages/worker pages/WorkerDashboardCompletedWorkListPage";
 import WorkerDashboardComposeMessagePage from "./pages/worker pages/WorkerDashboardComposeMessagePage";
 import WorkerDashboardCustomerMessageListPage from "./pages/worker pages/WorkerDashboardCustomerMessageListPage";
 import WorkerDashboardFeedbackList from "./pages/worker pages/WorkerDashboardFeedbackList";
@@ -30,6 +29,7 @@ import WorkerDashboardRatingListPage from "./pages/worker pages/WorkerDashboardR
 import WorkerDashboardReserveWorkListPage from "./pages/worker pages/WorkerDashboardReserveWorkListPage";
 import WorkerDashboardRevenueListPage from "./pages/worker pages/WorkerDashboardRevenueListPage";
 import WorkerDashboardWarningMessageListPage from "./pages/worker pages/WorkerDashboardWarningMessageListPage";
+import WorkerDashboardWorkHistoryListPage from "./pages/worker pages/WorkerDashboardWorkHistoryListPage";
 import WorkerDashboardWorkNotificationListPage from "./pages/worker pages/WorkerDashboardWorkNotificationListPage";
 import WorkerForgetPasswordPage from "./pages/worker pages/WorkerForgetPasswordPage";
 import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
@@ -85,8 +85,8 @@ function App() {
             element={<WorkerDashboardRatingListPage />}
           />
           <Route
-            path="/worker-dashboard/completed-work"
-            element={<WorkerDashboardCompletedWorkListPage />}
+            path="/worker-dashboard/work-history"
+            element={<WorkerDashboardWorkHistoryListPage />}
           />
           <Route
             path="/worker-dashboard/grace-point"

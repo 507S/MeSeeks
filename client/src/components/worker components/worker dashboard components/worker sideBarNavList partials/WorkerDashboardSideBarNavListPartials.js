@@ -36,9 +36,9 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="/worker-dashboard/completed-work"
+        sideBarNavListRedirectLink="/worker-dashboard/work-history"
         sideBarNavListIconClassName="fa fa-history"
-        sideBarNavListText="Completed Works"
+        sideBarNavListText=" Work History"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList

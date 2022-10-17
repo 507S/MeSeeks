@@ -1,4 +1,4 @@
-export default function AdminDashboardRowContentFetchedData({
+export default function WorkerDashboardRowContentFetchedData({
   rowFetchedData,
 }) {
   return { rowFetchedData };
