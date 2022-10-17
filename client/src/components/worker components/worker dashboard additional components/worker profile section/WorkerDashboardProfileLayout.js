@@ -3,20 +3,19 @@ import React from "react";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
-import classes from "../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
-import "../../../styles/global/admin global/AdminDashboardCards.css";
-import "../../../styles/global/admin global/AdminDashboardStyles.css";
-import "../../../styles/global/admin global/bootstrap.min.css";
-import WorkerDashboardCardContent from "./worker dashboard card partials/WorkerDashboardCardContent";
-import WorkerDashboardSideBarNavListPartials from "./worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
-import WorkerDashboardAuthenticationButton from "./WorkerDashboardAuthenticationButton";
-import WorkerDashboardHeaderContent from "./WorkerDashboardHeaderContent";
-import WorkerDashboardNavBarSearchForm from "./WorkerDashboardNavBarSearchForm";
-import WorkerDashboardNavBarSearchTextInput from "./WorkerDashboardNavBarSearchTextInput";
-import WorkerDashboardNavBarTogglerButton from "./WorkerDashboardNavBarTogglerButton";
-import WorkerDashboardSideBarHeaderSection from "./WorkerDashboardSideBarHeaderSection";
-import WorkerDashboardSideBarNavListEndSection from "./WorkerDashboardSideBarNavListEndSection";
-export default function WorkerDashboardLayout() {
+import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
+import "../../../../styles/global/admin global/AdminDashboardCards.css";
+import "../../../../styles/global/admin global/AdminDashboardStyles.css";
+import "../../../../styles/global/admin global/bootstrap.min.css";
+import WorkerDashboardSideBarNavListPartials from "../../worker dashboard components/worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
+import WorkerDashboardAuthenticationButton from "../../worker dashboard components/WorkerDashboardAuthenticationButton";
+import WorkerDashboardHeaderContent from "../../worker dashboard components/WorkerDashboardHeaderContent";
+import WorkerDashboardNavBarSearchForm from "../../worker dashboard components/WorkerDashboardNavBarSearchForm";
+import WorkerDashboardNavBarSearchTextInput from "../../worker dashboard components/WorkerDashboardNavBarSearchTextInput";
+import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
+import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
+import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
+export default function WorkerDashboardProfileLayout() {
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -70,41 +69,8 @@ export default function WorkerDashboardLayout() {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               {/* //button test */}
-              <WorkerDashboardHeaderContent adminHeaderContentText="Dashboard" />
+              <WorkerDashboardHeaderContent adminHeaderContentText="Worker Profile" />
               <div className="btn-toolbar mb-2 mb-md-0"></div>
-            </div>
-
-            {/* //card sections starts*/}
-            <div className="row row-cols-1 row-cols-md-3 g-3">
-              <WorkerDashboardCardContent
-                cardContentText="Completed Works"
-                cardContentDatabaseFetchedData="20"
-                cardIcon="../../../../assets/admin assets/customer.png"
-              />
-              <WorkerDashboardCardContent
-                cardContentText="Work Notifications"
-                cardContentDatabaseFetchedData="20"
-              />
-              <WorkerDashboardCardContent
-                cardContentText="Average Rating"
-                cardContentDatabaseFetchedData="20"
-              />
-              <WorkerDashboardCardContent
-                cardContentText="Grace Points"
-                cardContentDatabaseFetchedData="20"
-              />
-              <WorkerDashboardCardContent
-                cardContentText="Message"
-                cardContentDatabaseFetchedData="20"
-              />
-              <WorkerDashboardCardContent
-                cardContentText="Total Earnings"
-                cardContentDatabaseFetchedData="20"
-              />
-              {/* <WorkerDashboardCardContent
-                cardContentText="Total Customers"
-                cardContentDatabaseFetchedData="20"
-              /> */}
             </div>
 
             {/* //statistical container starts */}

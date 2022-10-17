@@ -16,7 +16,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/worker-dashboard"
+        sideBarNavListRedirectLink="/worker-dashboard/worker-profile"
         sideBarNavListIconClassName="bx bxs-user"
         sideBarNavListText="Profile"
         ariaCurrent="page"
@@ -36,51 +36,61 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="/worker-dashboard/active-service-category"
-        sideBarNavListIconClassName="fa fa-database"
-        sideBarNavListText="Service Categories"
+        sideBarNavListRedirectLink="/worker-dashboard/completed-work"
+        sideBarNavListIconClassName="fa fa-history"
+        sideBarNavListText="Completed Works"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="/admin-dashboard/active-services"
-        sideBarNavListIconClassName="bx bxs-megaphone"
-        sideBarNavListText="Current Services"
+        sideBarNavListRedirectLink="/worker-dashboard/average-rating"
+        sideBarNavListIconClassName="fa fa-star"
+        sideBarNavListText="Average Ratings"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-time"
-        sideBarNavListText="Ongoing Works"
+        sideBarNavListRedirectLink="/worker-dashboard/grace-point"
+        sideBarNavListIconClassName="fa fa-hand-o-right"
+        sideBarNavListText="Grace Points"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
-        sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-bar-chart-alt-2"
-        sideBarNavListText="Revenues"
+        sideBarNavListRedirectLink="/worker-dashboard/total-earnings"
+        sideBarNavListIconClassName="bx bx-money"
+        sideBarNavListText="Earnings"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListTextColor="white"
+        sideBarNavListRedirectLink="/worker-dashboard/customer-feedback"
+        sideBarNavListIconClassName="fa fa-comments-o
+        "
+        sideBarNavListText="Feedbacks"
+        ariaCurrent="page"
+      />
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/admin-dashboard/active-service-regions"
         sideBarNavListIconClassName="bx bxs-map-pin"
         sideBarNavListText="Regions"
         ariaCurrent="page"
-      />
+      /> */}
       {/* //second category */}
       <WorkerDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="black"
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
-        sideBarNavListCategoryText="Work Information"
+        sideBarNavListCategoryText="Work Reports"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
         sideBarNavListCategoryIcon="bx bxs-right-arrow"
@@ -90,28 +100,29 @@ export default function WorkerDashboardSideBarNavListPartials() {
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/admin-dashboard/customer-list"
-        sideBarNavListIconClassName="bx bxs-user-circle"
-        sideBarNavListText="Customer List"
+        sideBarNavListRedirectLink="/worker-dashboard/work-notification"
+        sideBarNavListIconClassName="fa fa-bell"
+        sideBarNavListText="Work Notification"
+        ariaCurrent="page"
+      />
+
+      <WorkerDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/worker-dashboard/ongoing-work"
+        sideBarNavListIconClassName="fa fa-wrench"
+        sideBarNavListText="Ongoing work"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bx-note"
-        sideBarNavListText="Complaint List"
+        sideBarNavListRedirectLink="/worker-dashboard/reserve-work"
+        sideBarNavListIconClassName="fa fa-hourglass"
+        sideBarNavListText="Reserve Work"
         ariaCurrent="page"
       />
-      <WorkerDashboardSideBarNavList
-        sideBarNavListClassName="nav-item"
-        sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
-        sideBarNavListIconClassName="bx bxs-star"
-        sideBarNavListText="Ratings"
-        ariaCurrent="page"
-      />
-      <WorkerDashboardSideBarNavList
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
@@ -126,13 +137,13 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="bx bxs-message-detail"
         sideBarNavListText="Messages"
         ariaCurrent="page"
-      />
+      /> */}
 
       {/* //third category */}
       <WorkerDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="black"
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
-        sideBarNavListCategoryText="Worker Information"
+        sideBarNavListCategoryText="Message Notifications"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
         sideBarNavListCategoryIcon="bx bxs-right-arrow"
@@ -142,12 +153,28 @@ export default function WorkerDashboardSideBarNavListPartials() {
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/worker-dashboard/customer-message"
         sideBarNavListIconClassName="bx bxs-user-voice"
-        sideBarNavListText="Worker List"
+        sideBarNavListText="Customer Message"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/worker-dashboard/admin-message"
+        sideBarNavListIconClassName="fa fa-bullhorn"
+        sideBarNavListText="Admin Message"
+        ariaCurrent="page"
+      />
+      <WorkerDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/worker-dashboard/warning-message"
+        sideBarNavListIconClassName="fa fa-exclamation-triangle"
+        sideBarNavListText="Warning Message"
+        ariaCurrent="page"
+      />
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/admin-dashboard/worker-banlist"
@@ -162,13 +189,13 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="bx bx-edit-alt"
         sideBarNavListText="Appeal Messages"
         ariaCurrent="page"
-      />
+      /> */}
 
       {/* //forth category */}
       <WorkerDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="black"
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
-        sideBarNavListCategoryText="Worker Information"
+        sideBarNavListCategoryText="Worker Activity"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
         sideBarNavListCategoryIcon="bx bxs-right-arrow"
@@ -184,7 +211,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/worker-dashboard/compose-message"
         sideBarNavListIconClassName="bx bxs-message-alt-edit"
         sideBarNavListText="Compose message"
         ariaCurrent="page"
@@ -192,20 +219,22 @@ export default function WorkerDashboardSideBarNavListPartials() {
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/admin-dashboard/add-service-category"
-        sideBarNavListIconClassName="bx bx-folder-plus"
-        sideBarNavListText="Service Category"
+        sideBarNavListRedirectLink="/worker-dashboard/complain-message"
+        sideBarNavListIconClassName="fa fa-paper-plane"
+        sideBarNavListText="Complain Message"
         ariaCurrent="page"
       />
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/admin-dashboard/add-service"
-        sideBarNavListIconClassName="bx bx-briefcase"
-        sideBarNavListText="Add Service"
+        sideBarNavListRedirectLink="/worker-dashboard/claim-message"
+        sideBarNavListIconClassName="fa fa-hand-paper-o	
+        "
+        sideBarNavListText="Claim Message"
         ariaCurrent="page"
       />
-      <WorkerDashboardSideBarNavList
+
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
@@ -252,7 +281,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="bx bxs-no-entry"
         sideBarNavListText="Remove Region"
         ariaCurrent="page"
-      />
+      /> */}
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import workerDashboardHeaderContentImage from "../../../../assets/worker assets/images/dashboard.png";
+import workerDashboardHeaderContentImage from "../../../../assets/worker assets/images/dashboardFolder.png";
 
 export default function WorkerDashboardHeaderContentIcon() {
   return (
