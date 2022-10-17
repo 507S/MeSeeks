@@ -102,7 +102,7 @@ export default function WorkerDashboardFeedbackListLayout() {
                         placeholder="MM-DD-YYYY "
                         id="start"
                         name="start_date"
-                        value=""
+                        // value=""
                         min="2020-01-01"
                         max="2050-01-01"
                       />
@@ -122,7 +122,7 @@ export default function WorkerDashboardFeedbackListLayout() {
                         placeholder="MM-DD-YYYY"
                         id="start"
                         name="end_date"
-                        value=""
+                        // value=""
                         min="2020-01-01"
                         max="2050-01-01"
                       />
