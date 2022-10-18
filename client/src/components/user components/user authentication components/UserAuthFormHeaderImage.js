@@ -5,7 +5,7 @@ export default function UserAuthFormHeaderImage() {
   return (
     // <!-- Company Logo -->
     <div className="text-center mb-3 mt-2">
-      <img src={companyLogo} alt="projectLogo" style={{ width: "250px" }} />
+      <img src={companyLogo} alt="projectLogo" style={{ width: "290px" }} />
     </div>
   );
 }

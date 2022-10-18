@@ -6,8 +6,6 @@ import UserAuthFormHeaderImage from "./UserAuthFormHeaderImage";
 import UserLoginHeadline from "./UserAuthFormHeadline";
 import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials";
 import UserForgetPasswordLink from "./UserForgetPasswordLink";
-import UserLoginCheckBox from "./UserLoginCheckbox";
-import UserLoginCheckBoxLabel from "./UserLoginCheckBoxLabel";
 import UserLoginSideImage from "./UserLoginFormSideImage";
 import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
 export default function UserLoginFormLayout() {
@@ -85,7 +83,7 @@ export default function UserLoginFormLayout() {
               <div class="row mb-3">
                 <div class="col-auto d-flex align-items-center">
                   <div class="custom-control custom-checkbox">
-                    <UserLoginCheckBox
+                    {/* <UserLoginCheckBox
                       type="checkbox"
                       className="custom-control-input"
                       id="checkbox"
@@ -99,7 +97,7 @@ export default function UserLoginFormLayout() {
                       labelText="Remember Me ?"
                       checked={formData.checked}
                       onChange={handleEvent}
-                    />
+                    /> */}
 
                     {/* <label htmlFor="checkbox">Remember Me?</label> */}
                   </div>

@@ -43,6 +43,7 @@ function App() {
         <Routes>
           {/* //User Pages */}
           <Route path="/" element={<TestaPageLayout />} />
+          <Route path="/users/homepage" element={<UserHomePage />} />
           <Route path="/users/login" element={<UserLoginPage />} />
           <Route
             path="/users/registration"
