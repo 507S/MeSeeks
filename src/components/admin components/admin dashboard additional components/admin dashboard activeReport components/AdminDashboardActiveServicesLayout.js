@@ -124,10 +124,7 @@ export default function AdminDashboardActiveServicesLayout() {
                           tableColumnClassName="col"
                           tableColumnHeaderText=" Service Category"
                         />
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText="Active Regions"
-                        />
+                   
                         <AdminDashboardDataTableColumnHeaderContent
                           tableColumnClassName="col"
                           tableColumnHeaderText="Added Date"
@@ -152,9 +149,7 @@ export default function AdminDashboardActiveServicesLayout() {
                         <AdminDashboardDataTableRowContent>
                           {"Home Appliances"}
                         </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"Mohakhali"}
-                        </AdminDashboardDataTableRowContent>
+                     
                         <AdminDashboardDataTableRowContent>
                           {"22/08/22"}
                         </AdminDashboardDataTableRowContent>
@@ -190,9 +185,7 @@ export default function AdminDashboardActiveServicesLayout() {
                         <AdminDashboardDataTableRowContent>
                           {"Home Appliances"}
                         </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"Mohakhali"}
-                        </AdminDashboardDataTableRowContent>
+                      
                         <AdminDashboardDataTableRowContent>
                           {"22/08/22"}
                         </AdminDashboardDataTableRowContent>

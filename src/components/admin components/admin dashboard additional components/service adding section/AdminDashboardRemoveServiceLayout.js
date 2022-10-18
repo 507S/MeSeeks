@@ -17,7 +17,7 @@ import AdminDashboardSideBarHeaderSection from "../../admin dashboard components
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
-import TextInput from "../admin dashboard actionForm components/TextInput";
+import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
 import AdminDashboardDataTableColumnHeaderContent from "../admin dashboard data table/AdminDashboardDataTableColumnHeaderContent";
 import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDashboardDataTableLayout";
 import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
@@ -85,14 +85,12 @@ export default function AdminDashboardRemoveServiceLayout() {
               <div class=" card-body w-100" style={{ height: "auto" }}>
                 {/* <form method="POST" enctype="multipart/form-data"> */}
                 <AdminDashboardActionForm method="POST">
-                  <TextInput
-                    labelName="Service Category : "
-                    type="text"
-                    inputName="serviceCategoryName"
-                    placeholder="Select a Service Category"
+                <SelectAreaInput
+                    selectName="selectServiceCategory"
+                    labelName="Select Service Category :"
                   />
 
-                  <div class="col-md-4 col-lg-2 w-100 ">
+                  <div class="col-md-4 col-lg-2 w-100 mt-3">
                     <AdminDashboardActionButton
                       adminActionButtonClassName="btn btn-info w-100"
                       adminActionButtonIcon="fa fa-wrench"
@@ -174,7 +172,7 @@ export default function AdminDashboardRemoveServiceLayout() {
                                 modalPopUpButtonIcon="fa fa-info-circle"
                               />
                               <ServiceDescriptionModal
-                                serviceTitle="Home Appliances"
+                                serviceTitle="Plumber"
                                 serviceTitleIcon="fa fa-file"
                                 serviceDescription="Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."
                                 modalClosingButtonText="Close"
