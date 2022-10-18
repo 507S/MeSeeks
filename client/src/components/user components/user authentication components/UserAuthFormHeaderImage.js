@@ -1,11 +1,11 @@
 import React from "react";
-import projectLogo from "../../../assets/global assets/projectLogo.png";
+import companyLogo from "../../../assets/global assets/companyLogo.png";
 
 export default function UserAuthFormHeaderImage() {
   return (
     // <!-- Company Logo -->
-    <div className="text-center mb-3 mt-5">
-      <img src={projectLogo} alt="projectLogo" style={{ width: "150px" }} />
+    <div className="text-center mb-3 mt-2">
+      <img src={companyLogo} alt="projectLogo" style={{ width: "250px" }} />
     </div>
   );
 }
