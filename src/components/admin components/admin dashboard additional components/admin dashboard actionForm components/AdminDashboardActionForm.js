@@ -4,10 +4,11 @@ export default function AdminDashboardActionForm({
   children,
   method,
   onSubmit,
+  enctype,
   ...rest
 }) {
   return (
-    <form className={actionFormClassName} method={method} onSubmit={onSubmit}>
+    <form className={actionFormClassName} method={method} onSubmit={onSubmit} enctype={enctype}>
       {children}
     </form>
   );
