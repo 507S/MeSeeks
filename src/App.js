@@ -7,7 +7,11 @@ import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboard
 import AdminDashboardAddRegionPage from "./pages/admin pages/AdminDashboardAddRegionPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
+
 import AdminDashboardProfilePage from "./pages/admin pages/AdminDashboardProfilePage";
+
+import AdminDashboardRemoveServiceDeletionPage from "./pages/admin pages/AdminDashboardRemoveServicePage";
+
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
@@ -99,8 +103,13 @@ function App() {
             element={<AdminDashboardAddServicePage />}
           />
           <Route
+
             path="/admin-dashboard/add-region"
             element={<AdminDashboardAddRegionPage />}
+
+            path="/admin-dashboard/remove-service"
+            element={<AdminDashboardRemoveServiceDeletionPage />}
+
           />
         </Routes>
       </Router>
