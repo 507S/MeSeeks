@@ -21,64 +21,64 @@ import AdminDashboardSideBarNavListEndSection from "../../admin dashboard compon
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import TextInput from "../admin dashboard actionForm components/TextInput";
 export default function AdminDashboardAddRegionLayout() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const [inpval, setINP] = useState({
-    name: "",
-    description: "",
-  });
+  // const [inpval, setINP] = useState({
+  //   name: "",
+  //   description: "",
+  // });
 
-  const setdata = (e) => {
-    console.log(e.target.value);
-    const { name, value } = e.target;
-    setINP((preval) => {
-      return {
-        ...preval,
-        [name]: value,
-      };
-    });
-  };
+  // const setdata = (e) => {
+  //   console.log(e.target.value);
+  //   const { name, value } = e.target;
+  //   setINP((preval) => {
+  //     return {
+  //       ...preval,
+  //       [name]: value,
+  //     };
+  //   });
+  // };
 
-  const addinpdata = async (e) => {
-    console.log("lol");
-    e.preventDefault();
+  // const addinpdata = async (e) => {
+  //   console.log("lol");
+  //   e.preventDefault();
 
-    const { name, description } = inpval;
+  //   const { name, description } = inpval;
 
-    // const res = await fetch("/api/services/addservice",{
-    //     method:"POST",
-    //     headers:{
-    //         "Content-Type":"application/json"
-    //     },
-    //     body:JSON.stringify({
-    //       name,description
-    //     })
-    // });
-    const post = {
-      name,
-      description,
-    };
-    try {
-      console.log(post);
-      const res = await axios.post(
-        "http://localhost:8003/api/services/addservice",
-        post
-      );
-      //  const data = await res.json();
-      console.log(res);
-      //  console.log(data);
-      if (res.status === 422 || !res) {
-        alert("error");
-        console.log("error ");
-      } else {
-        alert("data added");
-        console.log("data added");
-        navigate("/", { replace: true });
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  //   // const res = await fetch("/api/services/addservice",{
+  //   //     method:"POST",
+  //   //     headers:{
+  //   //         "Content-Type":"application/json"
+  //   //     },
+  //   //     body:JSON.stringify({
+  //   //       name,description
+  //   //     })
+  //   // });
+  //   const post = {
+  //     name,
+  //     description,
+  //   };
+  //   try {
+  //     console.log(post);
+  //     const res = await axios.post(
+  //       "http://localhost:8003/api/services/addservice",
+  //       post
+  //     );
+  //     //  const data = await res.json();
+  //     console.log(res);
+  //     //  console.log(data);
+  //     if (res.status === 422 || !res) {
+  //       alert("error");
+  //       console.log("error ");
+  //     } else {
+  //       alert("data added");
+  //       console.log("data added");
+  //       navigate("/", { replace: true });
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -145,8 +145,8 @@ export default function AdminDashboardAddRegionLayout() {
                     type="text"
                     // inputName="serviceCategoryName"
                     placeholder="Add a new Region"
-                    value={inpval.name}
-                    onChange={setdata}
+                    // value={inpval.name}
+                    // onChange={setdata}
                     name="regionName"
                   />
                   {/* <TextAreaInput
@@ -168,7 +168,7 @@ export default function AdminDashboardAddRegionLayout() {
                       adminActionButtonText="Add Region "
                       type="submit"
                       value="Submit"
-                      onClick={addinpdata}
+                      // onClick={addinpdata}
                     />
                   </div>
                 </form>

@@ -21,8 +21,89 @@ import ChooseServiceImage from "../admin dashboard actionForm components/ChooseS
 import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
 import TextInput from "../admin dashboard actionForm components/TextInput";
+import axios from "axios";
+import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
 
 export default function AdminDashboardAddServiceLayout() {
+  //   const navigate = useNavigate();
+  //   const [inpval, setINP] = useState({
+  //     serviceName: "",
+  //     subServiceName: "",
+  //     image:"",
+  //     description:""
+  // })
+
+  // const setdata = (e) => {
+  //     const { name, value } = e.target;
+  //     console.log(name)
+  //     console.log(value)
+  //     setINP((preval) => {
+  //         return {
+  //             ...preval,
+  //             [name]: value
+  //         }
+  //     })
+  // }
+  // const addinpdata = async(e) =>{
+  //   e.preventDefault();
+
+  //    try{
+  //     console.log(inpval)
+  //     const res = await axios.post("http://localhost:8003/api/subservices/addsubservice", inpval);
+  //     // console.log(res)
+  //     // const data = await res.json();
+  //     console.log(res);
+
+  //     if(res.status === 422){
+  //         alert("error");
+  //         console.log("error");
+  //     }
+  //     else{
+  //         alert("data added");
+  //         console.log("data added");
+  //         navigate("/admin-dashboard/active-service-category", { replace: true });
+  //     }
+  //    }
+  //    catch(error){
+  //     alert(error)
+  //    }
+
+  // }
+  const [newSubService, setNewSubService] = useState(
+    {
+      serviceName: "",
+      subServiceName: "",
+      image: "",
+      description: ""
+    }
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('serviceName', newSubService.serviceName);
+    formData.append('subServiceName', newSubService.subServiceName);
+    formData.append('image', newSubService.image);
+    formData.append('description', newSubService.description);
+
+
+    axios.post('http://localhost:8003/api/subservices/upload', formData)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  const handleChange = (e) => {
+    setNewSubService({ ...newSubService, [e.target.name]: e.target.value });
+  }
+
+  const handlePhoto = (e) => {
+    setNewSubService({ ...newSubService, image: e.target.files[0] });
+  }
 
   return (
     <>
@@ -83,28 +164,38 @@ export default function AdminDashboardAddServiceLayout() {
             <div class="card w-100" style={{ height: "auto" }}>
               <div class=" card-body w-100" style={{ height: "auto" }}>
                 {/* <form method="POST" enctype="multipart/form-data"> */}
-                <AdminDashboardActionForm
+                {/* <AdminDashboardActionForm
                   method="POST"
+                  onSubmit={handleSubmit}
                   enctype="multipart/form-data"
-                >
+                > */}
+                <form onSubmit={handleSubmit} enctype="multipart/form-data">
                   <SelectAreaInput
-                    selectName="selectServiceCategory"
+                    name="serviceName"
                     labelName="Select Service Category :"
                   />
                   <TextInput
                     labelName="Service Name : "
                     type="text"
-                    inputName="serviceName"
+                    name="subServiceName"
+                    value={newSubService.subServiceName}
+                    onChange={handleChange}
                     placeholder="Provide a new Service name"
+
                   />
                   <ChooseServiceImage
+                    accept=".png, .jpg, .jpeg"
+                    name="photo"
+                    onChange={handlePhoto}
                     type="file"
                     labelName="Choose Service Image :"
                   />
                   <TextAreaInput
                     labelName="Service Description :"
                     placeholder="Add a description..."
-                    inputName="serviceDescription"
+                    name="description"
+                    value={newSubService.description}
+                    onChange={handleChange}
                     textAreaInputRow="4"
                     style={{ reSize: "none" }}
                   />
@@ -114,9 +205,11 @@ export default function AdminDashboardAddServiceLayout() {
                       adminActionButtonIcon="fa fa-wrench"
                       adminActionButtonText="Add Service"
                       type="submit"
+                      // onClick={handleSubmit}
                     />
                   </div>
-                </AdminDashboardActionForm>
+                  </form>
+                {/* </AdminDashboardActionForm> */}
               </div>
             </div>
           </main>

@@ -107,8 +107,8 @@ function App() {
             path="/admin-dashboard/add-region"
             element={<AdminDashboardAddRegionPage />}
 
-            path="/admin-dashboard/remove-service"
-            element={<AdminDashboardRemoveServiceDeletionPage />}
+            // path="/admin-dashboard/remove-service"
+            // element={<AdminDashboardRemoveServiceDeletionPage />}
 
           />
         </Routes>
