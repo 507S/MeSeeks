@@ -1,18 +1,53 @@
+import axios from "axios";
 import React from "react";
 import "../../../styles/global/user global/UserLoginForm.css";
-import UserAuthenticationLinks from "./UserAuthenticationLinks";
 import UserAuthForm from "./UserAuthForm";
-import UserAuthFormButton from "./UserAuthFormButton";
 import UserAuthFormHeaderImage from "./UserAuthFormHeaderImage";
 import UserLoginHeadline from "./UserAuthFormHeadline";
 import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials";
 import UserForgetPasswordLink from "./UserForgetPasswordLink";
-import UserLoginCheckbox from "./UserLoginCheckbox";
-import UserLoginCheckBoxLabel from "./UserLoginCheckBoxLabel";
 import UserLoginSideImage from "./UserLoginFormSideImage";
 import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
-
 export default function UserLoginFormLayout() {
+  const [formData, setFormData] = React.useState({
+    email: "",
+    password: "",
+    checkbox: "False",
+  });
+
+  function handleEvent(event) {
+    const { name, value, type, checked } = event.target;
+    console.log(name, value);
+    setFormData((prevState) => {
+      return {
+        ...prevState,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+
+  async function submitHandler(event) {
+    event.preventDefault();
+    console.log(formData);
+    const response = await axios.post(
+      "http://localhost:1337/api/login",
+      formData
+    );
+
+    console.log(response.data);
+
+    if (response.data) {
+      console.log("Login Successful");
+      alert("Login Successful");
+      window.location.href = "/";
+    } else {
+      console.log("Invalid Credentials");
+      alert("Invalid credentials");
+    }
+
+    console.log(response);
+  }
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -31,6 +66,8 @@ export default function UserLoginFormLayout() {
                 name="email"
                 placeholder="Email Address"
                 tabIndex="10"
+                value={formData.email}
+                onChange={handleEvent}
               />
               <UserAuthFormTextInputCredentials
                 className="fa fa-lock"
@@ -38,26 +75,44 @@ export default function UserLoginFormLayout() {
                 name="password"
                 placeholder="Password"
                 tabIndex="10"
+                value={formData.password}
+                onChange={handleEvent}
               />
 
               {/* <!--Remember Checkbox --> */}
               <div class="row mb-3">
                 <div class="col-auto d-flex align-items-center">
                   <div class="custom-control custom-checkbox">
-                    <UserLoginCheckbox
+                    {/* <UserLoginCheckBox
                       type="checkbox"
                       className="custom-control-input"
-                      id="cb1"
+                      id="checkbox"
+                      name="checkbox"
                     />
                     <UserLoginCheckBoxLabel
-                      className="custom-control-label"
-                      labelText="Remember me"
-                    />
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="checkbox"
+                      name="checkbox"
+                      labelText="Remember Me ?"
+                      checked={formData.checked}
+                      onChange={handleEvent}
+                    /> */}
+
+                    {/* <label htmlFor="checkbox">Remember Me?</label> */}
                   </div>
                 </div>
               </div>
               {/* <!-- Login Button --> */}
-              <UserAuthFormButton type="submit" buttonText="submit" />
+              <button
+                onClick={submitHandler}
+                type="submit"
+                className="btn btn-block"
+                style={{ textAlign: "centre", width: "100%" }}
+              >
+                {" "}
+                Log in{" "}
+              </button>
               {/* <!-- Forget Password --> */}
               <UserForgetPasswordLink
                 redirectLink="/users/forgot-password"
@@ -65,30 +120,30 @@ export default function UserLoginFormLayout() {
                 linkText="Forgot password?"
               />
               {/* Other Credentials */}
-              <div className="text-center mb-2">
-                <div className="text-center mb-3" style={{ color: "#777" }}>
+              {/* <div className="text-center mb-2"> */}
+              {/* <div className="text-center mb-3" style={{ color: "#777" }}>
                   or login with
-                </div>
-                {/* #Other Authentication links */}
-                {/* <!-- Facebook Button --> */}
-                <UserAuthenticationLinks
+                </div> */}
+              {/* #Other Authentication links */}
+              {/* <!-- Facebook Button --> */}
+              {/* <UserAuthenticationLinks
                   redirectLink="facebook"
                   className="btn btn-social btn-facebook"
                   authenticationLinkText="Facebook"
-                />
-                {/* <!-- Google Button --> */}
-                <UserAuthenticationLinks
+                /> */}
+              {/* <!-- Google Button --> */}
+              {/* <UserAuthenticationLinks
                   redirectLink="google"
                   className="btn btn-social btn-google"
                   authenticationLinkText="Google"
-                />
-                {/* <!-- Twitter Button --> */}
-                <UserAuthenticationLinks
+                /> */}
+              {/* <!-- Twitter Button --> */}
+              {/* <UserAuthenticationLinks
                   redirectLink="twitter"
                   className="btn btn-social btn-twitter"
                   authenticationLinkText="Twitter"
-                />
-              </div>
+                /> */}
+              {/* </div> */}
               {/* #Registration link */}
               <UserLoginRegisterFormLink
                 linkQueryText="Don't have an account?"

@@ -1,6 +1,5 @@
 import React from "react";
 import "../../../styles/global/user global/UserLoginForm.css";
-import UserAuthenticationLinks from "./UserAuthenticationLinks";
 import UserAuthForm from "./UserAuthForm";
 import UserAuthFormButton from "./UserAuthFormButton";
 import UserAuthFormHeaderImage from "./UserAuthFormHeaderImage";
@@ -9,9 +8,49 @@ import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials
 
 import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
 
+import axios from "axios";
 import UserRegistrationSideImage from "./UserRegistrationFormSideImage";
 //hello
 export default function UserRegistrationFormLayout() {
+  const [formData, setFormData] = React.useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  function handleEvent(event) {
+    const { name, value, type, checked } = event.target;
+    setFormData((prevState) => {
+      return {
+        ...prevState,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+
+  async function submitHandler(event) {
+    event.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:1337/api/register",
+        formData
+      );
+      if (response.data) {
+        alert("success");
+        window.location.href("/login");
+      }
+    } catch (err) {
+      console.log(err.response.data);
+      alert(err.response.data);
+    }
+    // console.log(response)
+    // const data = await response.json()
+    // console.log(data)
+  }
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -25,57 +64,85 @@ export default function UserRegistrationFormLayout() {
             <UserAuthForm className="px-3" method="POST">
               {/* <!-- Input Box --> */}
               <UserAuthFormTextInputCredentials
+                type="text"
+                placeholder="First Name"
+                name="firstname"
+                className="fa fa-address-book"
+                tabIndex="10"
+                value={formData.firstname}
+                onChange={handleEvent}
+              />
+              <br />
+              <UserAuthFormTextInputCredentials
+                type="text"
+                placeholder="Last Name"
+                name="lastname"
+                className="fa fa-address-card"
+                tabIndex="10"
+                value={formData.lastname}
+                onChange={handleEvent}
+              />
+              <br />
+              <UserAuthFormTextInputCredentials
+                type="text"
+                placeholder="username"
+                name="username"
+                className="fa fa-user"
+                tabIndex="10"
+                value={formData.username}
+                onChange={handleEvent}
+              />
+              <br />
+              <UserAuthFormTextInputCredentials
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+                tabIndex="10"
                 className="fa fa-envelope"
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                tabIndex="10"
+                value={formData.email}
+                onChange={handleEvent}
               />
+              <br />
               <UserAuthFormTextInputCredentials
-                className="fa fa-phone "
-                type="email"
-                name="email"
-                placeholder="Mobile Number"
-                tabIndex="10"
-                style={{ fontSize: "20px" }}
-              />
-              <UserAuthFormTextInputCredentials
-                className="fa fa-lock"
                 type="password"
+                placeholder="Enter Password"
                 name="password"
-                placeholder="Password"
+                className="fa fa-lock"
                 tabIndex="10"
+                value={formData.password}
+                onChange={handleEvent}
               />
+              <br />
+              <UserAuthFormTextInputCredentials
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                className="fa fa-eye-slash"
+                tabIndex="10"
+                value={formData.confirmPassword}
+                onChange={handleEvent}
+              />
+              <br />
+              {/* <button onClick={submitHandler}>Register</button>
+            <br/> */}
 
               {/* <!--Remember Checkbox --> */}
 
               {/* <!-- Login Button --> */}
-              <UserAuthFormButton type="submit" buttonText="Register" />
+              <UserAuthFormButton
+                type="submit"
+                buttonText="Register"
+                onClick={submitHandler}
+              />
 
               {/* Other Credentials */}
               <div className="text-center mb-2">
-                <div className="text-center mb-3" style={{ color: "#777" }}>
-                  or login with
-                </div>
                 {/* #Other Authentication links */}
                 {/* <!-- Facebook Button --> */}
-                <UserAuthenticationLinks
-                  redirectLink="facebook"
-                  className="btn btn-social btn-facebook"
-                  authenticationLinkText="Facebook"
-                />
+
                 {/* <!-- Google Button --> */}
-                <UserAuthenticationLinks
-                  redirectLink="google"
-                  className="btn btn-social btn-google"
-                  authenticationLinkText="Google"
-                />
+
                 {/* <!-- Twitter Button --> */}
-                <UserAuthenticationLinks
-                  redirectLink="twitter"
-                  className="btn btn-social btn-twitter"
-                  authenticationLinkText="Twitter"
-                />
               </div>
               {/* #Registration link */}
               <UserLoginRegisterFormLink

@@ -7,7 +7,7 @@ export default function UserForgetPasswordLink({
   linkText,
 }) {
   return (
-    <div className="text-center mb-2">
+    <div className="text-center mb-3 mt-3">
       <NavLink to={redirectLink} className={className}>
         {linkText}
       </NavLink>
