@@ -17,14 +17,16 @@ import AdminDashboardSideBarHeaderSection from "../../admin dashboard components
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
-import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
 import axios from "axios";
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AdminDashboardDataTableColumnHeaderContent from "../admin dashboard data table/AdminDashboardDataTableColumnHeaderContent";
 import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDashboardDataTableLayout";
 import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
 import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
 export default function AdminDashboardRemoveServiceCategoryLayout() {
+  
+  const navigate = useNavigate();
 
   const [getServicedata, setServicedata] = useState([])
   useEffect(() => {
@@ -35,7 +37,7 @@ export default function AdminDashboardRemoveServiceCategoryLayout() {
 
    const deleteService = async (id) => {
     try{
-      const res2 = await axios.delete(`/deleteservice/${id}`);
+      const res2 = await axios.delete(`http://localhost:8003/api/services/deleteservice/${id}`);
 
       // const deleteduser = await res2.json();
       // console.log(deleteduser);
@@ -44,6 +46,7 @@ export default function AdminDashboardRemoveServiceCategoryLayout() {
         console.log("error");
       }else{
         alert("service deleted");
+        navigate("/admin-dashboard/remove-service-category", { replace: true });
         getServicedata();
       }
   }catch(error){
@@ -147,17 +150,21 @@ export default function AdminDashboardRemoveServiceCategoryLayout() {
                     /> */}
                     {/* //table data body starts */}
                     <tbody>
+                    {
+                        getServicedata.map((element,id) => {
+                          return (
+                    <>
                       <AdminDashboardDataTableRowSection>
                         {/* //get your fetch data here by loop*/}
                         <AdminDashboardDataTableRowContent>
-                          {"10001"}
+                          {element._id}
                         </AdminDashboardDataTableRowContent>
                      
                         <AdminDashboardDataTableRowContent>
-                          {"Home Appliances"}
+                          {element.name}
                         </AdminDashboardDataTableRowContent>
                         <AdminDashboardDataTableRowContent>
-                          {"22/08/22"}
+                          {Date(element.createdAt).slice(0,16)}
                         </AdminDashboardDataTableRowContent>
 
                         
@@ -169,37 +176,16 @@ export default function AdminDashboardRemoveServiceCategoryLayout() {
                               buttonType="submit"
                               adminActionButtonIcon="bx bxs-trash"
                               adminActionButtonText="Remove"
+                              onClick={()=>deleteService(element._id)}
                             />
                           </AdminDashboardActionForm>
                         </AdminDashboardDataTableRowContent>
                       </AdminDashboardDataTableRowSection>
-
-                      <AdminDashboardDataTableRowSection>
-                        {/* //get your fetch data here by loop*/}
-                        <AdminDashboardDataTableRowContent>
-                          {"10001"}
-                        </AdminDashboardDataTableRowContent>
-              
-                        <AdminDashboardDataTableRowContent>
-                          {"Home Appliances"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"22/08/22"}
-                        </AdminDashboardDataTableRowContent>
-
-                       
-
-                        <AdminDashboardDataTableRowContent>
-                          <AdminDashboardActionForm actionFormClassName="form-floating">
-                            <AdminDashboardActionButton
-                              adminActionButtonClassName="btn btn-danger"
-                              buttonType="submit"
-                              adminActionButtonIcon="bx bxs-trash"
-                              adminActionButtonText="Remove"
-                            />
-                          </AdminDashboardActionForm>
-                        </AdminDashboardDataTableRowContent>
-                      </AdminDashboardDataTableRowSection>
+                      </>
+                        
+                        )
+                      })
+                    }
                     </tbody>
                   </AdminDashboardDataTableLayout>
                 </div>
