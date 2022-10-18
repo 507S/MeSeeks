@@ -68,14 +68,14 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListText="Revenues"
         ariaCurrent="page"
       />
-      <AdminDashboardSideBarNavList
+      {/* <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/admin-dashboard/active-service-regions"
         sideBarNavListIconClassName="bx bxs-map-pin"
         sideBarNavListText="Regions"
         ariaCurrent="page"
-      />
+      /> */}
       {/* //second category */}
       <AdminDashboardSideBarNavListCategory
         sideBarNavListCategorySectionStartLineColor="rgb(255, 255, 255)"
@@ -204,6 +204,14 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListText="Remove Category"
         ariaCurrent="page"
       /> */}
+         <AdminDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/admin-dashboard/remove-service-category"
+        sideBarNavListIconClassName="fa fa-wrench"
+        sideBarNavListText="Remove Category"
+        ariaCurrent="page"
+      />
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
@@ -236,22 +244,22 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListText="Remove Ban"
         ariaCurrent="page"
       />
-      <AdminDashboardSideBarNavList
+      {/* <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/admin-dashboard/add-region"
         sideBarNavListIconClassName="bx bxs-location-plus"
         sideBarNavListText="Add Region"
         ariaCurrent="page"
-      />
-      <AdminDashboardSideBarNavList
+      /> */}
+      {/* <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="#"
         sideBarNavListIconClassName="bx bxs-no-entry"
         sideBarNavListText="Remove Region"
         ariaCurrent="page"
-      />
+      /> */}
     </>
   );
 }

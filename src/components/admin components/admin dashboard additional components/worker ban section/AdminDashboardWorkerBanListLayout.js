@@ -15,8 +15,6 @@ import AdminDashboardNavBarSearchTextInput from "../../admin dashboard component
 import AdminDashboardNavBarTogglerButton from "../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
-import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
-import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
 import AdminDashboardDataTableColumnHeaderContent from "../admin dashboard data table/AdminDashboardDataTableColumnHeaderContent";
 import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDashboardDataTableLayout";
 import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
@@ -108,10 +106,7 @@ export default function AdminDashboardWorkerBanListLayout() {
                           tableColumnClassName="col"
                           tableColumnHeaderText="Grace Points"
                         />
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText="Action"
-                        />
+                    
                       </tr>
                     </thead>
                     {/* <AdminDashboardDataTableColumnHeaderContent
@@ -140,16 +135,7 @@ export default function AdminDashboardWorkerBanListLayout() {
                         <AdminDashboardDataTableRowContent>
                           {"23.66"}
                         </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          <AdminDashboardActionForm actionFormClassName="form-floating">
-                            <AdminDashboardActionButton
-                              adminActionButtonClassName="btn btn-danger"
-                              buttonType="submit"
-                              adminActionButtonIcon="bx bxs-send"
-                              adminActionButtonText="Ban"
-                            />
-                          </AdminDashboardActionForm>
-                        </AdminDashboardDataTableRowContent>
+                    
                       </AdminDashboardDataTableRowSection>
 
                       <AdminDashboardDataTableRowSection>
@@ -172,16 +158,7 @@ export default function AdminDashboardWorkerBanListLayout() {
                         <AdminDashboardDataTableRowContent>
                           {"23.66"}
                         </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          <AdminDashboardActionForm actionFormClassName="form-floating">
-                            <AdminDashboardActionButton
-                              adminActionButtonClassName="btn btn-danger"
-                              buttonType="submit"
-                              adminActionButtonIcon="bx bxs-send"
-                              adminActionButtonText="Ban"
-                            />
-                          </AdminDashboardActionForm>
-                        </AdminDashboardDataTableRowContent>
+                   
                       </AdminDashboardDataTableRowSection>
                       <AdminDashboardDataTableRowSection>
                         {/* //get your fetch data here by loop*/}
@@ -203,16 +180,7 @@ export default function AdminDashboardWorkerBanListLayout() {
                         <AdminDashboardDataTableRowContent>
                           {"23.66"}
                         </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          <AdminDashboardActionForm actionFormClassName="form-floating">
-                            <AdminDashboardActionButton
-                              adminActionButtonClassName="btn btn-danger"
-                              buttonType="submit"
-                              adminActionButtonIcon="bx bxs-send"
-                              adminActionButtonText="Ban"
-                            />
-                          </AdminDashboardActionForm>
-                        </AdminDashboardDataTableRowContent>
+                        
                       </AdminDashboardDataTableRowSection>
                     </tbody>
                   </AdminDashboardDataTableLayout>
