@@ -5,10 +5,12 @@ export default function AdminDashboardActionButton({
   buttonType,
   adminActionButtonIcon,
   adminActionButtonText,
+  onClick
 }) {
   return (
-    <button className={adminActionButtonClassName} type={buttonType}>
+    <button className={adminActionButtonClassName} type={buttonType} onClick={onClick}>
       {adminActionButtonText}
+      
       &nbsp; <i className={adminActionButtonIcon}></i>
     </button>
   );

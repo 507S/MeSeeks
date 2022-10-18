@@ -15,14 +15,11 @@ import AdminDashboardNavBarSearchTextInput from "../../admin dashboard component
 import AdminDashboardNavBarTogglerButton from "../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
-import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
-import ChooseServiceImage from "../admin dashboard actionForm components/ChooseServiceImage";
-import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
 import TextInput from "../admin dashboard actionForm components/TextInput";
 
-export default function AdminDashboardAddServiceLayout() {
+export default function AdminDashboardProfileLayout() {
 
   return (
     <>
@@ -74,7 +71,7 @@ export default function AdminDashboardAddServiceLayout() {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               {/* //button test */}
-              <AdminDashboardHeaderContent adminHeaderContentText="Add Service" />
+              <AdminDashboardHeaderContent adminHeaderContentText="Profile" />
               <div className="btn-toolbar mb-2 mb-md-0"></div>
             </div>
 
@@ -85,37 +82,49 @@ export default function AdminDashboardAddServiceLayout() {
                 {/* <form method="POST" enctype="multipart/form-data"> */}
                 <AdminDashboardActionForm
                   method="POST"
-                  enctype="multipart/form-data"
+                  
                 >
-                  <SelectAreaInput
+                  {/* <SelectAreaInput
                     selectName="selectServiceCategory"
                     labelName="Select Service Category :"
+                  /> */}
+                    <TextInput
+                    labelName=" Username : "
+                    type="text"
+                    inputName="username"
+                    placeholder=""
                   />
                   <TextInput
-                    labelName="Service Name : "
+                    labelName="Phone Number : "
                     type="text"
-                    inputName="serviceName"
-                    placeholder="Provide a new Service name"
+                    inputName="phoneNumber"
+                    placeholder=""
                   />
-                  <ChooseServiceImage
+                   <TextInput
+                    labelName="Admin Code : "
+                    type="text"
+                    inputName="adminCode"
+                    placeholder=""
+                  />
+                  {/* <ChooseServiceImage
                     type="file"
                     labelName="Choose Service Image :"
-                  />
+                  /> */}
                   <TextAreaInput
-                    labelName="Service Description :"
-                    placeholder="Add a description..."
-                    inputName="serviceDescription"
-                    textAreaInputRow="4"
+                    labelName="Address :"
+                    placeholder=""
+                    inputName="adminAddress"
+                    textAreaInputRow="2"
                     style={{ reSize: "none" }}
                   />
-                  <div class="col-md-4 col-lg-2 w-100 ">
+                  {/* <div class="col-md-4 col-lg-2 w-100 ">
                     <AdminDashboardActionButton
                       adminActionButtonClassName="btn btn-info w-100"
                       adminActionButtonIcon="fa fa-wrench"
                       adminActionButtonText="Add Service"
                       type="submit"
                     />
-                  </div>
+                  </div> */}
                 </AdminDashboardActionForm>
               </div>
             </div>

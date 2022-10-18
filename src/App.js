@@ -1,12 +1,17 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminDashboardCustomerListLayout from "./components/admin components/admin dashboard additional components/admin dashboard customer section/AdminDashboardCustomerListLayout";
+import AdminDashboardAddServiceCategoryLayout from "./components/admin components/admin dashboard additional components/service adding section/AdminDashboardAddServiceCategoryLayout";
 import AdminDashboardActiveServiceCategoryPage from "./pages/admin pages/AdminDashboardActiveServiceCategoryPage";
 import AdminDashboardActiveServiceRegionsPage from "./pages/admin pages/AdminDashboardActiveServiceRegionsPage";
 import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboardActiveServicesPage";
-import AdminDashboardAddServiceCategoryPage from "./pages/admin pages/AdminDashboardAddServiceCategoryPage";
+import AdminDashboardAddRegionPage from "./pages/admin pages/AdminDashboardAddRegionPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
+
+import AdminDashboardProfilePage from "./pages/admin pages/AdminDashboardProfilePage";
+
 import AdminDashboardRemoveServiceDeletionPage from "./pages/admin pages/AdminDashboardRemoveServicePage";
+
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
@@ -64,6 +69,10 @@ function App() {
             path="/admins/registration"
             element={<AdminRegistrationPage />}
           />
+          <Route
+            path="/admin-dashboard/profile"
+            element={<AdminDashboardProfilePage />}
+          />
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
           <Route
             path="/admin-dashboard/active-service-category"
@@ -87,15 +96,20 @@ function App() {
           />
           <Route
             path="/admin-dashboard/add-service-category"
-            element={<AdminDashboardAddServiceCategoryPage />}
+            element={<AdminDashboardAddServiceCategoryLayout />}
           />
           <Route
             path="/admin-dashboard/add-service"
             element={<AdminDashboardAddServicePage />}
           />
           <Route
+
+            path="/admin-dashboard/add-region"
+            element={<AdminDashboardAddRegionPage />}
+
             path="/admin-dashboard/remove-service"
             element={<AdminDashboardRemoveServiceDeletionPage />}
+
           />
         </Routes>
       </Router>
