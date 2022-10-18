@@ -18,7 +18,36 @@ import AdminDashboardSideBarNavListEndSection from "../../admin dashboard compon
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
 import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
+import axios from "axios";
+import { useState, useEffect } from 'react';
 export default function AdminDashboardRemoveServiceCategoryLayout() {
+
+  const [getServicedata, setServicedata] = useState([])
+  useEffect(() => {
+    fetch("http://localhost:8003/api/services/getservice").then(res => {
+        return res.json();
+    }).then(jsonResponse => setServicedata(jsonResponse));
+}, []);
+
+   const deleteService = async (id) => {
+    try{
+      const res2 = await axios.delete(`/deleteservice/${id}`);
+
+      // const deleteduser = await res2.json();
+      // console.log(deleteduser);
+  
+      if(res2.status === 422){
+        console.log("error");
+      }else{
+        alert("service deleted");
+        getServicedata();
+      }
+  }catch(error){
+    console.log(error);
+  }
+    
+  }
+  
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
