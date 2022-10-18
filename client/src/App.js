@@ -15,6 +15,7 @@ import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
 import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
 import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
+import UserServicePage from "./pages/user pages/UserServicePage";
 import WorkerDashboardAdminMessageListPage from "./pages/worker pages/WorkerDashboardAdminMessageListPage";
 import WorkerDashboardAppealMessagePage from "./pages/worker pages/WorkerDashboardAppealMessagePage";
 import WorkerDashboardComplainMessagePage from "./pages/worker pages/WorkerDashboardComplainMessagePage";
@@ -57,7 +58,9 @@ function App() {
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
-          <Route path="/users/homepage" element={<UserHomePage />} />
+          <Route path="/users/home" element={<UserHomePage />} />
+          <Route path="/users/services" element={<UserServicePage />} />
+
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
           <Route
