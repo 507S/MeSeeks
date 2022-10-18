@@ -17,7 +17,10 @@ import AdminDashboardSideBarHeaderSection from "../../admin dashboard components
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
-import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
+import AdminDashboardDataTableColumnHeaderContent from "../admin dashboard data table/AdminDashboardDataTableColumnHeaderContent";
+import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDashboardDataTableLayout";
+import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
+import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
 export default function AdminDashboardRemoveServiceCategoryLayout() {
   return (
     <>
@@ -75,27 +78,103 @@ export default function AdminDashboardRemoveServiceCategoryLayout() {
 
             {/* //Form starts */}
 
-            <div class="card w-100 mt-5" style={{ height: "auto" }}>
-              <div class=" card-body w-100" style={{ height: "auto" }}>
-                {/* <form method="POST" enctype="multipart/form-data"> */}
-                <AdminDashboardActionForm method="POST">
-                <SelectAreaInput
-                    selectName="selectServiceCategory"
-                    labelName="Select Service Category :"
-                  />
+             {/* //Data Table Section starts */}
+             <div className="card mt-3">
+              <div className="card-body">
+                <div className="table-responsive">
+                  <AdminDashboardDataTableLayout className="table table-striped table-sm">
+                    {/* //Column header section starts */}
+                    <thead>
+                      <tr>
+                        <AdminDashboardDataTableColumnHeaderContent
+                          tableColumnClassName="col"
+                          tableColumnHeaderText="Category ID"
+                        />
+                        <AdminDashboardDataTableColumnHeaderContent
+                          tableColumnClassName="col"
+                          tableColumnHeaderText="Category Name"
+                        />
+                    
+                        <AdminDashboardDataTableColumnHeaderContent
+                          tableColumnClassName="col"
+                          tableColumnHeaderText="Added Date"
+                        />
+                   
+                        <AdminDashboardDataTableColumnHeaderContent
+                          tableColumnClassName="col"
+                          tableColumnHeaderText="Remove Service"
+                        />
 
-                  <div class="col-md-4 col-lg-2 w-100 mt-3">
-                    <AdminDashboardActionButton
-                      adminActionButtonClassName="btn btn-info w-100"
-                      adminActionButtonIcon="fa fa-trash"
-                      adminActionButtonText="Remove Category "
-                      type="submit"
-                    />
-                  </div>
-                </AdminDashboardActionForm>
+                        {/* <AdminDashboardDataTableColumnHeaderContent
+                          tableColumnClassName="col"
+                          tableColumnHeaderText="Action"
+                        /> */}
+                      </tr>
+                    </thead>
+                    {/* <AdminDashboardDataTableColumnHeaderContent
+                      tableColumnClassName="col"
+                      tableColumnHeaderText="Worker Name"
+                    /> */}
+                    {/* //table data body starts */}
+                    <tbody>
+                      <AdminDashboardDataTableRowSection>
+                        {/* //get your fetch data here by loop*/}
+                        <AdminDashboardDataTableRowContent>
+                          {"10001"}
+                        </AdminDashboardDataTableRowContent>
+                     
+                        <AdminDashboardDataTableRowContent>
+                          {"Home Appliances"}
+                        </AdminDashboardDataTableRowContent>
+                        <AdminDashboardDataTableRowContent>
+                          {"22/08/22"}
+                        </AdminDashboardDataTableRowContent>
+
+                        
+
+                        <AdminDashboardDataTableRowContent>
+                          <AdminDashboardActionForm actionFormClassName="form-floating">
+                            <AdminDashboardActionButton
+                              adminActionButtonClassName="btn btn-danger"
+                              buttonType="submit"
+                              adminActionButtonIcon="bx bxs-trash"
+                              adminActionButtonText="Remove"
+                            />
+                          </AdminDashboardActionForm>
+                        </AdminDashboardDataTableRowContent>
+                      </AdminDashboardDataTableRowSection>
+
+                      <AdminDashboardDataTableRowSection>
+                        {/* //get your fetch data here by loop*/}
+                        <AdminDashboardDataTableRowContent>
+                          {"10001"}
+                        </AdminDashboardDataTableRowContent>
+              
+                        <AdminDashboardDataTableRowContent>
+                          {"Home Appliances"}
+                        </AdminDashboardDataTableRowContent>
+                        <AdminDashboardDataTableRowContent>
+                          {"22/08/22"}
+                        </AdminDashboardDataTableRowContent>
+
+                       
+
+                        <AdminDashboardDataTableRowContent>
+                          <AdminDashboardActionForm actionFormClassName="form-floating">
+                            <AdminDashboardActionButton
+                              adminActionButtonClassName="btn btn-danger"
+                              buttonType="submit"
+                              adminActionButtonIcon="bx bxs-trash"
+                              adminActionButtonText="Remove"
+                            />
+                          </AdminDashboardActionForm>
+                        </AdminDashboardDataTableRowContent>
+                      </AdminDashboardDataTableRowSection>
+                    </tbody>
+                  </AdminDashboardDataTableLayout>
+                </div>
               </div>
             </div>
-
           
           </main>
         </div>
