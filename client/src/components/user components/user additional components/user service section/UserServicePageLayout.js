@@ -229,7 +229,7 @@ export default function UserServicePageLayout() {
               class="btn btn-info"
               style={{ backgroundColor: "#057a8d" }}
             >
-              Find
+              Search
             </button>
           </div>
         </form>
