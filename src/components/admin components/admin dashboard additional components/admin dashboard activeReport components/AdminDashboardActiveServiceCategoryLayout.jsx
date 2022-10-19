@@ -185,8 +185,10 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                                 modalButtonType="button"
                                 modalButtonClassName="btn btn-dark w-25 "
                                 modalPopUpButtonIcon="fa fa-info-circle"
+                                targetId={`#modal-${element._id}`}
                               />
                               <ServiceDescriptionModal
+                                id={`modal-${element._id}`}
                                 serviceTitle={element.name}
                                 serviceTitleIcon="fa fa-wrench"
                                 serviceDescription={element.description}

@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 export default function SelectAreaInput({
-  name,
+  // name,
   labelName,
+  onChange,
 
   ...rest
 }) {
@@ -17,14 +18,14 @@ export default function SelectAreaInput({
       <label for="exampleFormControlSelect1">{labelName}</label>
       <select
         class="form-control mt-2"
-        name={name}
+        // name={name}
         id="exampleFormControlSelect1"
       >
         {
           getServicedata.map((element, id) => {
             return (
               <>
-                <option value={element.name}>{element.name}</option>
+                <option value={element.name} onChange={onChange}>{element.name}</option>
               </>
             )
           }
