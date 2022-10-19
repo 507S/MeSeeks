@@ -36,7 +36,7 @@ export default function UserRegistrationFormLayout() {
   async function submitHandler(event){
     event.preventDefault()
     try{
-      const {data} = await axios.post('http://localhost:1337/api/register', formData);
+      const {data} = await axios.post('http://localhost:8003/api/register', formData);
       console.log(data)
       if(data){
         alert("Login Successful");

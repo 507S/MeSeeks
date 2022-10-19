@@ -37,7 +37,7 @@ export default function WorkerLoginFormLayout() {
   async function submitHandler(event){
       event.preventDefault()
       try{
-        const {data} = await axios.post('http://localhost:1337/api/registerWorker', formData);
+        const {data} = await axios.post('http://localhost:8003/api/registerWorker', formData);
         console.log(data)
         if(data){
           alert("Login Successful");

@@ -31,9 +31,10 @@ export default function UserLoginFormLayout() {
   async function submitHandler(event){
     event.preventDefault()
     try{
-      const {data} = await axios.post('http://localhost:1337/api/login', formData);
+      const {data} = await axios.post('http://localhost:8003/api/login', formData);
       console.log(data)
       if(data){
+        localStorage.setItem("userInfo", JSON.stringify(data))
         alert("Login Successful");
         navigate('/users/homepage')
       }
