@@ -4,10 +4,13 @@ import "../../../../styles/global/user global/aos.css";
 import "../../../../styles/global/user global/font-awesome.min.css";
 import "../../../../styles/global/user global/UserHomePageDesign.css";
 import introImage3 from "../images/5.jpg";
+import BatteryReplacerImage from "../images/batteryreplace4.png";
 import IntroImageOne from "../images/bg2.jpg";
+import CarWasherImage from "../images/carwasher2.jpg";
 import ElectricianImage from "../images/electrician.webp";
 import FlooringInstaller from "../images/flooringinstaller.jpg";
 import GlazierImage from "../images/glazier4.jpg";
+import OilChangerImage from "../images/oilchanger3.jpg";
 import TileSetterImage from "../images/tilesetter2.jpg";
 
 // import PlumberImage from "../images/";
@@ -417,7 +420,7 @@ export default function UserServicePageLayout() {
                   style={{ height: "400px" }}
                   width="30%"
                   height="30%"
-                  alt="ElectricianImage"
+                  alt="GlazierImage"
                 />
                 <div class="card-body">
                   <h5 class="card-title  text-center">Glazier</h5>
@@ -461,7 +464,7 @@ export default function UserServicePageLayout() {
                   style={{ height: "400px" }}
                   width="30%"
                   height="30%"
-                  alt="CarpenterImage"
+                  alt="TileSetterImage"
                 />
                 <div class="card-body">
                   <h5 class="card-title  text-center">Tile Setter</h5>
@@ -505,10 +508,162 @@ export default function UserServicePageLayout() {
                   style={{ height: "400px" }}
                   width="30%"
                   height="30%"
-                  alt="GlassCleanerImage"
+                  alt="FlooringInstaller"
                 />
                 <div class="card-body">
                   <h5 class="card-title  text-center">Flooring installer</h5>
+                  <p class="card-text  text-center">
+                    Average Rating : 3.45
+                    <span
+                      class="fa fa-star checked"
+                      style={{ color: "orange" }}
+                    ></span>
+                  </p>
+                  <p class="card-text  text-center text-muted">
+                    Rate : ৳ 22.33
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <h3 class="text-muted"></h3>
+                  <button
+                    type="submit"
+                    class="btn btn-info"
+                    style={{ width: "100%", fontSize: "20px" }}
+                  >
+                    <img
+                      src={ServiceSelectButtonImage}
+                      alt="ServiceSelectButtonImage"
+                      width="30px"
+                    />
+                    &nbsp;Select
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div style={{ textAlign: "center", marginTop: "3%" }}>
+        <button
+          class="custom-service-btn btn-bg btn mt-3"
+          // style={{
+          //   padding: "7px 10px",
+          //   borderRadius: "10px",
+          //   height: "50px",
+          //   textAlign: "center",
+          // }}
+        >
+          Car Maintenance Works
+        </button>
+      </div>
+
+      <section class="hero d-flex justify-content-center align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <div
+                class="card mt-5"
+                style={{ boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)" }}
+              >
+                <img
+                  src={CarWasherImage}
+                  class="card-img-top"
+                  style={{ height: "400px" }}
+                  width="30%"
+                  height="30%"
+                  alt="CarWasherImage"
+                />
+                <div class="card-body">
+                  <h5 class="card-title  text-center">Car Washer</h5>
+                  <p class="card-text  text-center">
+                    Average Rating : 3.45
+                    <span
+                      class="fa fa-star checked"
+                      style={{ color: "orange" }}
+                    ></span>
+                  </p>
+                  <p class="card-text  text-center text-muted">
+                    Rate : ৳ 22.33
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <h3 class="text-muted"></h3>
+                  <button
+                    type="submit"
+                    class="btn btn-info"
+                    style={{ width: "100%", fontSize: "20px" }}
+                  >
+                    <img
+                      src={ServiceSelectButtonImage}
+                      alt="ServiceSelectButtonImage"
+                      width="30px"
+                    />
+                    &nbsp;Select
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div
+                class="card mt-5"
+                style={{ boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)" }}
+              >
+                <img
+                  src={OilChangerImage}
+                  class="card-img-top"
+                  style={{ height: "400px" }}
+                  width="30%"
+                  height="30%"
+                  alt="OilChangerImage"
+                />
+                <div class="card-body">
+                  <h5 class="card-title  text-center">Oil Changer</h5>
+                  <p class="card-text  text-center">
+                    Average Rating : 3.45
+                    <span
+                      class="fa fa-star checked"
+                      style={{ color: "orange" }}
+                    ></span>
+                  </p>
+                  <p class="card-text  text-center text-muted">
+                    Rate : ৳ 22.33
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <h3 class="text-muted"></h3>
+                  <button
+                    type="submit"
+                    class="btn btn-info"
+                    style={{ width: "100%", fontSize: "20px" }}
+                  >
+                    <img
+                      src={ServiceSelectButtonImage}
+                      alt="ServiceSelectButtonImage"
+                      width="30px"
+                    />
+                    &nbsp;Select
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div
+                class="card mt-5"
+                style={{ boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)" }}
+              >
+                <img
+                  src={BatteryReplacerImage}
+                  class="card-img-top"
+                  style={{ height: "400px" }}
+                  width="30%"
+                  height="30%"
+                  alt="BatteryReplacerImage"
+                />
+                <div class="card-body">
+                  <h5 class="card-title  text-center">Battery Replacer</h5>
                   <p class="card-text  text-center">
                     Average Rating : 3.45
                     <span
