@@ -40,7 +40,7 @@ export default function UserRegistrationFormLayout() {
           const response = await axios.post('http://localhost:1337/api/register', formData);
           if(response.data){
             alert("success")
-            window.location.href("/login")
+            // window.location.href("/login")
         } 
       }
       catch(err){
