@@ -7,7 +7,43 @@ import WorkerAuthFormTextInputCredentials from "./WorkerAuthFormTextInputCredent
 import WorkerAuthFormTitle from "./WorkerAuthFormTitle";
 import WorkerLoginFormImage from "./WorkerLoginFormImage";
 import WorkerLoginRegistrationRedirectLink from "./WorkerLoginRegistrationRedirectLink";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 export default function WorkerLoginFormLayout() {
+  const[formData, setFormData] = React.useState({
+    email: "",
+    password: "",
+    rememberMe: "False",
+})
+
+function handleEvent(event){
+    const {name, value, type, checked} = event.target;
+    setFormData(prevState=>{
+        return{
+            ...prevState,
+            [name] : type === "checkbox" ? checked : value
+        }
+
+    })
+}
+
+  const navigate = useNavigate();
+  async function submitHandler(event){
+    event.preventDefault()
+    try{
+      const {data} = await axios.post('http://localhost:1337/api/registerWorker', formData);
+      console.log(data)
+      if(data){
+        alert("Login Successful");
+        navigate('/users/login')
+      }
+    }
+    catch(e)
+    {
+      alert(e.response.data)
+    }
+}
+
   return (
     <div className="Main-container">
       <div className="container-login">
@@ -16,21 +52,26 @@ export default function WorkerLoginFormLayout() {
           <WorkerAuthForm className="login-form">
             <WorkerAuthFormTitle workerAuthFormTitleText="Login" />
             <WorkerAuthFormTextInputCredentials
-              inputType="text"
-              inputName="phoneNumber"
-              placeholder="Phone Number"
-              inputFieldIconClassName="fa fa-phone"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleEvent}
+              inputFieldIconClassName="fa fa-envelope"
             />
             <WorkerAuthFormTextInputCredentials
-              inputType="password"
-              inputName="password"
+              type="password"
+              name="password"
               placeholder="Password"
+              value={formData.password}
+              onChange={handleEvent}
               inputFieldIconClassName="fa fa-lock"
             />
             <WorkerAuthFormButton
               workerAuthFormButtonText="Login"
               workerAuthFormButtonIconClassName="fa fa-key"
               workerAuthFormButtonType="submit"
+              onClick={submitHandler}
             />
             <WorkerAuthFormForgetPasswordLink
               redirectLink="/workers/forget-password"

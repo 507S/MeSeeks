@@ -10,6 +10,7 @@ import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
 
 import axios from "axios";
 import UserRegistrationSideImage from "./UserRegistrationFormSideImage";
+import { useNavigate } from "react-router-dom";
 
 export default function UserRegistrationFormLayout() {
   const [formData, setFormData] = React.useState({
@@ -31,20 +32,20 @@ export default function UserRegistrationFormLayout() {
     });
   }
  
-  async function submitHandler(event) {
-    event.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:1337/api/register",
-        formData
-      );
-      if (response.data) {
-        alert("success");
-        window.location.href("/login");
+  const navigate = useNavigate();
+  async function submitHandler(event){
+    event.preventDefault()
+    try{
+      const {data} = await axios.post('http://localhost:1337/api/register', formData);
+      console.log(data)
+      if(data){
+        alert("Login Successful");
+        navigate('/users/login')
       }
-    } catch (err) {
-      console.log(err.response.data);
-      alert(err.response.data);
+    }
+    catch(e)
+    {
+      alert(e.response.data)
     }
   }
 

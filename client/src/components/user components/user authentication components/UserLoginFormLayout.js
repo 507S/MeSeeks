@@ -8,6 +8,7 @@ import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials
 import UserForgetPasswordLink from "./UserForgetPasswordLink";
 import UserLoginSideImage from "./UserLoginFormSideImage";
 import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
+import { useNavigate } from "react-router-dom";
 export default function UserLoginFormLayout() {
   const [formData, setFormData] = React.useState({
     email: "",
@@ -26,23 +27,20 @@ export default function UserLoginFormLayout() {
     });
   }
 
-  async function submitHandler(event) {
-    event.preventDefault();
-    console.log(formData);
-    const {data} = await axios.post(
-      "http://localhost:1337/api/login",
-      formData
-    );
-
-    console.log(data);
-
-    if (data) {
-      localStorage.setItem("userInfo", JSON.stringify(data))
-      alert('Login Successful')
-      window.location.href = "/";
-    } else {
-      console.log("Invalid Credentials");
-      alert("Invalid credentials");
+  const navigate = useNavigate();
+  async function submitHandler(event){
+    event.preventDefault()
+    try{
+      const {data} = await axios.post('http://localhost:1337/api/login', formData);
+      console.log(data)
+      if(data){
+        alert("Login Successful");
+        navigate('/users/homepage')
+      }
+    }
+    catch(e)
+    {
+      alert(e.response.data)
     }
   }
 

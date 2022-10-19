@@ -1,9 +1,10 @@
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Protected = ({ isLoggedIn, children }) => {
- if (!isLoggedIn) {
-    console.log("here before alert")
-    alert("not Authorized, redirecting back to homepage")
-    return <Navigate to="/login" replace />;
+    const navigate = useNavigate();
+    if (!isLoggedIn) {
+        console.log("here before alert")
+        alert("not Authorized, redirecting back to login page")
+        return navigate('/users/login');
 }
  return children;
 };

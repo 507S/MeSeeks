@@ -1,19 +1,21 @@
 import React from "react";
 
 export default function WorkerAuthFormTextInputCredentials({
-  inputType,
-  inputName,
+  type,
+  name,
   placeholder,
   inputFieldIconClassName,
+  onChange,
   ...rest
 }) {
   return (
     <div className="wrap-input">
       <input
-        type={inputType}
+        type={type}
         className="input"
-        name={inputName}
+        name={name}
         placeholder={placeholder}
+        onChange={onChange}
         required
       />
       <span className="focus-input"></span>
