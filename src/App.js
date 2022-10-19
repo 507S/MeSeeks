@@ -22,6 +22,7 @@ import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
 import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
 import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
+import UserServicePage from "./pages/user pages/UserServicePage";
 import WorkerDashboardAdminMessageListPage from "./pages/worker pages/WorkerDashboardAdminMessageListPage";
 import WorkerDashboardAppealMessagePage from "./pages/worker pages/WorkerDashboardAppealMessagePage";
 import WorkerDashboardComplainMessagePage from "./pages/worker pages/WorkerDashboardComplainMessagePage";
@@ -43,7 +44,23 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
+import {useEffect, useRef} from 'react'
+import Protected from "./components/protectedComponent/Protected";
 function App() {
+  let varToken = false
+  const isLoggedIn = useRef(false);
+  if(localStorage.getItem("userInfo")){
+    varToken = JSON.parse(localStorage.getItem("userInfo"))
+  }
+  const token = varToken.token
+  console.log(token)
+  if(token)
+  {
+    isLoggedIn.current = true;
+  }
+  useEffect(() => {
+    console.log(`Your login status is:${isLoggedIn.current}`);
+  }, []);
   return (
     <>
       <Router>
@@ -64,7 +81,9 @@ function App() {
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
-          <Route path="/users/homepage" element={<UserHomePage />} />
+          <Route path="/users/home" element={<UserHomePage />} />
+          <Route path="/users/services" element={<UserServicePage />} />
+
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
           <Route
@@ -182,7 +201,11 @@ function App() {
           />
           <Route
             path="/admin-dashboard/add-service"
-            element={<AdminDashboardAddServicePage />}
+            element={
+                <Protected isLoggedIn={isLoggedIn.current}>
+                      <AdminDashboardAddServicePage />
+                </Protected>
+            }
           />
           <Route
 
