@@ -29,23 +29,21 @@ export default function UserLoginFormLayout() {
   async function submitHandler(event) {
     event.preventDefault();
     console.log(formData);
-    const response = await axios.post(
+    const {data} = await axios.post(
       "http://localhost:1337/api/login",
       formData
     );
 
-    console.log(response.data);
+    console.log(data);
 
-    if (response.data) {
-      console.log("Login Successful");
-      alert("Login Successful");
+    if (data) {
+      localStorage.setItem("userInfo", JSON.stringify(data))
+      alert('Login Successful')
       window.location.href = "/";
     } else {
       console.log("Invalid Credentials");
       alert("Invalid credentials");
     }
-
-    console.log(response);
   }
 
   return (

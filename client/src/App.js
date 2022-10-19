@@ -36,7 +36,23 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
+import {useEffect, useRef} from 'react'
+import Protected from "./components/protectedComponent/Protected";
 function App() {
+  let varToken = false
+  const isLoggedIn = useRef(false);
+  if(localStorage.getItem("userInfo")){
+    varToken = JSON.parse(localStorage.getItem("userInfo"))
+  }
+  const token = varToken.token
+  console.log(token)
+  if(token)
+  {
+    isLoggedIn.current = true;
+  }
+  useEffect(() => {
+    console.log(`Your login status is:${isLoggedIn.current}`);
+  }, []);
   return (
     <>
       <Router>
@@ -171,7 +187,11 @@ function App() {
           />
           <Route
             path="/admin-dashboard/add-service"
-            element={<AdminDashboardAddServicePage />}
+            element={
+                <Protected isLoggedIn={isLoggedIn.current}>
+                      <AdminDashboardAddServicePage />
+                </Protected>
+            }
           />
         </Routes>
       </Router>
