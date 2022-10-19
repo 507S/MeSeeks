@@ -37,7 +37,9 @@ import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPag
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 import {useEffect, useRef} from 'react'
-import Protected from "./components/protectedComponent/Protected";
+import Protected from "./components/protectedComponent/Protected"
+
+
 function App() {
   let varToken = false
   const isLoggedIn = useRef(false);
@@ -163,27 +165,51 @@ function App() {
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
           <Route
             path="/admin-dashboard/active-service-category"
-            element={<AdminDashboardActiveServiceCategoryPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                        <AdminDashboardActiveServiceCategoryPage />
+                  </Protected>
+              }
           />
           <Route
             path="/admin-dashboard/active-services"
-            element={<AdminDashboardActiveServicesPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                        <AdminDashboardActiveServicesPage />
+                  </Protected>
+              }
           />
           <Route
             path="/admin-dashboard/active-service-regions"
-            element={<AdminDashboardActiveServiceRegionsPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                        <AdminDashboardActiveServiceRegionsPage />
+                  </Protected>
+              }
           />
           <Route
             path="/admin-dashboard/customer-list"
-            element={<AdminDashboardCustomerListLayout />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                        <AdminDashboardCustomerListLayout />
+                  </Protected>
+              }
           />
           <Route
             path="/admin-dashboard/worker-banlist"
-            element={<AdminDashboardWorkerBanListPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                        <AdminDashboardWorkerBanListPage />
+                  </Protected>
+              }
           />
           <Route
             path="/admin-dashboard/add-service-category"
-            element={<AdminDashboardAddServiceCategoryPage />}
+            element={
+            <Protected isLoggedIn={isLoggedIn.current}>
+                      <AdminDashboardAddServiceCategoryPage />
+                </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/add-service"
