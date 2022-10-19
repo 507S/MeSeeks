@@ -1,5 +1,7 @@
+import { useEffect, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminDashboardCustomerListLayout from "./components/admin components/admin dashboard additional components/admin dashboard customer section/AdminDashboardCustomerListLayout";
+import Protected from "./components/protectedComponent/Protected";
 import AdminDashboardActiveServiceCategoryPage from "./pages/admin pages/AdminDashboardActiveServiceCategoryPage";
 import AdminDashboardActiveServiceRegionsPage from "./pages/admin pages/AdminDashboardActiveServiceRegionsPage";
 import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboardActiveServicesPage";
@@ -9,6 +11,9 @@ import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
+import AuthSelectionPage from "./pages/user pages/AuthSelectionPage";
+import PlatformSelectionForLoginPage from "./pages/user pages/PlatformSelectionForLoginPage";
+import PlatformSelectionForRegistration from "./pages/user pages/PlatformSelectionForRegistration";
 import TestaPageLayout from "./pages/user pages/TestaPage";
 import UserForgotPasswordPage from "./pages/user pages/UserForgotPasswordPage";
 import UserHomePage from "./pages/user pages/UserHomePage";
@@ -37,18 +42,15 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
-import {useEffect, useRef} from 'react'
-import Protected from "./components/protectedComponent/Protected";
 function App() {
-  let varToken = false
+  let varToken = false;
   const isLoggedIn = useRef(false);
-  if(localStorage.getItem("userInfo")){
-    varToken = JSON.parse(localStorage.getItem("userInfo"))
+  if (localStorage.getItem("userInfo")) {
+    varToken = JSON.parse(localStorage.getItem("userInfo"));
   }
-  const token = varToken.token
-  console.log(token)
-  if(token)
-  {
+  const token = varToken.token;
+  console.log(token);
+  if (token) {
     isLoggedIn.current = true;
   }
   useEffect(() => {
@@ -76,6 +78,15 @@ function App() {
           />
           <Route path="/users/home" element={<UserHomePage />} />
           <Route path="/users/services" element={<UserServicePage />} />
+          <Route path="/auth-selection" element={<AuthSelectionPage />} />
+          <Route
+            path="/login-platform-selection"
+            element={<PlatformSelectionForLoginPage />}
+          />
+          <Route
+            path="/registration-platform-selection"
+            element={<PlatformSelectionForRegistration />}
+          />
 
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
@@ -191,9 +202,9 @@ function App() {
           <Route
             path="/admin-dashboard/add-service"
             element={
-                <Protected isLoggedIn={isLoggedIn.current}>
-                      <AdminDashboardAddServicePage />
-                </Protected>
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardAddServicePage />
+              </Protected>
             }
           />
         </Routes>
