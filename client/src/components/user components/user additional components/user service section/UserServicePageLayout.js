@@ -27,8 +27,39 @@ import FooterImage from "../images/l5.png";
 import ServiceSelectButtonImage from "../images/plus.png";
 import IntroImageTwo from "../images/rs.jpg";
 import UserHomePageLogo from "../images/userHomeNavLogo.png";
-
+import axios from "axios";
 export default function UserServicePageLayout() {
+  const [workerInfo, setWrokerInfo] = React.useState([])
+
+  async function getworkerInfo() {
+    axios.get("/workerInfo").then((res) => {
+      if (res.data.success) {
+        this.setState({
+          workerInfo: res.data.workerInfo,
+        });
+        console.log("post: ", this.state.workerInfo);
+      }
+    });
+  }
+
+  function filterContent(workerInfo, searchTerm) {
+    const result = workerInfo.filter(
+      (post) =>
+        post.location.toLowerCase().includes(searchTerm) ||
+        post.profession.toLowerCase().includes(searchTerm)
+    );
+    this.setState({ workerInfo: result });
+  }
+
+  function handleTextSearch(e){
+    const searchTerm = e.currentTarget.value;
+    axios.get("/workerInfo").then((res) => {
+      if (res.data.success) {
+        this.filterContent(res.data.workerInfo, searchTerm);
+      }
+    });
+  }
+
   return (
     <main>
       <header
