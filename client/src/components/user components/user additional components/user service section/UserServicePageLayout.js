@@ -6,6 +6,9 @@ import "../../../../styles/global/user global/UserHomePageDesign.css";
 import introImage3 from "../images/5.jpg";
 import IntroImageOne from "../images/bg2.jpg";
 import ElectricianImage from "../images/electrician.webp";
+import FlooringInstaller from "../images/flooringinstaller.jpg";
+import GlazierImage from "../images/glazier4.jpg";
+import TileSetterImage from "../images/tilesetter2.jpg";
 
 // import PlumberImage from "../images/";
 
@@ -210,6 +213,28 @@ export default function UserServicePageLayout() {
         </h1>
       </div>
 
+      {/* search by service  */}
+      <div className="container" style={{ textAlign: "center" }}>
+        <form action="POST">
+          <div class="input-group w-25 ">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Find Services..."
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <button
+              type="submit"
+              class="btn btn-info"
+              style={{ backgroundColor: "#057a8d" }}
+            >
+              Find
+            </button>
+          </div>
+        </form>
+      </div>
+
       {/* user service section */}
 
       <div style={{ textAlign: "center", marginTop: "3%" }}>
@@ -387,7 +412,7 @@ export default function UserServicePageLayout() {
                 style={{ boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)" }}
               >
                 <img
-                  src={ElectricianImage}
+                  src={GlazierImage}
                   class="card-img-top"
                   style={{ height: "400px" }}
                   width="30%"
@@ -395,7 +420,7 @@ export default function UserServicePageLayout() {
                   alt="ElectricianImage"
                 />
                 <div class="card-body">
-                  <h5 class="card-title  text-center">Electrician</h5>
+                  <h5 class="card-title  text-center">Glazier</h5>
                   <p class="card-text  text-center">
                     Average Rating : 3.45
                     <span
@@ -431,7 +456,7 @@ export default function UserServicePageLayout() {
                 style={{ boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)" }}
               >
                 <img
-                  src={CarpenterImage}
+                  src={TileSetterImage}
                   class="card-img-top"
                   style={{ height: "400px" }}
                   width="30%"
@@ -439,7 +464,7 @@ export default function UserServicePageLayout() {
                   alt="CarpenterImage"
                 />
                 <div class="card-body">
-                  <h5 class="card-title  text-center">Carpenter</h5>
+                  <h5 class="card-title  text-center">Tile Setter</h5>
                   <p class="card-text  text-center">
                     Average Rating : 3.45
                     <span
@@ -475,7 +500,7 @@ export default function UserServicePageLayout() {
                 style={{ boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)" }}
               >
                 <img
-                  src={GlassCleanerImage}
+                  src={FlooringInstaller}
                   class="card-img-top"
                   style={{ height: "400px" }}
                   width="30%"
@@ -483,7 +508,7 @@ export default function UserServicePageLayout() {
                   alt="GlassCleanerImage"
                 />
                 <div class="card-body">
-                  <h5 class="card-title  text-center">Electrician</h5>
+                  <h5 class="card-title  text-center">Flooring installer</h5>
                   <p class="card-text  text-center">
                     Average Rating : 3.45
                     <span
