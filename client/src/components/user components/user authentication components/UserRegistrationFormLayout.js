@@ -10,7 +10,7 @@ import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
 
 import axios from "axios";
 import UserRegistrationSideImage from "./UserRegistrationFormSideImage";
-//hello
+
 export default function UserRegistrationFormLayout() {
   const [formData, setFormData] = React.useState({
     firstname: "",
@@ -30,7 +30,7 @@ export default function UserRegistrationFormLayout() {
       };
     });
   }
-
+ 
   async function submitHandler(event) {
     event.preventDefault();
     try {
@@ -46,9 +46,6 @@ export default function UserRegistrationFormLayout() {
       console.log(err.response.data);
       alert(err.response.data);
     }
-    // console.log(response)
-    // const data = await response.json()
-    // console.log(data)
   }
 
   return (
