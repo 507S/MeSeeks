@@ -23,13 +23,13 @@ import GlassCleanerImage from "../images/glasscleaner.jpg";
 
 // import FlooringInstallerImage from "../images/flooringinstaller4.jpg";
 
+import axios from "axios";
 import FooterImage from "../images/l5.png";
 import ServiceSelectButtonImage from "../images/plus.png";
 import IntroImageTwo from "../images/rs.jpg";
 import UserHomePageLogo from "../images/userHomeNavLogo.png";
-import axios from "axios";
 export default function UserServicePageLayout() {
-  const [workerInfo, setWrokerInfo] = React.useState([])
+  const [workerInfo, setWrokerInfo] = React.useState([]);
 
   async function getworkerInfo() {
     axios.get("/workerInfo").then((res) => {
@@ -51,7 +51,7 @@ export default function UserServicePageLayout() {
     this.setState({ workerInfo: result });
   }
 
-  function handleTextSearch(e){
+  function handleTextSearch(e) {
     const searchTerm = e.currentTarget.value;
     axios.get("/workerInfo").then((res) => {
       if (res.data.success) {
@@ -233,7 +233,6 @@ export default function UserServicePageLayout() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
       <div class="container marketing">
         <h1
           style={{
@@ -247,33 +246,10 @@ export default function UserServicePageLayout() {
         </h1>
       </div>
 
-      {/* search by service  */}
-      <div className="container" style={{ textAlign: "center" }}>
-        <form action="POST">
-          <div class="input-group w-25 ">
-            <input
-              type="search"
-              class="form-control rounded"
-              placeholder="Find Services..."
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <button
-              type="submit"
-              class="btn btn-info"
-              style={{ backgroundColor: "#057a8d" }}
-            >
-              Search
-            </button>
-          </div>
-        </form>
-      </div>
-
       {/* user service section */}
-
       <div style={{ textAlign: "center", marginTop: "3%" }}>
         <button
-          class="custom-service-btn btn-bg btn mt-3"
+          class="custom-service-btn btn-bg btn "
           // style={{
           //   padding: "7px 10px",
           //   borderRadius: "10px",
@@ -284,7 +260,6 @@ export default function UserServicePageLayout() {
           Home and Office Appliances
         </button>
       </div>
-
       <section class="hero d-flex justify-content-center align-items-center">
         <div class="container">
           <div class="row">
@@ -319,7 +294,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -363,7 +342,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -407,7 +390,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -422,7 +409,6 @@ export default function UserServicePageLayout() {
           </div>
         </div>
       </section>
-
       <div style={{ textAlign: "center", marginTop: "3%" }}>
         <button
           class="custom-service-btn btn-bg btn mt-3"
@@ -436,7 +422,6 @@ export default function UserServicePageLayout() {
           Construction Site Works
         </button>
       </div>
-
       <section class="hero d-flex justify-content-center align-items-center">
         <div class="container">
           <div class="row">
@@ -471,7 +456,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -515,7 +504,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -559,7 +552,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -574,7 +571,6 @@ export default function UserServicePageLayout() {
           </div>
         </div>
       </section>
-
       <div style={{ textAlign: "center", marginTop: "3%" }}>
         <button
           class="custom-service-btn btn-bg btn mt-3"
@@ -588,7 +584,6 @@ export default function UserServicePageLayout() {
           Car Maintenance Works
         </button>
       </div>
-
       <section class="hero d-flex justify-content-center align-items-center">
         <div class="container">
           <div class="row">
@@ -623,7 +618,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -667,7 +666,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -711,7 +714,11 @@ export default function UserServicePageLayout() {
                   <button
                     type="submit"
                     class="btn btn-info"
-                    style={{ width: "100%", fontSize: "20px" }}
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      backgroundColor: "#057a8d",
+                    }}
                   >
                     <img
                       src={ServiceSelectButtonImage}
@@ -726,7 +733,6 @@ export default function UserServicePageLayout() {
           </div>
         </div>
       </section>
-
       <footer
         class="site-footer "
         // style={{ backgroundColor: "black", color: "white" }}

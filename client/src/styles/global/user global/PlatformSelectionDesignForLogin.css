@@ -14,7 +14,7 @@
   background-position: center;
 }
 
-ul {
+/* ul {
   float: right;
   list-style-type: none;
   margin-top: 25px;
@@ -22,25 +22,25 @@ ul {
 
 ul li {
   display: inline-block;
-}
+} */
 
-ul li a {
+/* ul li a {
   text-decoration: none;
   color: black;
   padding: 5px 20px;
   border: 1px solid transparent;
   transition: 0.5s;
-}
+} */
 
-ul li a:hover {
+/* ul li a:hover {
   background-color: black;
   color: white;
-}
-
+} */
+/* 
 ul li.active-mode a {
   background-color: white;
   color: black;
-}
+} */
 
 .company-logo img {
   float: left;
@@ -73,7 +73,7 @@ ul li.active-mode a {
   display: inline-block;
 }
 
-.btn {
+/* .btn {
   border: 1px solid black;
   padding: 10px 30px;
   transition: 1.2s;
@@ -83,14 +83,14 @@ ul li.active-mode a {
   color: rgb(0, 0, 0);
   background-color: black;
   color: white;
-}
+} */
 
-.btn:hover {
-  /*background-color: rgba(128, 128, 128, 0.911);
-    color: black;*/
+/* .btn:hover {
+  background-color: rgba(128, 128, 128, 0.911);
+    color: black;
   background-color: white;
   color: black;
-}
+} */
 
 /* .container{
     position: absolute;
@@ -106,18 +106,7 @@ ul li.active-mode a {
   }
 }
 
-a {
-  text-decoration: none;
-  /* color: white; */
-  /* padding: 5px 20px; */
-  /* border: 1px solid transparent; */
-  /* transition: 0.5s; */
-  color: white;
-  background: transparent;
-  border: 1px solid transparent;
-}
-
-a:hover {
+/* a:hover {
   background-color: white;
   color: black;
-}
+} */

@@ -11,9 +11,6 @@ import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
-import AuthSelectionPage from "./pages/user pages/AuthSelectionPage";
-import PlatformSelectionForLoginPage from "./pages/user pages/PlatformSelectionForLoginPage";
-import PlatformSelectionForRegistration from "./pages/user pages/PlatformSelectionForRegistration";
 import TestaPageLayout from "./pages/user pages/TestaPage";
 import UserForgotPasswordPage from "./pages/user pages/UserForgotPasswordPage";
 import UserHomePage from "./pages/user pages/UserHomePage";
@@ -42,13 +39,7 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
-<<<<<<< HEAD
-=======
-import {useEffect, useRef} from 'react'
-import Protected from "./components/protectedComponent/Protected"
 
-
->>>>>>> 7d045566676f4d5d5720c9a34bbb06a7a4872791
 function App() {
   let varToken = false;
   const isLoggedIn = useRef(false);
@@ -69,7 +60,7 @@ function App() {
         <Routes>
           {/* //User Pages */}
           <Route path="/" element={<TestaPageLayout />} />
-          <Route path="/users/homepage" element={<UserHomePage />} />
+          <Route path="/users/home" element={<UserHomePage />} />
           <Route path="/users/login" element={<UserLoginPage />} />
           <Route
             path="/users/registration"
@@ -85,15 +76,6 @@ function App() {
           />
           <Route path="/users/home" element={<UserHomePage />} />
           <Route path="/users/services" element={<UserServicePage />} />
-          <Route path="/auth-selection" element={<AuthSelectionPage />} />
-          <Route
-            path="/login-platform-selection"
-            element={<PlatformSelectionForLoginPage />}
-          />
-          <Route
-            path="/registration-platform-selection"
-            element={<PlatformSelectionForRegistration />}
-          />
 
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
@@ -186,48 +168,48 @@ function App() {
             path="/admin-dashboard/active-service-category"
             element={
               <Protected isLoggedIn={isLoggedIn.current}>
-                        <AdminDashboardActiveServiceCategoryPage />
-                  </Protected>
-              }
+                <AdminDashboardActiveServiceCategoryPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/active-services"
             element={
               <Protected isLoggedIn={isLoggedIn.current}>
-                        <AdminDashboardActiveServicesPage />
-                  </Protected>
-              }
+                <AdminDashboardActiveServicesPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/active-service-regions"
             element={
               <Protected isLoggedIn={isLoggedIn.current}>
-                        <AdminDashboardActiveServiceRegionsPage />
-                  </Protected>
-              }
+                <AdminDashboardActiveServiceRegionsPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/customer-list"
             element={
               <Protected isLoggedIn={isLoggedIn.current}>
-                        <AdminDashboardCustomerListLayout />
-                  </Protected>
-              }
+                <AdminDashboardCustomerListLayout />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/worker-banlist"
             element={
               <Protected isLoggedIn={isLoggedIn.current}>
-                        <AdminDashboardWorkerBanListPage />
-                  </Protected>
-              }
+                <AdminDashboardWorkerBanListPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/add-service-category"
             element={
-            <Protected isLoggedIn={isLoggedIn.current}>
-                      <AdminDashboardAddServiceCategoryPage />
-                </Protected>
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardAddServiceCategoryPage />
+              </Protected>
             }
           />
           <Route

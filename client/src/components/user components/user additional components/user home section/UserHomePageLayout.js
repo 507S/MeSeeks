@@ -33,7 +33,7 @@ export default function UserHomePageLayout() {
         <div class="container mt-3">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <NavLink
-              to="/users/homepage"
+              to="/users/home"
               class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none "
             >
               <img
