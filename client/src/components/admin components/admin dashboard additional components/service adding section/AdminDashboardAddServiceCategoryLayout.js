@@ -6,7 +6,7 @@ import React from "react";
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
-import "../../../../styles/global/admin global/bootstrap.min.css";
+// import "../../../../styles/global/admin global/bootstrap.min.css";
 import AdminDashboardSideBarNavListPartials from "../../admin dashboard components/admin sideBarNavList partials/AdminDashboardSideBarNavListPartials";
 import AdminDashboardAuthenticationButton from "../../admin dashboard components/AdminDashboardAuthenticationButton";
 import AdminDashboardHeaderContent from "../../admin dashboard components/AdminDashboardHeaderContent";

@@ -15,7 +15,6 @@ import UserHomePage from "./pages/user pages/UserHomePage";
 import UserLoginPage from "./pages/user pages/UserLoginPage";
 import UserPasswordResetPage from "./pages/user pages/UserPasswordResetPage";
 import UserRegistrationPage from "./pages/user pages/UserRegistrationPage";
-import UserServicePage from "./pages/user pages/UserServicePage";
 import WorkerDashboardAdminMessageListPage from "./pages/worker pages/WorkerDashboardAdminMessageListPage";
 import WorkerDashboardAppealMessagePage from "./pages/worker pages/WorkerDashboardAppealMessagePage";
 import WorkerDashboardComplainMessagePage from "./pages/worker pages/WorkerDashboardComplainMessagePage";
@@ -37,14 +36,14 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
-import {useEffect, useRef, useState} from 'react'
+import {useEffect, useRef} from 'react'
 import Protected from "./components/protectedComponent/Protected"
+import UserServicePage from "./pages/user pages/UserServicePage";
 
 
 function App() {
   let varToken = false
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  // const isLoggedIn = useRef(false);
+  const isLoggedIn = useRef(false);
   if(localStorage.getItem("userInfo")){
     varToken = JSON.parse(localStorage.getItem("userInfo"))
   }
@@ -52,17 +51,17 @@ function App() {
   console.log(token)
   if(token)
   {
-    setIsLoggedIn(true)
+    isLoggedIn.current = true;
   }
   useEffect(() => {
-    console.log(`Your login status is:${isLoggedIn}`);
+    console.log(`Your login status is:${isLoggedIn.current}`);
   }, []);
   return (
     <>
       <Router>
         <Routes>
           {/* //User Pages */}
-          <Route path="/" element={<UserHomePage />} />
+          <Route path="/" element={<TestaPageLayout />} />
           <Route path="/users/homepage" element={<UserHomePage />} />
           <Route path="/users/login" element={<UserLoginPage />} />
           <Route
@@ -77,9 +76,11 @@ function App() {
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
-          <Route path="/users/home" element={<UserHomePage />} />
-          <Route path="/users/services" element={<UserServicePage />} />
-
+          <Route
+            path="/users/services"
+            element={<UserServicePage />}
+          />
+          <Route path="/users/homepage" element={<UserHomePage />} />
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
           <Route
@@ -169,59 +170,35 @@ function App() {
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
           <Route
             path="/admin-dashboard/active-service-category"
-            element={
-              <Protected isLoggedIn={isLoggedIn}>
-                        <AdminDashboardActiveServiceCategoryPage />
-                  </Protected>
-              }
+            element={<AdminDashboardActiveServiceCategoryPage />}
           />
           <Route
             path="/admin-dashboard/active-services"
-            element={
-              <Protected isLoggedIn={isLoggedIn}>
-                        <AdminDashboardActiveServicesPage />
-                  </Protected>
-              }
+            element={<AdminDashboardActiveServicesPage />}
           />
           <Route
             path="/admin-dashboard/active-service-regions"
-            element={
-              <Protected isLoggedIn={isLoggedIn}>
-                        <AdminDashboardActiveServiceRegionsPage />
-                  </Protected>
-              }
+            element={<AdminDashboardActiveServiceRegionsPage />}
           />
           <Route
             path="/admin-dashboard/customer-list"
             element={
-              <Protected isLoggedIn={isLoggedIn}>
-                        <AdminDashboardCustomerListLayout />
-                  </Protected>
-              }
+            <Protected isLoggedIn={isLoggedIn.current}>
+              <AdminDashboardCustomerListLayout />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/worker-banlist"
-            element={
-              <Protected isLoggedIn={isLoggedIn}>
-                        <AdminDashboardWorkerBanListPage />
-                  </Protected>
-              }
+            element={<AdminDashboardWorkerBanListPage />}
           />
           <Route
             path="/admin-dashboard/add-service-category"
-            element={
-            <Protected isLoggedIn={isLoggedIn}>
-                      <AdminDashboardAddServiceCategoryPage />
-                </Protected>
-            }
+            element={<AdminDashboardAddServiceCategoryPage />}
           />
           <Route
             path="/admin-dashboard/add-service"
-            element={
-                <Protected isLoggedIn={isLoggedIn}>
-                      <AdminDashboardAddServicePage />
-                </Protected>
-            }
+            element={ <AdminDashboardAddServicePage />}
           />
         </Routes>
       </Router>

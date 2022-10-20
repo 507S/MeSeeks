@@ -81,7 +81,7 @@ export default function UserServicePageLayout() {
             </NavLink>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li>
-                <NavLink to="/users/home" class="nav-link px-3 link-secondary">
+                <NavLink to="/users/homepage" class="nav-link px-3 link-secondary">
                   <h3
                     style={{
                       fontWeight: "lighter",
@@ -96,7 +96,7 @@ export default function UserServicePageLayout() {
             </ul>
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 mt-3">
               <p style={{ fontWeight: "lighter", fontSize: "40px" }}>
-                <NavLink to="/users/home" style={{ color: "white" }}>
+                <NavLink to="/users/homepage" style={{ color: "white" }}>
                   Home
                 </NavLink>
                 &nbsp; &nbsp;

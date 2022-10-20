@@ -40,8 +40,8 @@ export default function WorkerLoginFormLayout() {
         const {data} = await axios.post('http://localhost:8003/api/registerWorker', formData);
         console.log(data)
         if(data){
-          alert("Login Successful");
-          navigate('/users/login')
+          alert("Registration Successful");
+          navigate('/workers/login')
         }
       }
       catch(e)

@@ -31,7 +31,7 @@ function handleEvent(event){
   async function submitHandler(event){
     event.preventDefault()
     try{
-      const {data} = await axios.post('http://localhost:8003/api/registerWorker', formData);
+      const {data} = await axios.post('http://localhost:8003/api/loginWorker', formData);
       console.log(data)
       if(data){
         localStorage.setItem("userInfo", JSON.stringify(data))
