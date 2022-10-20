@@ -1,5 +1,7 @@
+import { useEffect, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminDashboardCustomerListLayout from "./components/admin components/admin dashboard additional components/admin dashboard customer section/AdminDashboardCustomerListLayout";
+import Protected from "./components/protectedComponent/Protected";
 import AdminDashboardActiveServiceCategoryPage from "./pages/admin pages/AdminDashboardActiveServiceCategoryPage";
 import AdminDashboardActiveServiceRegionsPage from "./pages/admin pages/AdminDashboardActiveServiceRegionsPage";
 import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboardActiveServicesPage";
@@ -42,15 +44,14 @@ import UserServicePage from "./pages/user pages/UserServicePage";
 
 
 function App() {
-  let varToken = false
+  let varToken = false;
   const isLoggedIn = useRef(false);
-  if(localStorage.getItem("userInfo")){
-    varToken = JSON.parse(localStorage.getItem("userInfo"))
+  if (localStorage.getItem("userInfo")) {
+    varToken = JSON.parse(localStorage.getItem("userInfo"));
   }
-  const token = varToken.token
-  console.log(token)
-  if(token)
-  {
+  const token = varToken.token;
+  console.log(token);
+  if (token) {
     isLoggedIn.current = true;
   }
   useEffect(() => {
@@ -62,7 +63,7 @@ function App() {
         <Routes>
           {/* //User Pages */}
           <Route path="/" element={<TestaPageLayout />} />
-          <Route path="/users/homepage" element={<UserHomePage />} />
+          <Route path="/users/home" element={<UserHomePage />} />
           <Route path="/users/login" element={<UserLoginPage />} />
           <Route
             path="/users/registration"
@@ -170,35 +171,59 @@ function App() {
           <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
           <Route
             path="/admin-dashboard/active-service-category"
-            element={<AdminDashboardActiveServiceCategoryPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardActiveServiceCategoryPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/active-services"
-            element={<AdminDashboardActiveServicesPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardActiveServicesPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/active-service-regions"
-            element={<AdminDashboardActiveServiceRegionsPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardActiveServiceRegionsPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/customer-list"
             element={
-            <Protected isLoggedIn={isLoggedIn.current}>
-              <AdminDashboardCustomerListLayout />
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardCustomerListLayout />
               </Protected>
             }
           />
           <Route
             path="/admin-dashboard/worker-banlist"
-            element={<AdminDashboardWorkerBanListPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardWorkerBanListPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/add-service-category"
-            element={<AdminDashboardAddServiceCategoryPage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardAddServiceCategoryPage />
+              </Protected>
+            }
           />
           <Route
             path="/admin-dashboard/add-service"
-            element={ <AdminDashboardAddServicePage />}
+            element={
+              <Protected isLoggedIn={isLoggedIn.current}>
+                <AdminDashboardAddServicePage />
+              </Protected>
+            }
           />
         </Routes>
       </Router>
