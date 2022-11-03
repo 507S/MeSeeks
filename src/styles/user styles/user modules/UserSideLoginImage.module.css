@@ -1,0 +1,6 @@
+.infinity_image_container {
+  background: url("../../../assets/user assets/userLoginSideImage.jpg") center
+    no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
