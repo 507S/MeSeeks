@@ -39,6 +39,7 @@ import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPag
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 // import {useEffect, useRef} from 'react'
+import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
@@ -61,6 +62,11 @@ function App() {
     <>
       <Router>
         <Routes>
+          {/* //Platform selection  Pages */}
+          <Route
+            path="/platform-selection"
+            element={<PlatformSelectionPage />}
+          />
           {/* //User Pages */}
           <Route path="/" element={<TestaPageLayout />} />
           <Route path="/users/home" element={<UserHomePage />} />
