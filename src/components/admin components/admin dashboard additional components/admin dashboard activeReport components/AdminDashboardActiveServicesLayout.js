@@ -23,9 +23,17 @@ import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDa
 import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
 import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
 import ModalButton from "../admin dashboard popup components/ModalButton";
+import { useEffect, useState } from "react";
 import ServiceDescriptionModal from "../admin dashboard popup components/ServiceDescriptionModal";
 export default function AdminDashboardActiveServicesLayout() {
+  const [getSubServicedata, setSubServicedata] = useState([])
+  useEffect(() => {
+    fetch("http://localhost:8003/api/subservices/getsubservices").then(res => {
+        return res.json();
+    }).then(jsonResponse => setSubServicedata(jsonResponse));
+}, []);
   return (
+    
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
@@ -124,10 +132,7 @@ export default function AdminDashboardActiveServicesLayout() {
                           tableColumnClassName="col"
                           tableColumnHeaderText=" Service Category"
                         />
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText="Active Regions"
-                        />
+                   
                         <AdminDashboardDataTableColumnHeaderContent
                           tableColumnClassName="col"
                           tableColumnHeaderText="Added Date"
@@ -141,22 +146,24 @@ export default function AdminDashboardActiveServicesLayout() {
 
                     {/* //table data body starts */}
                     <tbody>
+                    {
+                        getSubServicedata.map((element,id) => {
+                          return (
+                    <>
                       <AdminDashboardDataTableRowSection>
                         {/* //get your fetch data here by loop*/}
                         <AdminDashboardDataTableRowContent>
-                          {"12001"}
+                          {element._id}
                         </AdminDashboardDataTableRowContent>
                         <AdminDashboardDataTableRowContent>
-                          {"Plumber"}
+                          {element.subServiceName}
                         </AdminDashboardDataTableRowContent>
                         <AdminDashboardDataTableRowContent>
-                          {"Home Appliances"}
+                          {element.serviceName}
                         </AdminDashboardDataTableRowContent>
+                     
                         <AdminDashboardDataTableRowContent>
-                          {"Mohakhali"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"22/08/22"}
+                        {Date(element.createdAt).slice(0,16)}
                         </AdminDashboardDataTableRowContent>
                         <AdminDashboardDataTableRowContent>
                           {
@@ -166,11 +173,13 @@ export default function AdminDashboardActiveServicesLayout() {
                                 modalButtonType="button"
                                 modalButtonClassName="btn btn-dark w-50 "
                                 modalPopUpButtonIcon="fa fa-info-circle"
+                                targetId={`#modal-${element._id}`}
                               />
                               <ServiceDescriptionModal
-                                serviceTitle="Plumber"
+                                id={`modal-${element._id}`}
+                                serviceTitle={element.subServiceName}
                                 serviceTitleIcon="fa fa-wrench"
-                                serviceDescription="Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph."
+                                serviceDescription={element.description}
                                 modalClosingButtonText="Close"
                                 modalClosingButtonIcon="fa fa-close"
                               />
@@ -179,42 +188,11 @@ export default function AdminDashboardActiveServicesLayout() {
                         </AdminDashboardDataTableRowContent>
                       </AdminDashboardDataTableRowSection>
 
-                      <AdminDashboardDataTableRowSection>
-                        {/* //get your fetch data here by loop*/}
-                        <AdminDashboardDataTableRowContent>
-                          {"12001"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"Electrician"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"Home Appliances"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"Mohakhali"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {"22/08/22"}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {
-                            <>
-                              <ModalButton
-                                modalButtonText="Open"
-                                modalButtonType="button"
-                                modalButtonClassName="btn btn-dark w-50 "
-                                modalPopUpButtonIcon="fa fa-info-circle"
-                              />
-                              <ServiceDescriptionModal
-                                serviceTitle="Electrician"
-                                serviceDescription="Fix water pumps etc"
-                                modalClosingButtonText="Close"
-                                modalClosingButtonIcon="fa fa-close"
-                              />
-                            </>
-                          }
-                        </AdminDashboardDataTableRowContent>
-                      </AdminDashboardDataTableRowSection>
+                      </>
+                        
+                        )
+                      })
+                    }
                     </tbody>
                   </AdminDashboardDataTableLayout>
                 </div>
