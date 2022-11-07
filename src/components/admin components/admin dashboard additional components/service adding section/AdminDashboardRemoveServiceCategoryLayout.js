@@ -3,8 +3,6 @@ import React from "react";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
@@ -17,53 +15,46 @@ import AdminDashboardNavBarSearchTextInput from "../../admin dashboard component
 import AdminDashboardNavBarTogglerButton from "../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
+import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
+import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
+import axios from "axios";
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AdminDashboardDataTableColumnHeaderContent from "../admin dashboard data table/AdminDashboardDataTableColumnHeaderContent";
 import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDashboardDataTableLayout";
 import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
 import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
-import ModalButton from "../admin dashboard popup components/ModalButton";
-import ServiceDescriptionModal from "../admin dashboard popup components/ServiceDescriptionModal";
-// import { useNavigate } from 'react-router-dom';
-// import axios from "axios";
-export default function AdminDashboardActiveServiceCategoryLayout() {
+export default function AdminDashboardRemoveServiceCategoryLayout() {
+  
+  const navigate = useNavigate();
+
   const [getServicedata, setServicedata] = useState([])
   useEffect(() => {
     fetch("http://localhost:8003/api/services/getservice").then(res => {
         return res.json();
     }).then(jsonResponse => setServicedata(jsonResponse));
 }, []);
-  // const getdata = async (e) => {
-  //   try{
-  //     axios.get("http://localhost:8003/api/services/getservice")
-  //    .then(res=>setServicedata(res) )
-  //    .catch(err=>console.log(err))
-      // const res = await axios.get("http://localhost:8003/api/services/getservice");
-    //   const res = await fetch("http://localhost:8003/api/services/getservice",{
-    //     method:"GET",
-    //     headers:{
-    //         "Content-Type":"application/json"
-    //     },
-    // });
-    // const data = await res.json();
-    // console.log(res);
+
+   const deleteService = async (id) => {
+    try{
+      const res2 = await axios.delete(`http://localhost:8003/api/services/deleteservice/${id}`);
+
+      // const deleteduser = await res2.json();
+      // console.log(deleteduser);
   
-    //   if (res.status === 422) {
-    //     alert("error");
-    //     console.log("error ");
-    //   }
-    //   else {
-    //     setServicedata(res);
-    //     console.log("got data");
-    //   }
-  //   }
-  //   catch(error){
-  //     alert(error);
-  //   }
+      if(res2.status === 422){
+        console.log("error");
+      }else{
+        alert("service deleted");
+        navigate("/admin-dashboard/remove-service-category", { replace: true });
+        getServicedata();
+      }
+  }catch(error){
+    console.log(error);
+  }
     
-  // }
-  // useEffect(() => {
-  //   getdata();
-  // }, []);
+  }
+  
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -114,12 +105,14 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               {/* //button test */}
-              <AdminDashboardHeaderContent adminHeaderContentText="Service Category List" />
+              <AdminDashboardHeaderContent adminHeaderContentText="Remove Service Category" />
               <div className="btn-toolbar mb-2 mb-md-0"></div>
             </div>
 
-            {/* //Data Table Section starts */}
-            <div className="card">
+            {/* //Form starts */}
+
+             {/* //Data Table Section starts */}
+             <div className="card mt-3">
               <div className="card-body">
                 <div className="table-responsive">
                   <AdminDashboardDataTableLayout className="table table-striped table-sm">
@@ -134,13 +127,15 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                           tableColumnClassName="col"
                           tableColumnHeaderText="Category Name"
                         />
+                    
                         <AdminDashboardDataTableColumnHeaderContent
                           tableColumnClassName="col"
                           tableColumnHeaderText="Added Date"
                         />
+                   
                         <AdminDashboardDataTableColumnHeaderContent
                           tableColumnClassName="col"
-                          tableColumnHeaderText="Category Information"
+                          tableColumnHeaderText="Remove Service"
                         />
 
                         {/* <AdminDashboardDataTableColumnHeaderContent
@@ -155,84 +150,48 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                     /> */}
                     {/* //table data body starts */}
                     <tbody>
-                      {
+                    {
                         getServicedata.map((element,id) => {
                           return (
                     <>
-                    
-                    {/* <td>{element._id}</td>
-                    <td>{element.name}</td>
-                    <td>{element.createdAt}</td> */}
-
                       <AdminDashboardDataTableRowSection>
-                        
+                        {/* //get your fetch data here by loop*/}
                         <AdminDashboardDataTableRowContent>
-                          {id+1}
+                          {element._id}
                         </AdminDashboardDataTableRowContent>
+                     
                         <AdminDashboardDataTableRowContent>
                           {element.name}
                         </AdminDashboardDataTableRowContent>
-                        {/* const date= new Date(element.createdAt)
-                        res = date..toLocaleDateString(); */}
                         <AdminDashboardDataTableRowContent>
                           {Date(element.createdAt).slice(0,16)}
                         </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {
-                            <>
-                              <ModalButton
-                                modalButtonText="Open"
-                                modalButtonType="button"
-                                modalButtonClassName="btn btn-dark w-25 "
-                                modalPopUpButtonIcon="fa fa-info-circle"
-                                targetId={`#modal-${element._id}`}
-                              />
-                              <ServiceDescriptionModal
-                                id={`modal-${element._id}`}
-                                serviceTitle={element.name}
-                                serviceTitleIcon="fa fa-wrench"
-                                serviceDescription={element.description}
-                                modalClosingButtonText="Close"
-                                modalClosingButtonIcon="fa fa-close"
-                              />
-                            </>
-                          }
-                          
-                        </AdminDashboardDataTableRowContent>
 
-                        {/* <AdminDashboardDataTableRowContent> */}
-                          {/* <AdminDashboardActionForm actionFormClassName="form-floating">
+                        
+
+                        <AdminDashboardDataTableRowContent>
+                          <AdminDashboardActionForm actionFormClassName="form-floating">
                             <AdminDashboardActionButton
                               adminActionButtonClassName="btn btn-danger"
                               buttonType="submit"
-                              adminActionButtonIcon="bx bxs-send"
-                              adminActionButtonText="Ban"
+                              adminActionButtonIcon="bx bxs-trash"
+                              adminActionButtonText="Remove"
+                              onClick={()=>deleteService(element._id)}
                             />
-                          </AdminDashboardActionForm> */}
-                        {/* </AdminDashboardDataTableRowContent> */}
-                       
+                          </AdminDashboardActionForm>
+                        </AdminDashboardDataTableRowContent>
                       </AdminDashboardDataTableRowSection>
                       </>
                         
                         )
                       })
                     }
-                      {/* <AdminDashboardDataTableRowContent>
-                          <AdminDashboardActionForm actionFormClassName="form-floating">
-                            <AdminDashboardActionButton
-                              adminActionButtonClassName="btn btn-danger"
-                              buttonType="submit"
-                              adminActionButtonIcon="bx bxs-send"
-                              adminActionButtonText="Ban"
-                            />
-                          </AdminDashboardActionForm>
-                        </AdminDashboardDataTableRowContent>
-                      </AdminDashboardDataTableRowSection> */}
                     </tbody>
                   </AdminDashboardDataTableLayout>
                 </div>
               </div>
             </div>
+          
           </main>
         </div>
       </div>

@@ -191,7 +191,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard/remove-service-category"
         sideBarNavListIconClassName="bx bxs-folder-minus"
         sideBarNavListText="Remove Service"
         ariaCurrent="page"

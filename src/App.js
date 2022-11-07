@@ -38,6 +38,7 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
+import AdminDashboardRemoveServiceCategoryPage from "./pages/admin pages/AdminDashboardRemoveServiceCategoryPage"
 // import {useEffect, useRef} from 'react'
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
@@ -183,58 +184,62 @@ function App() {
           <Route
             path="/admin-dashboard/active-service-category"
             element={
-              <Protected isLoggedIn={isLoggedIn.current}>
+              // <Protected isLoggedIn={isLoggedIn.current}>
                 <AdminDashboardActiveServiceCategoryPage />
-              </Protected>
+              // </Protected>
             }
           />
           <Route
             path="/admin-dashboard/active-services"
             element={
-              <Protected isLoggedIn={isLoggedIn.current}>
+              // <Protected isLoggedIn={isLoggedIn.current}>
                 <AdminDashboardActiveServicesPage />
-              </Protected>
+              // </Protected>
             }
           />
           <Route
             path="/admin-dashboard/active-service-regions"
             element={
-              <Protected isLoggedIn={isLoggedIn.current}>
+              // <Protected isLoggedIn={isLoggedIn.current}>
                 <AdminDashboardActiveServiceRegionsPage />
-              </Protected>
+              // </Protected>
             }
           />
           <Route
             path="/admin-dashboard/customer-list"
             element={
-              <Protected isLoggedIn={isLoggedIn.current}>
+              // <Protected isLoggedIn={isLoggedIn.current}>
                 <AdminDashboardCustomerListLayout />
-              </Protected>
+              // </Protected>
             }
           />
           <Route
             path="/admin-dashboard/worker-banlist"
             element={
-              <Protected isLoggedIn={isLoggedIn.current}>
+              // <Protected isLoggedIn={isLoggedIn.current}>
                 <AdminDashboardWorkerBanListPage />
-              </Protected>
+              // </Protected>
             }
           />
           <Route
             path="/admin-dashboard/add-service-category"
             element={
-              <Protected isLoggedIn={isLoggedIn.current}>
+              // <Protected isLoggedIn={isLoggedIn.current}>
                 <AdminDashboardAddServiceCategoryPage />
-              </Protected>
+              // </Protected>
             }
           />
           <Route
             path="/admin-dashboard/add-service"
             element={
-              <Protected isLoggedIn={isLoggedIn.current}>
+              // <Protected isLoggedIn={isLoggedIn.current}>
                 <AdminDashboardAddServicePage />
-              </Protected>
+              // </Protected>
             }
+          />
+          <Route
+            path="/admin-dashboard/remove-service-category"
+            element={<AdminDashboardRemoveServiceCategoryPage />}
           />
         </Routes>
       </Router>

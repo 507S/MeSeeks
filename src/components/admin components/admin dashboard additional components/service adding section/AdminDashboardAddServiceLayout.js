@@ -19,9 +19,100 @@ import AdminDashboardActionButton from "../admin dashboard actionForm components
 import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
 import ChooseServiceImage from "../admin dashboard actionForm components/ChooseServiceImage";
 import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
+// import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm"
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
 import TextInput from "../admin dashboard actionForm components/TextInput";
+import axios from "axios";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 export default function AdminDashboardAddServiceLayout() {
+    const navigate = useNavigate();
+  //   const [inpval, setINP] = useState({
+  //     serviceName: "",
+  //     subServiceName: "",
+  //     description:""
+  // })
+
+  // const setdata = (e) => {
+  //     const { name, value } = e.target;
+  //     console.log(name)
+  //     console.log(value)
+  //     setINP((preval) => {
+  //         return {
+  //             ...preval,
+  //             [name]: value
+  //         }
+  //     })
+  // }
+  // const addinpdata = async(e) =>{
+  //   e.preventDefault();
+
+  //    try{
+  //     console.log(inpval)
+  //     const res = await axios.post("http://localhost:8003/api/subservices/addsubservice", inpval);
+  //     // console.log(res)
+  //     // const data = await res.json();
+  //     console.log(res);
+
+  //     if(res.status === 422){
+  //         alert("error");
+  //         console.log("error");
+  //     }
+  //     else{
+  //         alert("data added");
+  //         console.log("data added");
+  //         navigate("/admin-dashboard/active-service-category", { replace: true });
+  //     }
+  //    }
+  //    catch(error){
+  //     alert(error)
+  //    }
+
+  // }
+  const [newSubService, setNewSubService] = useState(
+    {
+      serviceName: "",
+      subServiceName: "",
+      image: "",
+      description: ""
+    }
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(newSubService.image);
+    const formData = new FormData();
+    formData.append('serviceName', newSubService.serviceName);
+    formData.append('subServiceName', newSubService.subServiceName);
+    formData.append('image', newSubService.image);
+    // formData.append('image', URL.createObjectURL(newSubService.image));
+
+    //, URL.createObjectURL(newSubService.image)
+    formData.append('description', newSubService.description);
+    
+
+    axios.post('http://localhost:8003/api/subservices/upload', formData)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+      alert("service added")
+      navigate("/admin-dashboard/active-services", { replace: true });
+  }
+
+  const handleChange = (e) => {
+    console.log(e);
+    setNewSubService({ ...newSubService, [e.target.name]: e.target.value });
+  }
+
+  const handlePhoto = (e) => {
+    console.log(e.target.files[0])
+    setNewSubService({ ...newSubService, image: e.target.files[0] });
+  }
+
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -83,26 +174,51 @@ export default function AdminDashboardAddServiceLayout() {
                 {/* <form method="POST" enctype="multipart/form-data"> */}
                 <AdminDashboardActionForm
                   method="POST"
+                  onSubmit={handleSubmit}
                   enctype="multipart/form-data"
                 >
+                 
+                {/* <form onSubmit={handleSubmit} enctype="multipart/form-data"> */}
                   <SelectAreaInput
-                    selectName="selectServiceCategory"
+                    name="serviceName"
+                    value={newSubService.serviceName} 
+                    onChange={handleChange}
                     labelName="Select Service Category :"
                   />
+                  {/* <TextInput
+                    name="serviceName"
+                    type="text"
+                    value={inpval.serviceName} 
+                    onChange={setdata}
+                    labelName="Service Category :"
+                    placeholder="Provide a Service Category name"
+                  /> */}
                   <TextInput
                     labelName="Service Name : "
                     type="text"
-                    inputName="serviceName"
+                    name="subServiceName"
+                    value={newSubService.subServiceName}
+                    onChange={handleChange}
+                    // value={inpval.subServiceName} 
+                    // onChange={setdata}
                     placeholder="Provide a new Service name"
+
                   />
                   <ChooseServiceImage
+                    accept=".png, .jpg, .jpeg"
+                    name="photo"
+                    onChange={handlePhoto}
                     type="file"
                     labelName="Choose Service Image :"
                   />
                   <TextAreaInput
                     labelName="Service Description :"
                     placeholder="Add a description..."
-                    inputName="serviceDescription"
+                    name="description"
+                    value={newSubService.description}
+                    onChange={handleChange}
+                    // value={inpval.description} 
+                    // onChange={setdata}
                     textAreaInputRow="4"
                     style={{ reSize: "none" }}
                   />
@@ -112,8 +228,12 @@ export default function AdminDashboardAddServiceLayout() {
                       adminActionButtonIcon="fa fa-wrench"
                       adminActionButtonText="Add Service"
                       type="submit"
+                      // onClick={handleSubmit}
+                      value="Submit" 
+                      // onClick={addinpdata}
                     />
                   </div>
+                  {/* </form> */}
                 </AdminDashboardActionForm>
               </div>
             </div>

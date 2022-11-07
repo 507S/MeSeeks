@@ -6,12 +6,13 @@ export default function ServiceDescriptionModal({
   modalClosingButtonText,
   modalClosingButtonIcon,
   serviceTitleIcon,
+  id,
   ...rest
 }) {
   return (
     <div
       class="modal fade"
-      id="staticBackdrop"
+      id={id}
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"
