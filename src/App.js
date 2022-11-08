@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminDashboardCustomerListLayout from "./components/admin components/admin dashboard additional components/admin dashboard customer section/AdminDashboardCustomerListLayout";
-import Protected from "./components/protectedComponent/Protected";
 import AdminDashboardActiveServiceCategoryPage from "./pages/admin pages/AdminDashboardActiveServiceCategoryPage";
 import AdminDashboardActiveServiceRegionsPage from "./pages/admin pages/AdminDashboardActiveServiceRegionsPage";
 import AdminDashboardActiveServicesPage from "./pages/admin pages/AdminDashboardActiveServicesPage";
 import AdminDashboardAddServiceCategoryPage from "./pages/admin pages/AdminDashboardAddServiceCategoryPage";
 import AdminDashboardAddServicePage from "./pages/admin pages/AdminDashboardAddServicePage";
 import AdminDashboardPage from "./pages/admin pages/AdminDashboardPage";
+import AdminDashboardRemoveServiceCategoryPage from "./pages/admin pages/AdminDashboardRemoveServiceCategoryPage";
 import AdminDashboardWorkerBanListPage from "./pages/admin pages/AdminDashboardWorkerBanListPage";
 import AdminLoginPage from "./pages/admin pages/AdminLoginPage";
 import AdminRegistrationPage from "./pages/admin pages/AdminRegistrationPage";
@@ -38,9 +38,10 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
-import AdminDashboardRemoveServiceCategoryPage from "./pages/admin pages/AdminDashboardRemoveServiceCategoryPage"
 // import {useEffect, useRef} from 'react'
+import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
+import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
@@ -94,6 +95,7 @@ function App() {
             path="/users/worker-list"
             element={<UserSiteWorkerListPage />}
           />
+          <Route path="/users/list-of-work" element={<UserListOfWorkPage />} />
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
           <Route
@@ -185,7 +187,7 @@ function App() {
             path="/admin-dashboard/active-service-category"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
-                <AdminDashboardActiveServiceCategoryPage />
+              <AdminDashboardActiveServiceCategoryPage />
               // </Protected>
             }
           />
@@ -193,7 +195,7 @@ function App() {
             path="/admin-dashboard/active-services"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
-                <AdminDashboardActiveServicesPage />
+              <AdminDashboardActiveServicesPage />
               // </Protected>
             }
           />
@@ -201,7 +203,7 @@ function App() {
             path="/admin-dashboard/active-service-regions"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
-                <AdminDashboardActiveServiceRegionsPage />
+              <AdminDashboardActiveServiceRegionsPage />
               // </Protected>
             }
           />
@@ -209,7 +211,7 @@ function App() {
             path="/admin-dashboard/customer-list"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
-                <AdminDashboardCustomerListLayout />
+              <AdminDashboardCustomerListLayout />
               // </Protected>
             }
           />
@@ -217,7 +219,7 @@ function App() {
             path="/admin-dashboard/worker-banlist"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
-                <AdminDashboardWorkerBanListPage />
+              <AdminDashboardWorkerBanListPage />
               // </Protected>
             }
           />
@@ -225,7 +227,7 @@ function App() {
             path="/admin-dashboard/add-service-category"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
-                <AdminDashboardAddServiceCategoryPage />
+              <AdminDashboardAddServiceCategoryPage />
               // </Protected>
             }
           />
@@ -233,13 +235,17 @@ function App() {
             path="/admin-dashboard/add-service"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
-                <AdminDashboardAddServicePage />
+              <AdminDashboardAddServicePage />
               // </Protected>
             }
           />
           <Route
             path="/admin-dashboard/remove-service-category"
             element={<AdminDashboardRemoveServiceCategoryPage />}
+          />
+          <Route
+            path="/admin-dashboard/worker-appeal-messages"
+            element={<AdminDashboardWorkerAppealMessagePage />}
           />
         </Routes>
       </Router>

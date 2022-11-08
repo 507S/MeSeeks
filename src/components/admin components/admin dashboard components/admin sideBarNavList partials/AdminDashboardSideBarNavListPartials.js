@@ -150,7 +150,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard/worker-appeal-messages"
         sideBarNavListIconClassName="bx bx-edit-alt"
         sideBarNavListText="Appeal Messages"
         ariaCurrent="page"
@@ -159,7 +159,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       {/* //forth category */}
       <AdminDashboardSideBarNavListCategory
         sideBarNavListCategorySectionClassName="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-7 mb-1"
-        sideBarNavListCategoryText="AAdditional Tasks"
+        sideBarNavListCategoryText="Additional Tasks"
         sideBarNavListCategoryIconClassName="bx bxs-right-arrow"
         sideBarNavKListButtonTextInBetweenSpace=" &nbsp;"
         sideBarNavListCategoryIcon="bx bxs-right-arrow"
