@@ -3,6 +3,9 @@ import React from "react";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
+import axios from "axios";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
@@ -16,24 +19,93 @@ import AdminDashboardNavBarTogglerButton from "../../admin dashboard components/
 import AdminDashboardSideBarHeaderSection from "../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
-import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
-import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
-import AdminDashboardDataTableColumnHeaderContent from "../admin dashboard data table/AdminDashboardDataTableColumnHeaderContent";
-import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDashboardDataTableLayout";
-import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
-import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
-import ModalButton from "../admin dashboard popup components/ModalButton";
-import { useEffect, useState } from "react";
-import ServiceDescriptionModal from "../admin dashboard popup components/ServiceDescriptionModal";
-export default function AdminDashboardActiveServicesLayout() {
-  const [getSubServicedata, setSubServicedata] = useState([])
-  useEffect(() => {
-    fetch("http://localhost:8003/api/subservices/getsubservices").then(res => {
-        return res.json();
-    }).then(jsonResponse => setSubServicedata(jsonResponse));
-}, []);
-  return (
-    
+import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
+import TextInput from "../admin dashboard actionForm components/TextInput";
+import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm"
+export default function AdminDashboardAddServiceCategoryLayout() {
+  
+  const navigate = useNavigate();
+
+  // const [name, setName] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [error, setError] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  
+
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  //     try {
+  //       const config = {
+  //         headers: {
+  //           "Content-type": "application/json",
+  //         },
+  //       };
+
+  //       setLoading(true);
+
+  //       const { data } = await axios.post(
+  //         "/api/services/addservice",
+  //         {
+  //           name,
+  //           description
+  //         },
+  //         config
+  //       )
+  //       .then(res => {
+  //         console.log(res);
+  //       });
+
+  //       console.log(data);
+  //       localStorage.setItem("userInfo", JSON.stringify(data));
+  //       setLoading(false);
+  //       window.location.href = "/";
+  //     } catch (error) {
+  //       setError(error.response.data.message);
+  //     }
+  //   }
+
+  const [inpval, setINP] = useState({
+    name: "",
+    description: "",
+})
+
+const setdata = (e) => {
+    const { name, value } = e.target;
+    console.log(name)
+    console.log(value)
+    setINP((preval) => {
+        return {
+            ...preval,
+            [name]: value
+        }
+    })
+}
+const addinpdata = async(e) =>{
+  e.preventDefault();
+
+   try{
+    console.log(inpval)
+    const res = await axios.post("http://localhost:8003/api/services/addservice", inpval);
+    // console.log(res)
+    // const data = await res.json();
+    console.log(res);
+  
+    if(res.status === 422){
+        alert("error");
+        console.log("error");
+    }
+    else{
+        alert("data added");
+        console.log("data added");
+        navigate("/admin-dashboard/active-service-category", { replace: true });
+    }
+   }
+   catch(error){
+    alert(error)
+   }
+  
+}
+return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
@@ -83,119 +155,47 @@ export default function AdminDashboardActiveServicesLayout() {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               {/* //button test */}
-              <AdminDashboardHeaderContent adminHeaderContentText="Active Services " />
+              <AdminDashboardHeaderContent adminHeaderContentText="Add Service Category" />
               <div className="btn-toolbar mb-2 mb-md-0"></div>
             </div>
 
-            {/* //Form Section starts */}
+            {/* //Form starts */}
 
-            <div class="card w-100" style={{ height: "auto" }}>
+            <div class="card w-100 mt-5" style={{ height: "auto" }}>
               <div class=" card-body w-100" style={{ height: "auto" }}>
                 {/* <form method="POST" enctype="multipart/form-data"> */}
-                <AdminDashboardActionForm method="POST">
-                  <SelectAreaInput
-                    selectName="selectServiceCategory"
-                    labelName="Select Service Category :"
+                <AdminDashboardActionForm method="POST" >
+                  <TextInput
+                    name="name"
+                    labelName="Service Category : "
+                    type="text"
+                    placeholder="Provide a new Service Category"
+                    value={inpval.name} 
+                    onChange={setdata} 
+                  />
+                  <TextAreaInput
+                    name="description"
+                    type="text"
+                    labelName="Service Category Description :"
+                    placeholder="Add a description..."
+                    textAreaInputRow="4"
+                    value={inpval.description}
+                    onChange={setdata} 
+                    style={{ reSize: "none" }}
                   />
 
-                  <div class="col-md-4 col-lg-2 w-100 mt-3">
+
+                  <div class="col-md-4 col-lg-2 w-100 ">
                     <AdminDashboardActionButton
                       adminActionButtonClassName="btn btn-info w-100"
-                      adminActionButtonIcon="fa fa-wrench"
-                      adminActionButtonText="Show Services"
+                      adminActionButtonIcon="fa fa-briefcase"
+                      adminActionButtonText="Add Service Category"
                       type="submit"
+                      value="Submit" 
+                      onClick={addinpdata}
                     />
                   </div>
                 </AdminDashboardActionForm>
-              </div>
-            </div>
-
-            {/* //Form Section ends */}
-
-            {/* //Data Table Section starts */}
-            <div className="card mt-3">
-              <div className="card-body">
-                <div className="table-responsive">
-                  <AdminDashboardDataTableLayout className="table table-striped table-sm">
-                    {/* //Column header section starts */}
-                    <thead>
-                      <tr>
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText="Service ID"
-                        />
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText="Service Name"
-                        />
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText=" Service Category"
-                        />
-                   
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText="Added Date"
-                        />
-                        <AdminDashboardDataTableColumnHeaderContent
-                          tableColumnClassName="col"
-                          tableColumnHeaderText="Service Information"
-                        />
-                      </tr>
-                    </thead>
-
-                    {/* //table data body starts */}
-                    <tbody>
-                    {
-                        getSubServicedata.map((element,id) => {
-                          return (
-                    <>
-                      <AdminDashboardDataTableRowSection>
-                        {/* //get your fetch data here by loop*/}
-                        <AdminDashboardDataTableRowContent>
-                          {element._id}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {element.subServiceName}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {element.serviceName}
-                        </AdminDashboardDataTableRowContent>
-                     
-                        <AdminDashboardDataTableRowContent>
-                          {element.createdAt}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {
-                            <>
-                              <ModalButton
-                                modalButtonText="Open"
-                                modalButtonType="button"
-                                modalButtonClassName="btn btn-dark w-50 "
-                                modalPopUpButtonIcon="fa fa-info-circle"
-                                targetId={`#modal-${element._id}`}
-                              />
-                              <ServiceDescriptionModal
-                                id={`modal-${element._id}`}
-                                serviceTitle={element.subServiceName}
-                                serviceTitleIcon="fa fa-wrench"
-                                serviceDescription={element.description}
-                                modalClosingButtonText="Close"
-                                modalClosingButtonIcon="fa fa-close"
-                              />
-                            </>
-                          }
-                        </AdminDashboardDataTableRowContent>
-                      </AdminDashboardDataTableRowSection>
-
-                      </>
-                        
-                        )
-                      })
-                    }
-                    </tbody>
-                  </AdminDashboardDataTableLayout>
-                </div>
               </div>
             </div>
           </main>

@@ -7,6 +7,7 @@ import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavLis
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
 import "../../../../styles/global/admin global/bootstrap.min.css";
+import TextInput from "../worker dashboard actionForm components/TextInput";
 import WorkerDashboardSideBarNavListPartials from "../../worker dashboard components/worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
 import WorkerDashboardAuthenticationButton from "../../worker dashboard components/WorkerDashboardAuthenticationButton";
 import WorkerDashboardHeaderContent from "../../worker dashboard components/WorkerDashboardHeaderContent";
@@ -19,8 +20,55 @@ import SelectAreaInput from "../worker dashboard actionForm components/SelectAre
 import TextAreaInput from "../worker dashboard actionForm components/TextAreaInput";
 import WorkerDashboardActionButton from "../worker dashboard actionForm components/WorkerDashboardActionButton";
 import WorkerDashboardActionForm from "../worker dashboard actionForm components/WorkerDashboardActionForm";
-
+import axios from "axios";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 export default function WorkerDashboardAppealMessageLayout() {
+  const navigate = useNavigate();
+
+
+  const [inpval, setINP] = useState({
+    name: "",
+    msg: "",
+  })
+
+  const setdata = (e) => {
+    const { name, value } = e.target;
+    console.log(name)
+    console.log(value)
+    setINP((preval) => {
+      return {
+        ...preval,
+        [name]: value
+      }
+    })
+  }
+  const addinpdata = async (e) => {
+    e.preventDefault();
+
+    try {
+      console.log(inpval)
+      console.log("I am here")
+      const res = await axios.post("http://localhost:8003/api/worker/sendappealmsg", inpval);
+      // console.log(res)
+      // const data = await res.json();
+      console.log(res);
+
+      if (res.status === 422) {
+        alert("error");
+        console.log("error");
+      }
+      else {
+        alert("data added");
+        console.log("data added");
+        navigate("/admin-dashboard/active-service-category", { replace: true });
+      }
+    }
+    catch (error) {
+      alert(error)
+    }
+
+  }
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -57,7 +105,7 @@ export default function WorkerDashboardAppealMessageLayout() {
             className="col-md-2 col-sm-2 d-md-block  sidebar-sticky  "
             // style={{ backgroundColor: " #91b5e7" }}
             style={{ backgroundColor: " #2ab7ca" }}
-            // style={{ backgroundColor: "#91b5e7" }}
+          // style={{ backgroundColor: "#91b5e7" }}
           >
             <div className="position-absolute pt-3">
               <ul className="nav flex-column">
@@ -105,11 +153,15 @@ export default function WorkerDashboardAppealMessageLayout() {
                     value="admin"
                   />
 
+                  <TextInput value={inpval.name}
+                    onChange={setdata} labelName="Username" type="text" name="name" placeholder="Your username..." />
+
                   <TextAreaInput
                     labelName="Appeal Message :"
                     placeholder="Write your message here..."
-                    value=""
-                    inputName="appealMessage"
+                    value={inpval.msg}
+                    onChange={setdata}
+                    name="msg"
                     textAreaInputRow="3"
                   />
                   <div class="col-md-4 col-lg-2 w-100 ">
@@ -118,7 +170,8 @@ export default function WorkerDashboardAppealMessageLayout() {
                       adminActionButtonIcon="fa-solid fa-paper-plane"
                       adminActionButtonText="Appeal"
                       type="submit"
-                      name=""
+                      value="Submit"
+                      onClick={addinpdata}
                     />
                   </div>
                 </WorkerDashboardActionForm>
