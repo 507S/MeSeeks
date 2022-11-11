@@ -39,6 +39,7 @@ import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPag
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 // import {useEffect, useRef} from 'react'
+import UserServices from "./components/user components/user additional components/worker hiring section/UserServices";
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
@@ -85,6 +86,7 @@ function App() {
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
+          <Route path="/users/services2" element={<UserServices />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route path="/users/homepage" element={<UserHomePage />} />
           <Route
