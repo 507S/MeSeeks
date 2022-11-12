@@ -20,8 +20,14 @@ import AdminDashboardNavBarSearchTextInput from "../../../admin dashboard compon
 import AdminDashboardNavBarTogglerButton from "../../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
-
+import { useEffect, useState } from "react";
 export default function AdminDashboardWorkerAppealMessageLayout() {
+  const [getServicedata, setServicedata] = useState([])
+  useEffect(() => {
+    fetch("http://localhost:8003/api/worker/getappealmsg").then(res => {
+      return res.json();
+    }).then(jsonResponse => setServicedata(jsonResponse));
+  }, []);
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -146,6 +152,7 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
             </div>
 
             {/* data are shown wrapped in following listed-cards */}
+<<<<<<< HEAD
             <div class="card mt-5">
               <div class="card-header ">
                 <div className="row">
@@ -190,30 +197,90 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
                 </p>
                 <div className="row">
                   <div class="col-sm"></div>
+=======
+            {
+              getServicedata.map((element, id) => {
+                return (
+                  <>
+                    <div class="card mt-5">
+                      <div class="card-header ">
+                        <div className="row">
+                          <div class="col-sm">
+                            {/* fetched customer name */}
+                            <h5>
+                            {element.name}
+                              {/* From : Sivan Alam{" "} */}
+                              <img
+                                src={userImage}
+                                alt="userImage"
+                                width="32px"
+                                height="32px"
+                              />{" "}
+                            </h5>
+                          </div>
+                          <div class="col-sm">
+                            {/* fetched send date */}
+                            <h5 style={{ float: "right" }}>
+                              <img
+                                src={clockImage}
+                                alt="clockImage"
+                                width="32px"
+                                height="32px"
+                              />{" "}
+                              {Date(element.createdAt).slice(0,16)}
+                              {/* Time : 03:77:80 */}
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          Message{" "}
+                          <img
+                            src={feedbackimage}
+                            alt="clockImage"
+                            width="32px"
+                            height="32px"
+                          />{" "}
+                        </h5>
+                        <p class="card-text">
+                          {/* fetched feedback here */}
+                          {/* I did nothing wrong. Please
+                          ebarer moto amake maaf koro. I can treat you better. */}
+                          {element.msg}
+                        </p>
+                        <div className="row">
+                          <div class="col-sm"></div>
+>>>>>>> d799853cf0cf81e95f26d5761294ed5f4f42d682
 
-                  <ModalButton
-                    modalButtonText="View Worker Profile"
-                    modalButtonType="button"
-                    modalButtonClassName="btn btn-dark w-25 "
-                    modalPopUpButtonIcon="fa fa-info-circle"
-                  />
-                  <WorkerInformationModal
-                    //   {/* //fetch from db */}
+                          <ModalButton
+                            modalButtonText="View Worker Profile"
+                            modalButtonType="button"
+                            modalButtonClassName="btn btn-dark w-25 "
+                            modalPopUpButtonIcon="fa fa-info-circle"
+                          />
+                          <WorkerInformationModal
+                            //   {/* //fetch from db */}
 
-                    workerGenre="Plumber"
-                    workerAverageRating="2.88"
-                    workerPhoneNumber="01306989478"
-                    workerTotalServices="33"
-                    workerProfileImage=""
-                    workerAddress="Mirpur, Cantt. , Dhaka"
-                    workerName="Akib"
-                    modalClosingButtonText="Close"
-                    banDecisionText="UnBan"
-                    modalClosingButtonIcon="fa fa-close"
-                  />
-                </div>
-              </div>
-            </div>
+                            workerGenre="Plumber"
+                            workerAverageRating="2.88"
+                            workerPhoneNumber="01306989478"
+                            workerTotalServices="33"
+                            workerProfileImage=""
+                            workerAddress="Mirpur, Cantt. , Dhaka"
+                            workerName="Akib"
+                            modalClosingButtonText="Close"
+                            banDecisionText="UnBan"
+                            modalClosingButtonIcon="fa fa-close"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </>
+
+                )
+              })
+            }
           </main>
         </div>
       </div>
