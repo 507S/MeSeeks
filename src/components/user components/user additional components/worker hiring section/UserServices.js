@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import data from "./data";
-import "./Profile.css";
+// import "./Profile.css";
 
 const UserServices = () => {
   const [profileName, setProfileName] = useState("");

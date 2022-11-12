@@ -186,8 +186,7 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
                   />{" "}
                 </h5>
                 <p class="card-text">
-                  {/* fetched feedback here */}I did nothing wrong. Please
-                  ebarer moto amake maaf koro. I can treat you better.
+                  {/* fetched feedback here */}I did nothing wrong.
                 </p>
                 <div className="row">
                   <div class="col-sm"></div>
