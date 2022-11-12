@@ -38,10 +38,8 @@ import WorkerLoginPage from "./pages/worker pages/WorkerLoginPage";
 import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPage";
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
-import {useEffect, useRef} from 'react'
-import Protected from "./components/protectedComponent/Protected"
 import UserServicePage from "./pages/user pages/UserServicePage";
-
+import HireAWorker from "./pages/appointment/listOfWork"
 
 function App() {
   let varToken = false;
@@ -82,6 +80,9 @@ function App() {
             element={<UserServicePage />}
           />
           <Route path="/users/homepage" element={<UserHomePage />} />
+
+          <Route path="/users/hire" element={<HireAWorker />}/>
+
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
           <Route
