@@ -29,7 +29,7 @@ function ListOfWork(){
 
       const fetchProducts = () => {
           axios
-            .get('http://localhost:8003/api/listofwork')
+            .get('http://localhost:1337/api/listofwork')
             .then((res) => {
               console.log(res);
               setAllWork(res.data);
@@ -49,7 +49,7 @@ function ListOfWork(){
         fetchProducts();
         let allData = {formData: formData, workList: inputList};
         try{
-          const {data} = axios.post("http://localhost:8003/api/appointment-status", allData)
+          const {data} = axios.post("http://localhost:1337/api/appointment-status", allData)
           console.log(data)
           console.log("inputList: ", inputList);
           console.log("FormData: ", formData)
