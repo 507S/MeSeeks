@@ -39,11 +39,13 @@ import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPag
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 // import {useEffect, useRef} from 'react'
+import ListOfWork from "./components/user components/user additional components/worker hiring section/ListOfWork";
 import UserServices from "./components/user components/user additional components/worker hiring section/UserServices";
+import AdminDashboardComposeMessageForUserAndWorkerPage from "./pages/admin pages/AdminDashboardComposeMessageForUserAndWorkerPage";
+import AdminDashboardNotifyingMessageForWorkerPage from "./pages/admin pages/AdminDashboardNotifyingMessageForWorkerPage";
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
-import ListOfWork from "../client/src/pages/appointment/listOfWork";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
@@ -91,6 +93,7 @@ function App() {
           <Route path="/users/services2" element={<UserServices />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route path="/users/homepage" element={<UserHomePage />} />
+
           <Route
             path="/users/worker-hiring-form"
             element={<UserWorkerHiringFormPage />}
@@ -246,6 +249,15 @@ function App() {
           <Route
             path="/admin-dashboard/remove-service-category"
             element={<AdminDashboardRemoveServiceCategoryPage />}
+          />
+          {/* admin compose message */}
+          <Route
+            path="/admin-dashboard/compose-message"
+            element={<AdminDashboardComposeMessageForUserAndWorkerPage />}
+          />
+          <Route
+            path="/admin-dashboard/notifying-message"
+            element={<AdminDashboardNotifyingMessageForWorkerPage />}
           />
           <Route
             path="/admin-dashboard/worker-appeal-messages"
