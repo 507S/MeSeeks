@@ -43,6 +43,7 @@ import UserServices from "./components/user components/user additional component
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
+import ListOfWork from "../client/src/pages/appointment/listOfWork";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
@@ -86,6 +87,7 @@ function App() {
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
+          <Route path="/users/hire" element={<ListOfWork />} />
           <Route path="/users/services2" element={<UserServices />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route path="/users/homepage" element={<UserHomePage />} />
