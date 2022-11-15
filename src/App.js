@@ -49,6 +49,7 @@ import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
+import WorkerDashboardProfileUpdatingPage from "./pages/worker pages/WorkerDashboardProfileUpdatingPage";
 
 function App() {
   let varToken = false;
@@ -121,10 +122,15 @@ function App() {
             path="/workers/profile-setup"
             element={<WorkerProfilePage />}
           />
+
           <Route path="/worker-dashboard" element={<WorkerDashboardPage />} />
           <Route
             path="/worker-dashboard/worker-profile"
             element={<WorkerDashboardProfilePage />}
+          />
+          <Route
+            path="/worker-dashboard/update-profile"
+            element={<WorkerDashboardProfileUpdatingPage />}
           />
           <Route
             path="/worker-dashboard/rating-list"

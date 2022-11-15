@@ -101,6 +101,7 @@ export default function WorkerProfileLayout() {
                   selectNamesFetchedFromDatabase="Day"
                 />
                 <WorkerProfileImageChooseInput
+                  imageInputFieldClassName="col-12 mt-4"
                   labelFor="formFile"
                   labelIconClassName="fa fa-picture-o"
                   labelName="Upload your profile picture"

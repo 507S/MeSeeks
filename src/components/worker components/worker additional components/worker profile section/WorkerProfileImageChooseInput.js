@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function WorkerProfileImageChooseInput({
+  imageInputFieldClassName,
   selectNamesFetchedFromDatabase,
   labelName,
   labelIconClassName,
@@ -10,10 +11,10 @@ export default function WorkerProfileImageChooseInput({
   ...rest
 }) {
   return (
-    <div class="col-12 mt-4">
+    <div className={imageInputFieldClassName}>
       <label for={labelFor} class="form-label">
         <h5>
-          <i className={labelIconClassName}></i>&nbsp;{labelName}
+          <i className={labelIconClassName}></i>&nbsp;&nbsp;{labelName}
         </h5>
       </label>
 
