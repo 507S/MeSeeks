@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import UserLoaderLayout from "../../../loading phase components/userSite loading phase/UserLoaderLayout";
 
 function ListOfWork() {
   // const {state} = useLocation();
@@ -30,7 +31,9 @@ function ListOfWork() {
         setAllWork(res.data);
         console.log("this is all work");
         console.log(allWork);
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1 * 60 * 1000);
       })
       .catch((err) => {
         console.log(err);
@@ -85,7 +88,7 @@ function ListOfWork() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <UserLoaderLayout />;
   } else {
     return (
       <div>
