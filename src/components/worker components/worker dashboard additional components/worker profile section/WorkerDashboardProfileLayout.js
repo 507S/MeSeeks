@@ -83,6 +83,7 @@ export default function WorkerDashboardProfileLayout() {
               <WorkerDashboardGraphHeaderContent dashboardGraphHeaderContentText="Statistics" />
               <WorkerDashboardGraphCanvas />
             </div> */}
+            <h1>Hello</h1>
           </main>
         </div>
       </div>

@@ -97,6 +97,7 @@ function ListOfWork() {
             type="text"
             value={formData.workerType}
             onChange={handleEvent}
+            placeholder="HWorker Type"
           />
           <br />
 

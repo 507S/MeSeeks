@@ -5,6 +5,7 @@ import WorkerProfileActionButton from "./WorkerProfileActionButton";
 import WorkerProfileFormSideImage from "./WorkerProfileFormSideImage";
 import WorkerProfileHeaderImage from "./WorkerProfileHeaderImage";
 import WorkerProfileHeadline from "./WorkerProfileHeadline";
+import WorkerProfileImageChooseInput from "./WorkerProfileImageChooseInput";
 import WorkerProfileSelectInput from "./WorkerProfileSelectInput";
 import WorkerProfileTextAreaInput from "./WorkerProfileTextAreaInput";
 import WorkerProfileTextInput from "./WorkerProfileTextInput";
@@ -99,8 +100,15 @@ export default function WorkerProfileLayout() {
                   labelName="Select Working Shift"
                   selectNamesFetchedFromDatabase="Day"
                 />
+                <WorkerProfileImageChooseInput
+                  labelFor="formFile"
+                  labelIconClassName="fa fa-picture-o"
+                  labelName="Upload your profile picture"
+                  inputType="file"
+                  inputName="profileImage"
+                />
 
-                <h5 className="mt-3">
+                <h5 className="mt-7">
                   <i className="fa fa-briefcase"></i>&nbsp;Your Work Experience
                 </h5>
                 {workExperienceList.map((singleService, index) => (
