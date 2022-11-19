@@ -1,4 +1,5 @@
 import React from "react";
+import workerProfileImage from "../../../user components/user additional components/images/akib.jpg";
 
 export default function ServiceDescriptionModal({
   serviceTitle,
@@ -24,6 +25,13 @@ export default function ServiceDescriptionModal({
           <div class="modal-header">
             <h5 class="modal-title">
               {serviceTitle}&nbsp;<i className={serviceTitleIcon}></i>
+              <img
+                src={workerProfileImage}
+                alt="workerProfileImage"
+                width="100%"
+                height="100%"
+                // style={{}}
+              />
             </h5>
             <button
               type="button"

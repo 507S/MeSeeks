@@ -43,6 +43,7 @@ import ListOfWork from "./components/user components/user additional components/
 import UserServices from "./components/user components/user additional components/worker hiring section/UserServices";
 import AdminDashboardComposeMessageForUserAndWorkerPage from "./pages/admin pages/AdminDashboardComposeMessageForUserAndWorkerPage";
 import AdminDashboardNotifyingMessageForWorkerPage from "./pages/admin pages/AdminDashboardNotifyingMessageForWorkerPage";
+import AdminDashboardServiceUpdatingPage from "./pages/admin pages/AdminDashboardServiceUpdatingPage";
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
@@ -220,6 +221,7 @@ function App() {
               // </Protected>
             }
           />
+
           <Route
             path="/admin-dashboard/customer-list"
             element={
@@ -249,6 +251,14 @@ function App() {
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
               <AdminDashboardAddServicePage />
+              // </Protected>
+            }
+          />
+          <Route
+            path="/admin-dashboard/update-service"
+            element={
+              // <Protected isLoggedIn={isLoggedIn.current}>
+              <AdminDashboardServiceUpdatingPage />
               // </Protected>
             }
           />
