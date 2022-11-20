@@ -4,6 +4,6 @@ const Protected = ({ isLoggedIn }) => {
         console.log("here before alert")
         alert("not Authorized, redirecting back to homepage")
         return <Navigate to="/users/homepage" replace />;
-}
+    }
 };
-export default Protected;
+export default Protected;   

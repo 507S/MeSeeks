@@ -43,24 +43,27 @@ import UserServices from "./components/user components/user additional component
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
-import ListOfWork from "../client/src/pages/appointment/listOfWork";
+import ListOfWork from "./components/user components/user additional components/worker hiring section/ListOfWork";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
-
+import Protected from "./components/protectedComponent/Protected";
+import WorkerRequest from "./components/worker components/worker dashboard components/WorkRequest"; 
 function App() {
   let varToken = false;
-  const isLoggedIn = useRef(false);
+  // const isLoggedIn = useRef(false);
   if (localStorage.getItem("userInfo")) {
     varToken = JSON.parse(localStorage.getItem("userInfo"));
   }
   const token = varToken.token;
   console.log(token);
-  if (token) {
-    isLoggedIn.current = true;
-  }
+  
+  
+  const [isLoggedIn, setIsLoggiedIn] = useState(token? true : false)
+
+
   useEffect(() => {
-    console.log(`Your login status is:${isLoggedIn.current}`);
+    console.log(`Your login status is:${isLoggedIn}`);
   }, []);
   return (
     <>
@@ -87,7 +90,13 @@ function App() {
             path="/users/reset-password"
             element={<UserPasswordResetPage />}
           />
-          <Route path="/users/hire" element={<ListOfWork />} />
+          <Route path="/users/hire" 
+          element=
+          {
+            <Protected isLoggedIn = {isLoggedIn}>
+              <ListOfWork/>
+            </Protected>
+          } />
           <Route path="/users/services2" element={<UserServices />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route path="/users/homepage" element={<UserHomePage />} />
@@ -179,6 +188,13 @@ function App() {
             path="/worker-dashboard/appeal-message"
             element={<WorkerDashboardAppealMessagePage />}
           />
+          {/* 16 Nov new routes by salman */}
+          <Route
+            path="/work-request"
+            element={<WorkerRequest />}
+          />
+
+
           {/* //Worker Pages end */}
           {/* //Admin Pages */}
           <Route path="/admins/login" element={<AdminLoginPage />} />

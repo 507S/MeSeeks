@@ -3,13 +3,23 @@ import React from "react";
 import {useLocation} from "react-router-dom";
 
 function ListOfWork(){
-      const {state} = useLocation();
-      const { name, type } = state;
+  let userInfo = false
+
+    if (localStorage.getItem("userInfo")) {
+    userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    }
+
+    const uid = userInfo.id
+    console.log("user id is: ")
+    console.log(uid)
+      // const {state} = useLocation();
+      // const { name, type } = state;
       // console.log(name)
       const [isLoading, setIsLoading] = React.useState(true)
       const[formData, setFormData] = React.useState(
         {
-          workerType: name,
+          uid: uid,
+          workerType: "",
           location:"",
           address:"",
           phone:"",
@@ -29,10 +39,10 @@ function ListOfWork(){
 
       const fetchProducts = () => {
           axios
-            .get('http://localhost:8003/api/listofwork')
+            .get(`http://localhost:8003/api/listofwork/${uid}`)
             .then((res) => {
               console.log(res);
-              setAllWork(res.data);
+              setAllWork(res.data); 
               console.log("this is all work")
               console.log(allWork)
               setIsLoading(false)
@@ -45,7 +55,8 @@ function ListOfWork(){
     
       const handleSubmit = (e) => {
         console.log("here before prevent default")
-        e.preventDefault(); 
+        e.preventDefault();
+        setIsLoading(true) 
         fetchProducts();
         let allData = {formData: formData, workList: inputList};
         try{
@@ -105,6 +116,7 @@ function ListOfWork(){
             <input
               name="workerType"
               label="workerType"
+              placeholder="workerType"
               type="text"
               value={formData.workerType}
               onChange={handleEvent}
@@ -178,7 +190,7 @@ function ListOfWork(){
               onClick={handleSubmit}
             >Send</button>
           </form>
-          <div className='item-container'>
+          <div>
             {allWork.map((work, i) => (
             <div className='card'>
               <h1>{work.workerType}</h1>
