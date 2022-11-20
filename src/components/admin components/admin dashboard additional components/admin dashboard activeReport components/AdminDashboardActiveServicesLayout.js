@@ -3,6 +3,8 @@ import React from "react";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
@@ -23,17 +25,17 @@ import AdminDashboardDataTableLayout from "../admin dashboard data table/AdminDa
 import AdminDashboardDataTableRowContent from "../admin dashboard data table/AdminDashboardDataTableRowContent";
 import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
 import ModalButton from "../admin dashboard popup components/ModalButton";
-import { useEffect, useState } from "react";
 import ServiceDescriptionModal from "../admin dashboard popup components/ServiceDescriptionModal";
 export default function AdminDashboardActiveServicesLayout() {
-  const [getSubServicedata, setSubServicedata] = useState([])
+  const [getSubServicedata, setSubServicedata] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8003/api/subservices/getsubservices").then(res => {
+    fetch("http://localhost:8003/api/subservices/getsubservices")
+      .then((res) => {
         return res.json();
-    }).then(jsonResponse => setSubServicedata(jsonResponse));
-}, []);
+      })
+      .then((jsonResponse) => setSubServicedata(jsonResponse));
+  }, []);
   return (
-    
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
@@ -132,7 +134,7 @@ export default function AdminDashboardActiveServicesLayout() {
                           tableColumnClassName="col"
                           tableColumnHeaderText=" Service Category"
                         />
-                   
+
                         <AdminDashboardDataTableColumnHeaderContent
                           tableColumnClassName="col"
                           tableColumnHeaderText="Added Date"
@@ -141,58 +143,67 @@ export default function AdminDashboardActiveServicesLayout() {
                           tableColumnClassName="col"
                           tableColumnHeaderText="Service Information"
                         />
+                        <AdminDashboardDataTableColumnHeaderContent
+                          tableColumnClassName="col"
+                          tableColumnHeaderText="Update Service"
+                        />
                       </tr>
                     </thead>
 
                     {/* //table data body starts */}
                     <tbody>
-                    {
-                        getSubServicedata.map((element,id) => {
-                          return (
-                    <>
-                      <AdminDashboardDataTableRowSection>
-                        {/* //get your fetch data here by loop*/}
-                        <AdminDashboardDataTableRowContent>
-                          {element._id}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {element.subServiceName}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {element.serviceName}
-                        </AdminDashboardDataTableRowContent>
-                     
-                        <AdminDashboardDataTableRowContent>
-                        {Date(element.createdAt).slice(0,16)}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {
-                            <>
-                              <ModalButton
-                                modalButtonText="Open"
-                                modalButtonType="button"
-                                modalButtonClassName="btn btn-dark w-50 "
-                                modalPopUpButtonIcon="fa fa-info-circle"
-                                targetId={`#modal-${element._id}`}
-                              />
-                              <ServiceDescriptionModal
-                                id={`modal-${element._id}`}
-                                serviceTitle={element.subServiceName}
-                                serviceTitleIcon="fa fa-wrench"
-                                serviceDescription={element.description}
-                                modalClosingButtonText="Close"
-                                modalClosingButtonIcon="fa fa-close"
-                              />
-                            </>
-                          }
-                        </AdminDashboardDataTableRowContent>
-                      </AdminDashboardDataTableRowSection>
+                      {getSubServicedata.map((element, id) => {
+                        return (
+                          <>
+                            <AdminDashboardDataTableRowSection>
+                              {/* //get your fetch data here by loop*/}
+                              <AdminDashboardDataTableRowContent>
+                                {element._id}
+                              </AdminDashboardDataTableRowContent>
+                              <AdminDashboardDataTableRowContent>
+                                {element.subServiceName}
+                              </AdminDashboardDataTableRowContent>
+                              <AdminDashboardDataTableRowContent>
+                                {element.serviceName}
+                              </AdminDashboardDataTableRowContent>
 
-                      </>
-                        
-                        )
-                      })
-                    }
+                              <AdminDashboardDataTableRowContent>
+                                {Date(element.createdAt).slice(0, 16)}
+                              </AdminDashboardDataTableRowContent>
+                              <AdminDashboardDataTableRowContent>
+                                {
+                                  <>
+                                    <ModalButton
+                                      modalButtonText="Open"
+                                      modalButtonType="button"
+                                      modalButtonClassName="btn btn-dark w-50 "
+                                      modalPopUpButtonIcon="fa fa-info-circle"
+                                      targetId={`#modal-${element._id}`}
+                                    />
+                                    <ServiceDescriptionModal
+                                      id={`modal-${element._id}`}
+                                      serviceTitle={element.subServiceName}
+                                      serviceTitleIcon="fa fa-wrench"
+                                      serviceDescription={element.description}
+                                      modalClosingButtonText="Close"
+                                      modalClosingButtonIcon="fa fa-close"
+                                    />
+                                  </>
+                                }
+                              </AdminDashboardDataTableRowContent>
+                              <AdminDashboardDataTableRowContent>
+                                <NavLink to="/admin-dashboard/update-service">
+                                  <AdminDashboardActionButton
+                                    adminActionButtonClassName="btn btn-info"
+                                    adminActionButtonText="Update"
+                                    buttonType="button"
+                                  />
+                                </NavLink>
+                              </AdminDashboardDataTableRowContent>
+                            </AdminDashboardDataTableRowSection>
+                          </>
+                        );
+                      })}
                     </tbody>
                   </AdminDashboardDataTableLayout>
                 </div>

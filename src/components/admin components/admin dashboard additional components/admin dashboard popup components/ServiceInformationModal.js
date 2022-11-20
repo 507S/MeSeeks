@@ -1,10 +1,11 @@
 import React from "react";
-import workerProfileImage from "../images/akib.jpg";
-export default function WorkerInformationModal({
+import workerProfileImage from "../../../user components/user additional components/images/akib.jpg";
+export default function ServiceInformationModal({
   workerGenre,
   workerAverageRating,
   workerTotalServices,
   // workerProfileImage,
+  banDecisionText,
   workerAddress,
   workerPhoneNumber,
   workerName,
@@ -27,7 +28,6 @@ export default function WorkerInformationModal({
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">
-              {/* <p>Hello</p> */}
               <img
                 src={workerProfileImage}
                 alt="workerProfileImage"
@@ -57,6 +57,18 @@ export default function WorkerInformationModal({
             <br />
           </div>
           <div class="modal-footer">
+            {/* unban/ban button submit form */}
+            <form action="POST">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                style={{ backgroundColor: "black" }}
+              >
+                <i className="fa-solid fa-wrench"></i>&nbsp;{banDecisionText}
+              </button>
+            </form>
+
             <button
               type="button"
               class="btn btn-secondary"

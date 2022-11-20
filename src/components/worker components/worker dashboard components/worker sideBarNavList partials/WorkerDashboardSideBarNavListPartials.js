@@ -106,7 +106,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         ariaCurrent="page"
       />
 
-      <WorkerDashboardSideBarNavList
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListRedirectLink="/worker-dashboard/ongoing-work"
@@ -121,7 +121,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="fa fa-hourglass"
         sideBarNavListText="Reserve Work"
         ariaCurrent="page"
-      />
+      /> */}
       {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"

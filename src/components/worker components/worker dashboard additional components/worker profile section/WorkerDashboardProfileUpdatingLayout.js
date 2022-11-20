@@ -4,15 +4,18 @@ import { NavLink } from "react-router-dom";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
-import workerProfileImage from "../../../../assets/worker assets/images/ep2.jpg";
+import workerProfileImage from "../../../../assets/worker assets/images/1.jpg";
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
 import "../../../../styles/global/admin global/bootstrap.min.css";
-import WorkerProfileActionButton from "../../worker additional components/worker profile section/WorkerProfileActionButton";
+import WorkerProfileImageChooseInput from "../../worker additional components/worker profile section/WorkerProfileImageChooseInput";
 import WorkerProfileSelectInput from "../../worker additional components/worker profile section/WorkerProfileSelectInput";
 import WorkerProfileTextAreaInput from "../../worker additional components/worker profile section/WorkerProfileTextAreaInput";
 import WorkerProfileTextInput from "../../worker additional components/worker profile section/WorkerProfileTextInput";
+// import WorkerProfileUpdateButton from "../../worker additional components/worker profile section/WorkerProfileUpdateButton";
+import ProfileUpdateCancelButton from "../../worker additional components/worker profile section/ProfileUpdateCancelButton";
+import ProfileUpdateConfirmButton from "../../worker additional components/worker profile section/ProfileUpdateConfirmButton";
 import WorkerDashboardSideBarNavListPartials from "../../worker dashboard components/worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
 import WorkerDashboardAuthenticationButton from "../../worker dashboard components/WorkerDashboardAuthenticationButton";
 import WorkerDashboardHeaderContent from "../../worker dashboard components/WorkerDashboardHeaderContent";
@@ -21,7 +24,8 @@ import WorkerDashboardNavBarSearchTextInput from "../../worker dashboard compone
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
-export default function WorkerDashboardProfileLayout() {
+
+export default function WorkerDashboardProfileUpdatingLayout() {
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -77,8 +81,8 @@ export default function WorkerDashboardProfileLayout() {
               {/* //button test */}
 
               <WorkerDashboardHeaderContent
-                adminHeaderContentText="Worker Profile"
-                workerDashboardHeaderContentImage="fa-solid fa-helmet-safety"
+                adminHeaderContentText="Update Profile"
+                workerDashboardHeaderContentImage="fa fa-wrench"
               />
 
               <div className="btn-toolbar mb-2 mb-md-0"></div>
@@ -107,7 +111,7 @@ export default function WorkerDashboardProfileLayout() {
             {/* update profile from here */}
 
             <div className="container " style={{ marginTop: "5%" }}>
-              <form class="row g-3 ">
+              <form class="row g-3 " action="">
                 <WorkerProfileTextInput
                   labelFor="username"
                   labelIconClassName="fa fa-user"
@@ -135,23 +139,14 @@ export default function WorkerDashboardProfileLayout() {
                   value=""
                   // placeholder="Phone Number..."
                 />
-                <WorkerProfileTextInput
-                  labelFor="workerType"
-                  labelIconClassName="fa fa-wrench"
-                  labelName="Worker Genre"
-                  textInputType="text"
-                  inputName="workerType"
-                  value=""
-                  // placeholder="Worker Type..."
-                />
-                {/* <WorkerProfileImageChooseInput
+                <WorkerProfileImageChooseInput
                   imageInputFieldClassName="col-md-6"
                   labelFor="formFile"
                   labelIconClassName="fa fa-picture-o"
                   labelName="Change Avatar"
                   inputType="file"
                   inputName="profileImage"
-                /> */}
+                />
                 <WorkerProfileSelectInput
                   labelFor="areaSelection"
                   labelIconClassName="bx bxs-map"
@@ -165,14 +160,6 @@ export default function WorkerDashboardProfileLayout() {
                   selectNamesFetchedFromDatabase="Day"
                 />
 
-                {/* <WorkerProfileImageChooseInput
-                  labelFor="formFile"
-                  labelIconClassName="fa fa-picture-o"
-                  labelName="Upload your profile picture"
-                  inputType="file"
-                  inputName="profileImage"
-                /> */}
-
                 <WorkerProfileTextAreaInput
                   labelFor="address"
                   labelIconClassName="fa fa-home"
@@ -182,13 +169,33 @@ export default function WorkerDashboardProfileLayout() {
                   value=""
                   placeholder="Your Address..."
                 />
-                <NavLink to="/worker-dashboard/update-profile">
-                  <WorkerProfileActionButton
-                    buttonType="submit"
-                    workerProfileActionButtonIcon="fa fa-wrench"
-                    workerProfileActionButtonText=" Update Profile "
+
+                {/* <WorkerProfileUpdateButton
+                  buttonType="submit"
+                  workerProfileActionButtonIcon="fa fa-check"
+                  workerProfileActionButtonText="Confirm Update  "
+                /> */}
+                <div className="col-md-6 mt-3">
+                  <ProfileUpdateConfirmButton
+                    type="submit"
+                    workerProfileActionButtonIcon="fa fa-check"
+                    workerProfileActionButtonText="Confirm Update "
+                    btnClassName="btn btn-info w-100"
+                    // onClick={submitHandler}
                   />
-                </NavLink>
+                </div>
+                <div className="col-md-6 mt-3">
+                  <NavLink to="/worker-dashboard/worker-profile">
+                    <ProfileUpdateCancelButton
+                      type="submit"
+                      workerProfileActionButtonIcon="fa fa-arrow-left"
+                      workerProfileActionButtonText="Go Back "
+                      btnClassName="btn btn-dark w-100"
+
+                      //no need onClick={submitHandler} redirected back to  the service page
+                    />
+                  </NavLink>
+                </div>
               </form>
             </div>
           </main>
