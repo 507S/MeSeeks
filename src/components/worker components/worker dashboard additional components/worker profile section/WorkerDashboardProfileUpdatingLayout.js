@@ -153,12 +153,12 @@ export default function WorkerDashboardProfileUpdatingLayout() {
                   labelName="Select Working Area"
                   selectNamesFetchedFromDatabase="Uttara"
                 />
-                <WorkerProfileSelectInput
+                {/* <WorkerProfileSelectInput
                   labelFor="workingShift"
                   labelIconClassName="fa fa-clock-o"
                   labelName="Select Working Shift"
                   selectNamesFetchedFromDatabase="Day"
-                />
+                /> */}
 
                 <WorkerProfileTextAreaInput
                   labelFor="address"

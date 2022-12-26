@@ -26,6 +26,7 @@ import AdminDashboardDataTableRowContent from "../admin dashboard data table/Adm
 import AdminDashboardDataTableRowSection from "../admin dashboard data table/AdminDashboardDataTableRowSection";
 import ModalButton from "../admin dashboard popup components/ModalButton";
 import ServiceDescriptionModal from "../admin dashboard popup components/ServiceDescriptionModal";
+
 export default function AdminDashboardActiveServicesLayout() {
   const [getSubServicedata, setSubServicedata] = useState([]);
   useEffect(() => {
@@ -153,6 +154,10 @@ export default function AdminDashboardActiveServicesLayout() {
                     {/* //table data body starts */}
                     <tbody>
                       {getSubServicedata.map((element, id) => {
+                        // const base64String = btoa(String.fromCharCode(...new Uint8Array(element.image.data.data)));
+                        // const blob = new Blob([Int8Array.from(element.image.data.data)], {type: element.image.contentType });
+
+                        // const img = window.URL.createObjectURL(blob);
                         return (
                           <>
                             <AdminDashboardDataTableRowSection>
@@ -184,6 +189,7 @@ export default function AdminDashboardActiveServicesLayout() {
                                       id={`modal-${element._id}`}
                                       serviceTitle={element.subServiceName}
                                       serviceTitleIcon="fa fa-wrench"
+                                      source={element.image.data}
                                       serviceDescription={element.description}
                                       modalClosingButtonText="Close"
                                       modalClosingButtonIcon="fa fa-close"
@@ -191,14 +197,19 @@ export default function AdminDashboardActiveServicesLayout() {
                                   </>
                                 }
                               </AdminDashboardDataTableRowContent>
+                              
                               <AdminDashboardDataTableRowContent>
-                                <NavLink to="/admin-dashboard/update-service">
+                              {
+                                <>
+                                <NavLink to={`/admin-dashboard/update-service/${element._id}`}>
                                   <AdminDashboardActionButton
                                     adminActionButtonClassName="btn btn-info"
                                     adminActionButtonText="Update"
                                     buttonType="button"
                                   />
                                 </NavLink>
+                                </>
+                                }
                               </AdminDashboardDataTableRowContent>
                             </AdminDashboardDataTableRowSection>
                           </>

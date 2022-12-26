@@ -78,21 +78,28 @@ export default function AdminDashboardAddServiceLayout() {
       description: ""
     }
   );
+  
+  const toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(newSubService.image);
     const formData = new FormData();
     formData.append('serviceName', newSubService.serviceName);
     formData.append('subServiceName', newSubService.subServiceName);
-    formData.append('image', newSubService.image);
+    formData.append('image', await toBase64(newSubService.image) );
     // formData.append('image', URL.createObjectURL(newSubService.image));
 
     //, URL.createObjectURL(newSubService.image)
     formData.append('description', newSubService.description);
     
 
-    axios.post('http://localhost:8003/api/subservices/upload', formData)
+    axios.post('http://localhost:8003/api/subservices//updateSubService/:id', formData)
       .then(res => {
         console.log(res);
       })

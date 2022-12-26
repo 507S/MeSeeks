@@ -22,7 +22,7 @@ import SelectAreaInput from "../admin dashboard actionForm components/SelectArea
 // import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm"
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
 import TextInput from "../admin dashboard actionForm components/TextInput";
 
@@ -76,28 +76,35 @@ export default function AdminDashboardAddServiceLayout() {
     image: "",
     description: "",
   });
-
-  const handleSubmit = (e) => {
+  const toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
+const {id} = useParams("");
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(newSubService.image);
     const formData = new FormData();
     formData.append("serviceName", newSubService.serviceName);
     formData.append("subServiceName", newSubService.subServiceName);
-    formData.append("image", newSubService.image);
+    // formData.append("image", newSubService.image);
     // formData.append('image', URL.createObjectURL(newSubService.image));
+    formData.append('image', await toBase64(newSubService.image) );
 
     //, URL.createObjectURL(newSubService.image)
     formData.append("description", newSubService.description);
 
     axios
-      .post("http://localhost:8003/api/subservices/upload", formData)
+      .patch(`http://localhost:8003/api/subservices//updateSubService/${id}`, formData)
       .then((res) => {
         console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
-    alert("service added");
+    alert("service updated");
     navigate("/admin-dashboard/active-services", { replace: true });
   };
 

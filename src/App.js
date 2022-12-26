@@ -255,7 +255,7 @@ function App() {
             }
           />
           <Route
-            path="/admin-dashboard/update-service"
+            path="/admin-dashboard/update-service/:id"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
               <AdminDashboardServiceUpdatingPage />
