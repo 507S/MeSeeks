@@ -99,7 +99,6 @@ function App() {
           } />
           <Route path="/users/services2" element={<UserServices />} />
           <Route path="/users/services" element={<UserServicePage />} />
-          <Route path="/users/homepage" element={<UserHomePage />} />
           <Route
             path="/users/worker-hiring-form"
             element={<UserWorkerHiringFormPage />}

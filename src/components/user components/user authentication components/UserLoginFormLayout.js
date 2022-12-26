@@ -36,7 +36,7 @@ export default function UserLoginFormLayout() {
       if(data){
         localStorage.setItem("userInfo", JSON.stringify(data))
         alert("Login Successful");
-        navigate('/users/homepage')
+        navigate('/users/home')
       }
     }
     catch(e)

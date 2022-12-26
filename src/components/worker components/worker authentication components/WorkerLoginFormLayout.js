@@ -36,12 +36,12 @@ function handleEvent(event){
       if(data){
         localStorage.setItem("userInfo", JSON.stringify(data))
         alert("Login Successful");
-        navigate('/users/login')
+        navigate('/workers/profile-setup')
       }
     }
     catch(e)
     {
-      alert(e.response.data)
+      alert(e)
     }
 }
 

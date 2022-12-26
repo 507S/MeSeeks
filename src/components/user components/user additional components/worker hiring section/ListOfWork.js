@@ -10,15 +10,14 @@ function ListOfWork(){
     }
 
     const uid = userInfo.id
-    console.log("user id is: ")
-    console.log(uid)
+    // console.log("user id is: ")
+    // console.log(uid)
       // const {state} = useLocation();
       // const { name, type } = state;
       // console.log(name)
       const [isLoading, setIsLoading] = React.useState(true)
       const[formData, setFormData] = React.useState(
         {
-          uid: uid,
           workerType: "",
           location:"",
           address:"",
@@ -38,15 +37,16 @@ function ListOfWork(){
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:8003/api/listofwork")
+      .get(`http://localhost:8003/api/listofwork/${uid}`)
       .then((res) => {
         console.log(res);
         setAllWork(res.data);
         console.log("this is all work");
         console.log(allWork);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1 * 60 * 1000);
+        setIsLoading(false);
+      //   setTimeout(() => {
+      //     setIsLoading(false);
+      //   }, 1 * 60 * 1000);
       })
       .catch((err) => {
         console.log(err);
