@@ -259,6 +259,14 @@ function App() {
             }
           />
           <Route
+            path="/admin-dashboard/update-service/:id"
+            element={
+              // <Protected isLoggedIn={isLoggedIn.current}>
+              <AdminDashboardServiceUpdatingPage />
+              // </Protected>
+            }
+          />
+          <Route
             path="/admin-dashboard/remove-service-category"
             element={<AdminDashboardRemoveServiceCategoryPage />}
           />

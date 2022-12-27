@@ -8,6 +8,7 @@ export default function ServiceDescriptionModal({
   modalClosingButtonIcon,
   serviceTitleIcon,
   id,
+  source,
   ...rest
 }) {
   return (
@@ -26,19 +27,25 @@ export default function ServiceDescriptionModal({
             <h5 class="modal-title">
               {serviceTitle}&nbsp;<i className={serviceTitleIcon}></i>
               <img
-                src={workerProfileImage}
+                src={source}
                 alt="workerProfileImage"
                 width="100%"
                 height="100%"
                 // style={{}}
               />
-            </h5>
-            <button
+                 {/* <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            ></button> */}
+            </h5>
+            {/* <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button> */}
           </div>
           <div class="modal-body">{serviceDescription}</div>
           <div class="modal-footer">
