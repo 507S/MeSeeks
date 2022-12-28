@@ -38,10 +38,14 @@ export default function UserServiceFeedbackFormPageLayout() {
       <div class="card">
       <div class="card-body">
 
-      <form class="row g-3">
+      <form class="row g-3" 
+      // onSubmit={handleSubmit}
+      >
       <div class="col-md-6">
       <label for="email" class="form-label"><i className='fa fa-user'></i>&nbsp;Your Email</label>
       <input type="email" 
+      //  value={formData.workerType}
+      //  onChange={handleEvent}
       class="form-control" 
       required
       />
@@ -49,6 +53,8 @@ export default function UserServiceFeedbackFormPageLayout() {
      <div class="col-md-6">
       <label for="feedbackAgainstWorkerName" class="form-label"><i className='fa fa-wrench'></i>&nbsp;Feedback against Worker</label>
       <input type="text" 
+      // value={formData.workerType}
+      // onChange={handleEvent}
       class="form-control" 
       
     />
@@ -56,6 +62,8 @@ export default function UserServiceFeedbackFormPageLayout() {
     <div class="col-12">
     <label for="rating" class="form-label"><i className='fa fa-star'></i>&nbsp;Provide Rating</label>
     <input type="range" 
+    // value={formData.workerType}
+    // onChange={handleEvent}
     class="form-range" 
     min="0" 
     max="5" 
@@ -68,6 +76,8 @@ export default function UserServiceFeedbackFormPageLayout() {
     <div class="col-12">
     <label for="location" class="form-label"><i className='fa fa-map-marker'></i>&nbsp;Provide your location</label>
     <input type="text" 
+    // value={formData.workerType}
+    // onChange={handleEvent}
     class="form-control" 
     id="inputAddress" 
     placeholder="Location"
@@ -77,6 +87,8 @@ export default function UserServiceFeedbackFormPageLayout() {
     <div class="col-12">
     <label for="address" class="form-label"><i className='fa fa-home'></i>&nbsp;Provide your Address</label>
     <input type="text" 
+    // value={formData.workerType}
+    // onChange={handleEvent}
     class="form-control" 
     id="inputAddress" 
     placeholder="Address" 
@@ -87,6 +99,8 @@ export default function UserServiceFeedbackFormPageLayout() {
     <label for="comments" class="form-label"  ><i className='fa fa-comments'></i>&nbsp;Provide reason for your rating</label>
     <input type="text" 
     class="form-control" 
+    // value={formData.workerType}
+    //   onChange={handleEvent}
     id="inputAddress2" 
     placeholder="Comments"
     style={{height:"60px"}}

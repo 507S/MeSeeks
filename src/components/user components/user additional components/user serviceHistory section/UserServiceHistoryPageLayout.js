@@ -56,7 +56,7 @@ export default function UserServiceHistoryPageLayout() {
             </h5>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Profile Information</h5>
+            <h5 class="card-title">Work Information</h5>
             <br />
             <p class="card-text" style={{ fontSize: "17.5px" }}>
               <img src={ratingIcon} alt="rateIcon" width="40px" height="40px" />
