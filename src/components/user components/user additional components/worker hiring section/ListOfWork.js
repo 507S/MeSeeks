@@ -33,7 +33,7 @@ function ListOfWork() {
         console.log(allWork);
         setTimeout(() => {
           setIsLoading(false);
-        }, 1 * 60 * 1000);
+        },  3000);
       })
       .catch((err) => {
         console.log(err);

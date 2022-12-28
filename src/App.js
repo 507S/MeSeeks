@@ -39,7 +39,9 @@ import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPag
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 // import {useEffect, useRef} from 'react'
+import Appointment from "./components/user components/user additional components/worker hiring section/appointments";
 import ListOfWork from "./components/user components/user additional components/worker hiring section/ListOfWork";
+import SubmitAppointment from "./components/user components/user additional components/worker hiring section/submitAppointment";
 import UserServices from "./components/user components/user additional components/worker hiring section/UserServices";
 import AdminDashboardComposeMessageForUserAndWorkerPage from "./pages/admin pages/AdminDashboardComposeMessageForUserAndWorkerPage";
 import AdminDashboardNotifyingMessageForWorkerPage from "./pages/admin pages/AdminDashboardNotifyingMessageForWorkerPage";
@@ -93,6 +95,8 @@ function App() {
           />
           <Route path="/users/hire" element={<ListOfWork />} />
           <Route path="/users/services2" element={<UserServices />} />
+          <Route path="/users/appointment" element={<Appointment />} />
+          <Route path="/users/submit-work" element={<SubmitAppointment />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route path="/users/homepage" element={<UserHomePage />} />
 

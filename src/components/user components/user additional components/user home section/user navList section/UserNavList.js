@@ -40,9 +40,12 @@ export default function UserNavList() {
             Services
           </NavLink>
           &nbsp; &nbsp;
-          <NavLink to="" style={{ color: "white" }}>
-            About
+          <NavLink to="/users/submit-work" style={{ color: "white" }}>
+            Request Service
           </NavLink>
+          {/* <NavLink to="" style={{ color: "white" }}>
+            About
+          </NavLink> */}
           &nbsp; &nbsp;
           <NavLink
             className="btn btn-dark"
