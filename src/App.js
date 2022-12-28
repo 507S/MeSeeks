@@ -48,6 +48,7 @@ import AdminDashboardNotifyingMessageForWorkerPage from "./pages/admin pages/Adm
 import AdminDashboardServiceUpdatingPage from "./pages/admin pages/AdminDashboardServiceUpdatingPage";
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
+import UserFAQPage from "./pages/user pages/UserFAQPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
@@ -109,6 +110,10 @@ function App() {
             element={<UserSiteWorkerListPage />}
           />
           <Route path="/users/list-of-work" element={<UserListOfWorkPage />} />
+          <Route
+            path="/users/FAQ"
+            element={<UserFAQPage />}
+          />
           {/* //Worker Pages */}
           <Route path="/workers/login" element={<WorkerLoginPage />} />
           <Route

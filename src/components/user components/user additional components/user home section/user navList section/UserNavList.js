@@ -43,6 +43,10 @@ export default function UserNavList() {
           <NavLink to="/users/submit-work" style={{ color: "white" }}>
             Request Service
           </NavLink>
+          &nbsp; &nbsp;
+          <NavLink to="/users/FAQ" style={{ color: "white" }}>
+            FAQ
+          </NavLink>
           {/* <NavLink to="" style={{ color: "white" }}>
             About
           </NavLink> */}
