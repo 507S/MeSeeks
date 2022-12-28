@@ -59,21 +59,22 @@ export default function UserServiceFeedbackFormPageLayout() {
       
     />
       </div>
-    <div class="col-12">
-    <label for="rating" class="form-label"><i className='fa fa-star'></i>&nbsp;Provide Rating</label>
-    <input type="range" 
+    <div class="col-md-6">
+    <label for="rating" class="form-label"><i className='fa fa-star'></i>&nbsp;Provide Rating <b style={{color:"red",fontWeight:"100px"}}>*(between 1 and 5)</b> </label>
+    <input type="number" 
+    min="1" 
+    max="5"
     // value={formData.workerType}
     // onChange={handleEvent}
-    class="form-range" 
-    min="0" 
-    max="5" 
+    class="form-control" 
+    
     id="customRange2" 
     required
     >
       
     </input>
     </div>
-    <div class="col-12">
+    <div class="col-md-6">
     <label for="location" class="form-label"><i className='fa fa-map-marker'></i>&nbsp;Provide your location</label>
     <input type="text" 
     // value={formData.workerType}
