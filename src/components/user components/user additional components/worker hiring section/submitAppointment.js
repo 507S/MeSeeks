@@ -2,9 +2,11 @@ import axios from "axios";
 import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../../../../styles/global/worker global/WorkerProfileDynamicInputFieldStyle.css";
+import SelectAreaInput from "../../../admin components/admin dashboard additional components/admin dashboard actionForm components/SelectAreaInput";
 import UserHomeSectionFooter from "../user home section/user footerSection/UserHomeSectionFooter";
 import UserNavList from "../user home section/user navList section/UserNavList";
 import AppointmentListSubmissionImage from "./AppointmentListSubmissionImage";
+
 function SubmitAppointment() {
     let name=""
     const { state } = useLocation();
@@ -122,14 +124,19 @@ function SubmitAppointment() {
           <i className="fa-solid fa-helmet-safety"></i>&nbsp;Worker Type
         </h5>
       </label>
-                <input
+                {/* <input
                     name="workerType"
                     label="workerType"
                     className="form-control"
                     type="text"
                     value={formData.workerType}
                     onChange={handleEvent}
-                />
+                /> */}
+                <SelectAreaInput
+                    name="workerType"
+                    value={formData.workerType} 
+                    onChange={handleEvent}
+                  />
                 </div>
                 <br />
 
