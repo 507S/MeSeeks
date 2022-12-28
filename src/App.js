@@ -50,6 +50,8 @@ import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDash
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserFAQPage from "./pages/user pages/UserFAQPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
+import UserServiceFeedbackFormPage from "./pages/user pages/UserServiceFeedbackFormPage";
+import UserServiceHistoryPage from "./pages/user pages/UserServiceHistoryPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
@@ -110,6 +112,9 @@ function App() {
             element={<UserSiteWorkerListPage />}
           />
           <Route path="/users/list-of-work" element={<UserListOfWorkPage />} />
+          <Route path="/users/service-history" element={<UserServiceHistoryPage />} />
+          <Route path="/users/service-feedback-form" element={<UserServiceFeedbackFormPage />} />
+
           <Route
             path="/users/FAQ"
             element={<UserFAQPage />}

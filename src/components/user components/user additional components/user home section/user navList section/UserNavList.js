@@ -44,6 +44,10 @@ export default function UserNavList() {
             Request Service
           </NavLink>
           &nbsp; &nbsp;
+          <NavLink to="/users/service-history" style={{ color: "white" }}>
+            Service History
+          </NavLink>
+          &nbsp; &nbsp;
           <NavLink to="/users/FAQ" style={{ color: "white" }}>
             FAQ
           </NavLink>
