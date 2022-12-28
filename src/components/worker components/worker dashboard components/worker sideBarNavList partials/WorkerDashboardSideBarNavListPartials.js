@@ -50,7 +50,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListText="Rating List"
         ariaCurrent="page"
       />
-      <WorkerDashboardSideBarNavList
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
@@ -58,8 +58,8 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="fa fa-hand-o-right"
         sideBarNavListText="Grace Points"
         ariaCurrent="page"
-      />
-      <WorkerDashboardSideBarNavList
+      /> */}
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
@@ -67,7 +67,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="bx bx-money"
         sideBarNavListText="Revenues"
         ariaCurrent="page"
-      />
+      /> */}
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
@@ -149,7 +149,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListCategoryIcon="bx bxs-right-arrow"
         sideBarNavListCategorySectionEndLineColor="rgb(255, 255, 255)"
       />
-
+{/* 
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
@@ -157,7 +157,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="bx bxs-user-voice"
         sideBarNavListText="Customer Message"
         ariaCurrent="page"
-      />
+      /> */}
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
