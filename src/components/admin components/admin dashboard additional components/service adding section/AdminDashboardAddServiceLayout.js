@@ -88,26 +88,24 @@ export default function AdminDashboardAddServiceLayout() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(newSubService.image);
+    // console.log(newSubService.image);
     const formData = new FormData();
     formData.append('serviceName', newSubService.serviceName);
     formData.append('subServiceName', newSubService.subServiceName);
     formData.append('image', await toBase64(newSubService.image) );
-    // formData.append('image', URL.createObjectURL(newSubService.image));
-
-    //, URL.createObjectURL(newSubService.image)
     formData.append('description', newSubService.description);
     
 
-    axios.post('http://localhost:8003/api/subservices//updateSubService/:id', formData)
+    axios.post('http://localhost:8003/api/subservices/upload', formData)
       .then(res => {
-        console.log(res);
+        // console.log(res);
+        alert("service added")
+        navigate("/admin-dashboard/active-services", { replace: true });
       })
       .catch(err => {
         console.log(err);
       });
-      alert("service added")
-      navigate("/admin-dashboard/active-services", { replace: true });
+      
   }
 
   const handleChange = (e) => {
@@ -213,7 +211,7 @@ export default function AdminDashboardAddServiceLayout() {
                   />
                   <ChooseServiceImage
                     accept=".png, .jpg, .jpeg"
-                    name="photo"
+                    name="image"
                     onChange={handlePhoto}
                     type="file"
                     labelName="Choose Service Image :"

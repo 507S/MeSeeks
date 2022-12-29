@@ -189,7 +189,7 @@ export default function AdminDashboardActiveServicesLayout() {
                                       id={`modal-${element._id}`}
                                       serviceTitle={element.subServiceName}
                                       serviceTitleIcon="fa fa-wrench"
-                                      source={element.image.data}
+                                      // source={element.image.data}
                                       serviceDescription={element.description}
                                       modalClosingButtonText="Close"
                                       modalClosingButtonIcon="fa fa-close"

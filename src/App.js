@@ -145,7 +145,7 @@ function App() {
             element={<WorkerProfilePage />}
           />
 
-          <Route path="/worker-dashboard" element={<WorkerDashboardPage />} />
+          <Route path="/worker-dashboard/:id" element={<WorkerDashboardPage />} />
           <Route
             path="/worker-dashboard/worker-profile"
             element={<WorkerDashboardProfilePage />}
@@ -251,6 +251,15 @@ function App() {
               // </Protected>
             }
           />
+           <Route
+            path="/admin-dashboard/ban-worker"
+            element={
+              // <Protected isLoggedIn={isLoggedIn.current}>
+              <AdminDashboardBanWorkerPage />
+              // </Protected>
+            }
+          />
+         
           <Route
             path="/admin-dashboard/worker-banlist"
             element={
@@ -286,10 +295,6 @@ function App() {
           <Route
             path="/admin-dashboard/remove-service-category"
             element={<AdminDashboardRemoveServiceCategoryPage />}
-          />
-           <Route
-            path="/admin-dashboard/ban-worker"
-            element={<AdminDashboardBanWorkerPage />}
           />
           {/* admin compose message */}
           <Route

@@ -10,6 +10,13 @@ import WorkerLoginRegistrationRedirectLink from "./WorkerLoginRegistrationRedire
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export default function WorkerLoginFormLayout() {
+  let userInfo = false
+
+    if (localStorage.getItem("userInfo")) {
+        userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    }
+
+    const uid = userInfo.id
   const[formData, setFormData] = React.useState({
     email: "",
     password: "",
@@ -31,12 +38,12 @@ function handleEvent(event){
   async function submitHandler(event){
     event.preventDefault()
     try{
-      const {data} = await axios.post('http://localhost:8003/api/loginWorker', formData);
+      const {data} = await axios.post(`http://localhost:8003/api/loginWorker`, formData);
       console.log(data)
       if(data){
         localStorage.setItem("userInfo", JSON.stringify(data))
         alert("Login Successful");
-        navigate('/users/login')
+        navigate(`/worker-dashboard/${uid}`)
       }
     }
     catch(e)
