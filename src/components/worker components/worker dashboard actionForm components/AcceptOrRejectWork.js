@@ -17,9 +17,20 @@ function AcceptOrRejectWork() {
     const [allWork, setAllWork] = React.useState([
         { workName: '', price: '' },
     ]);
+    const [allPendingWork, setAllPendingWork] = React.useState([
+        { workName: '', price: '' },
+    ]);
 
+    const [allCompletedWork, setAllCompletedWork] = React.useState([
+        { workName: '', price: '' },
+    ]);
+
+    const fetchPendingWork = () => {
+        
+    }
     React.useEffect(() => {
         fetchProducts();
+        fetchPendingWork();
     }, []);
 
     const fetchProducts = () => {
@@ -30,19 +41,32 @@ function AcceptOrRejectWork() {
                 setAllWork(res.data);
                 console.log("this is all work")
                 console.log(allWork)
-                setIsLoading(false)
+                axios
+                .get(`http://localhost:8003/api/workers/pending/${uid}`)
+                .then((res) => {
+                    console.log("********here***********")
+                    console.log(res.data);
+                    setAllPendingWork(res.data);
+                    console.log("this is all pending work")
+                    console.log(allPendingWork)
+                    setIsLoading(false)
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
             })
             .catch((err) => {
                 console.log(err);
             });
+       
     };
 
-    const AcceptWork = (id) =>{
+    const AcceptWork = (id) => {
         console.log("work id:", id)
         console.log("worker id: ", uid)
         try {
             axios.post(`http://localhost:8003/api/workers/accept-work`, { id, uid })
-            // window.location.reload()
+            window.location.reload()
         }
         catch (e) {
             alert(e)
@@ -55,13 +79,13 @@ function AcceptOrRejectWork() {
         )
     }
 
-    else{
+    else {
         return (
             <div>
                 <h1>
-                    Accept or Reject Work
+                    Work Requests
                 </h1>
-                <br/>
+                <br />
                 <div>
                     <h1>Incoming Work</h1>
                     <p>{category}</p>
@@ -82,22 +106,48 @@ function AcceptOrRejectWork() {
                                         </div>
                                     ))}
                                 </p>
-                                <button onClick={()=>AcceptWork(work._id)}>Accept</button>
+                                <button onClick={() => AcceptWork(work._id)}>Accept</button>
                             </div>
                         ))}
                     </div>
                     <div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                         <h1>
                             Pending Work
                         </h1>
+                        <div className='item-container'>
+                            {allPendingWork.map((work, i) => (
+                                <div className='card'>
+                                    <h1>{work.workerType}</h1>
+                                    <p>{work._id}</p>
+                                    <p>{work.address}</p>
+                                    <p>{work.phone}</p>
+                                    <p>{work.status}</p>
+                                    <p>
+                                        {work.list.map((w) => (
+                                            <div>
+                                                <p>{w.workName}</p>
+                                                <p>{w.price}</p>
+                                            </div>
+                                        ))}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <br/>
+                    <br />
                     <div>
                         <h1>
                             Completed Work
                         </h1>
                     </div>
-                    <br/>
+                    <br />
                 </div>
             </div>
         )

@@ -40,7 +40,7 @@ function Appointment() {
         // e.preventDefault();
         console.log(id)
         try {
-            axios.post(`/api/delete-work`, { id })
+            axios.post(`http://localhost:8003/api/delete-work`, { id })
             window.location.reload()
         }
         catch (e) {
