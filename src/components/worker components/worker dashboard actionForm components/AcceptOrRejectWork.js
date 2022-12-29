@@ -26,7 +26,7 @@ function AcceptOrRejectWork() {
     ]);
 
     const fetchPendingWork = () => {
-        
+
     }
     React.useEffect(() => {
         fetchProducts();
@@ -42,23 +42,34 @@ function AcceptOrRejectWork() {
                 console.log("this is all work")
                 console.log(allWork)
                 axios
-                .get(`http://localhost:8003/api/workers/pending/${uid}`)
-                .then((res) => {
-                    console.log("********here***********")
-                    console.log(res.data);
-                    setAllPendingWork(res.data);
-                    console.log("this is all pending work")
-                    console.log(allPendingWork)
-                    setIsLoading(false)
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+                    .get(`http://localhost:8003/api/workers/pending/${uid}`)
+                    .then((res) => {
+                        console.log(res.data);
+                        setAllPendingWork(res.data);
+                        console.log("this is all pending work")
+                        console.log(allPendingWork)
+                        axios
+                            .get(`http://localhost:8003/api/workers/completed/${uid}`)
+                            .then((res) => {
+                                console.log("********here***********")
+                                console.log(res.data);
+                                setAllCompletedWork(res.data);
+                                console.log("this is all completed work")
+                                console.log(allCompletedWork)
+                                setIsLoading(false)
+                            })
+                            .catch((err) => {
+                                console.log(err)
+                            })
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
             })
             .catch((err) => {
                 console.log(err);
             });
-       
+
     };
 
     const AcceptWork = (id) => {
@@ -88,7 +99,8 @@ function AcceptOrRejectWork() {
                 <br />
                 <div>
                     <h1>Incoming Work</h1>
-                    <p>{category}</p>
+                    {/* <p>{category}</p> */}
+                    <p>Plumber</p>
                     <p>{uid}</p>
                     <div className='item-container'>
                         {allWork.map((work, i) => (
@@ -142,12 +154,38 @@ function AcceptOrRejectWork() {
                         </div>
                     </div>
                     <br />
+                    <br />
                     <div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                         <h1>
                             Completed Work
                         </h1>
+                        <div className='item-container'>
+                            {allCompletedWork.map((work, i) => (
+                                <div className='card'>
+                                    <h1>{work.workerType}</h1>
+                                    <p>{work._id}</p>
+                                    <p>{work.address}</p>
+                                    <p>{work.phone}</p>
+                                    <p>{work.status}</p>
+                                    <p>
+                                        {work.list.map((w) => (
+                                            <div>
+                                                <p>{w.workName}</p>
+                                                <p>{w.price}</p>
+                                            </div>
+                                        ))}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <br />
                 </div>
             </div>
         )
