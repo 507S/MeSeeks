@@ -36,6 +36,10 @@ export default function UserNavList() {
             Home
           </NavLink>
           &nbsp; &nbsp;
+          <NavLink to="/users/profile" style={{ color: "white" }}>
+            Profile
+          </NavLink>
+          &nbsp; &nbsp;
           <NavLink to="/users/services" style={{ color: "white" }}>
             Services
           </NavLink>
@@ -51,6 +55,7 @@ export default function UserNavList() {
           <NavLink to="/users/FAQ" style={{ color: "white" }}>
             FAQ
           </NavLink>
+
           {/* <NavLink to="" style={{ color: "white" }}>
             About
           </NavLink> */}
