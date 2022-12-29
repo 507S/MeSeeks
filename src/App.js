@@ -51,6 +51,7 @@ import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDash
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserFAQPage from "./pages/user pages/UserFAQPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
+import UserProfilePage from "./pages/user pages/UserProfilePage";
 import UserServiceFeedbackFormPage from "./pages/user pages/UserServiceFeedbackFormPage";
 import UserServiceHistoryPage from "./pages/user pages/UserServiceHistoryPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
@@ -103,6 +104,11 @@ function App() {
           <Route path="/users/submit-work" element={<SubmitAppointment />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route path="/users/homepage" element={<UserHomePage />} />
+
+          <Route
+            path="/users/profile"
+            element={<UserProfilePage />}
+          />
 
           <Route
             path="/users/worker-hiring-form"
