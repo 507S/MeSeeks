@@ -48,7 +48,7 @@ import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
 import Protected from "./components/protectedComponent/Protected";
-import WorkerRequest from "./components/worker components/worker dashboard components/WorkRequest"; 
+import WorkerRequest from "./components/worker components/worker dashboard components/WorkRequest";
 function App() {
   let varToken = false;
   // const isLoggedIn = useRef(false);
@@ -258,14 +258,14 @@ function App() {
               // </Protected>
             }
           />
-          <Route
+          {/* <Route
             path="/admin-dashboard/update-service/:id"
             element={
               // <Protected isLoggedIn={isLoggedIn.current}>
               <AdminDashboardServiceUpdatingPage />
               // </Protected>
             }
-          />
+          /> */}
           <Route
             path="/admin-dashboard/remove-service-category"
             element={<AdminDashboardRemoveServiceCategoryPage />}
