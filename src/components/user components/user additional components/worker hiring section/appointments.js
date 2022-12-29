@@ -1,11 +1,13 @@
 import axios from "axios"
 import React from "react"
 import { useNavigate } from 'react-router-dom'
-import WorkListImage from "../../../../assets/user assets/list.png"
+import workList from "../../../../assets/user assets/list.png"
+import workType from "../../../../assets/user assets/wrench.png"
+
 import UserLoaderLayout from "../../../loading phase components/userSite loading phase/UserLoaderLayout"
+import UserHomeSectionFooter from "../user home section/user footerSection/UserHomeSectionFooter"
 import UserNavList from "../user home section/user navList section/UserNavList"
 import AppointmentListSubmissionImage from "./AppointmentListSubmissionImage"
-
 function Appointment() {
     const navigate = useNavigate()
     let userInfo = false
@@ -122,49 +124,32 @@ function Appointment() {
 
 
     <div className="container mt-3 ">
-
-    <div class="card">
+    <button  class="btn btn-info"  style={{margin:"1%"}}  onClick={submitHandler} > <i className="fa fa-wrench"></i>&nbsp; Add new work</button>
+    
+    {allWork.map((work, i) => ( 
+    <div class="card mt-3 ">
+    <div class="card-header" >
+    <b style={{color:"green"}} >Work ID : {work._id} </b> <img src={workList} style={{float:"right"}} alt="" />
+    </div>
     <div class="card-body">
-
-      <img src={WorkListImage} alt="workListImage" style={{float:"left"}} />
-    <button  class="btn btn-info "style={{marginBottom:"3%",float:"right"}}  onClick={submitHandler} > <i className="fa fa-wrench"></i>&nbsp; Add new work</button>
-
-    <table class="table table-bordered" style={{textAlign:"justify"}}>
-  <thead>
-    <tr>
-      <th scope="col">Work ID</th>
-      <th scope="col">Worker Type</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Address</th>
-      <th scope="col">Status</th>
-      <th scope="col">Work Name</th>
-      <th scope="col">Work Price</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  {allWork.map((work, i) => ( 
-    <tr>
-      <td>{work._id}</td>
-      <td>{work.workerType}</td>
-      <td>+88{work.phone}</td>
-      <td>{work.address}</td>
-      <td>{work.status}</td>
-      {work.list.map((w) => (
-      <><td>{w.workName}</td><td>{w.price}</td></>
+    <h5 class="card-title"><img src={workType} width="35px" height="35px" alt="" /> Worker Type : {work.workerType} </h5>
+    <p class="card-text mt-3" style={{fontSize:"18px"}}>
+    <i className="fa fa-phone"></i>&nbsp;Phone Number : +88{work.phone}<br />
+    <i className="fa fa-home"></i>&nbsp;Address : {work.address}<br/>
+    <i className="fa fa-shopping-bag"></i>&nbsp;Work Status : {work.status}<br />
+    <hr/>
+        {work.list.map((w) => (
+        <>
+        <i class="fa-solid fa-helmet-safety"></i>&nbsp;Work Name : {w.workName}<br/>
+        <i className="fa fa-dollar"></i>&nbsp;Work Price : {w.price}<br/>
+        </>
+        ))}
+    </p>
+    <button  class="btn btn-danger" style={{float:"right"}} onClick={() => handleDelete(work._id)} > <i className="fa-solid fa-trash-can"></i>&nbsp;Delete</button>
+    </div>
+    </div>
       ))}
-      <td><button  class="btn btn-danger"onClick={() => handleDelete(work._id)} > <i className="fa-solid fa-trash-can"></i>&nbsp;Delete</button></td>
-    </tr>
-     ))}
-  
-  </tbody>
-</table>
 
-
-
-
-    </div>
-    </div>
     </div>
 
     {/* worker hiring form
@@ -172,7 +157,7 @@ function Appointment() {
 */}
 
     
-    {/* <UserHomeSectionFooter /> */}
+    <UserHomeSectionFooter />
   </main>
 
     )
