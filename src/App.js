@@ -39,16 +39,22 @@ import WorkerPasswordResetPage from "./pages/worker pages/WorkerPasswordResetPag
 import WorkerProfilePage from "./pages/worker pages/WorkerProfilePage";
 import WorkerRegistrationPage from "./pages/worker pages/WorkerRegistrationPage";
 // import {useEffect, useRef} from 'react'
+import Appointment from "./components/user components/user additional components/worker hiring section/appointments";
+import ListOfWork from "./components/user components/user additional components/worker hiring section/ListOfWork";
+import SubmitAppointment from "./components/user components/user additional components/worker hiring section/submitAppointment";
 import UserServices from "./components/user components/user additional components/worker hiring section/UserServices";
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
+import UserFAQPage from "./pages/user pages/UserFAQPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
-import ListOfWork from "./components/user components/user additional components/worker hiring section/ListOfWork";
+import UserServiceFeedbackFormPage from "./pages/user pages/UserServiceFeedbackFormPage";
+import UserServiceHistoryPage from "./pages/user pages/UserServiceHistoryPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
 import Protected from "./components/protectedComponent/Protected";
 import WorkerRequest from "./components/worker components/worker dashboard components/WorkRequest";
+import AcceptOrRejectWork from "./components/worker components/worker dashboard actionForm components/AcceptOrRejectWork";
 function App() {
   let varToken = false;
   // const isLoggedIn = useRef(false);
@@ -98,6 +104,8 @@ function App() {
             </Protected>
           } />
           <Route path="/users/services2" element={<UserServices />} />
+          <Route path="/users/appointment" element={<Appointment />} />
+          <Route path="/users/submit-work" element={<SubmitAppointment />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route
             path="/users/worker-hiring-form"
@@ -108,7 +116,15 @@ function App() {
             element={<UserSiteWorkerListPage />}
           />
           <Route path="/users/list-of-work" element={<UserListOfWorkPage />} />
+          <Route path="/users/service-history" element={<UserServiceHistoryPage />} />
+          <Route path="/users/service-feedback-form" element={<UserServiceFeedbackFormPage />} />
+                      
+          <Route
+            path="/users/FAQ"
+            element={<UserFAQPage />}
+          />
           {/* //Worker Pages */}
+          <Route path="/workers/a-r" element={<AcceptOrRejectWork />} />
           <Route path="/workers/login" element={<WorkerLoginPage />} />
           <Route
             path="/workers/registration"

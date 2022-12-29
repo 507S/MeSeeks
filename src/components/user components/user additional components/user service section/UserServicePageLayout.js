@@ -17,7 +17,6 @@ import GlassCleanerImage from "../images/glasscleaner.jpg";
 
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import ServiceSelectButtonImage from "../images/plus.png";
 import UserCarouselSection from "../user home section/carousel section/UserCarouselSection";
 import UserHomeSectionFooter from "../user home section/user footerSection/UserHomeSectionFooter";
 import UserNavList from "../user home section/user navList section/UserNavList";
@@ -121,13 +120,13 @@ export default function UserServicePageLayout() {
                   </p>
                   <p class="card-text  text-center text-muted">
                     {/* comes from db */}
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer ">
                   <h3 className="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -142,7 +141,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -171,13 +170,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 className="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -192,7 +191,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -221,13 +220,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 class="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -242,7 +241,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -281,13 +280,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 class="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -302,7 +301,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -331,13 +330,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 class="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -352,7 +351,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -381,13 +380,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 class="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -402,7 +401,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -441,13 +440,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 class="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -462,7 +461,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -491,13 +490,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 class="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -512,7 +511,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>
@@ -541,13 +540,13 @@ export default function UserServicePageLayout() {
                     ></span>
                   </p>
                   <p class="card-text  text-center text-muted">
-                    Rate : ৳ 22.33
+                    {/* Rate : ৳ 22.33 */}
                   </p>
                 </div>
                 <div class="card-footer">
                   <h3 class="text-muted"></h3>
                   <NavLink to="/users/worker-hiring-form">
-                    <button
+                    {/* <button
                       type="submit"
                       class="btn btn-info text-white"
                       style={{
@@ -562,7 +561,7 @@ export default function UserServicePageLayout() {
                         width="30px"
                       />
                       &nbsp;Select
-                    </button>
+                    </button> */}
                   </NavLink>
                 </div>
               </div>

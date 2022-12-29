@@ -3,6 +3,7 @@ import React from "react";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
+import AdminImage from "../../../../assets/worker assets/images/admin.png";
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
@@ -15,6 +16,9 @@ import WorkerDashboardNavBarSearchTextInput from "../../worker dashboard compone
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
+import TextAreaInput from "../worker dashboard actionForm components/TextAreaInput";
+import WorkerDashboardActionForm from "../worker dashboard actionForm components/WorkerDashboardActionForm";
+
 export default function WorkerDashboardAdminMessageListLayout() {
   return (
     <>
@@ -84,6 +88,30 @@ export default function WorkerDashboardAdminMessageListLayout() {
               <WorkerDashboardGraphHeaderContent dashboardGraphHeaderContentText="Statistics" />
               <WorkerDashboardGraphCanvas />
             </div> */}
+                <div class="card w-100" style={{ height: "auto" }}>
+              <div class=" card-body w-100" style={{ height: "auto" }}>
+                {/* <form method="POST" enctype="multipart/form-data"> */}
+
+                <WorkerDashboardActionForm method="GET">
+                 
+
+                  
+                  <h5>Message received : {"Timestamp"} <img src={AdminImage} width="50px" height="50px" style={{float:"right"}} alt="admin"  /> </h5>
+                  
+                  <TextAreaInput
+                    labelName="Admin Message "
+                    placeholder=""
+                    // value={inpval.msg}
+                    // onChange={setdata}
+                    //get admin message here
+                    name="msg"
+                    textAreaInputRow="3"
+                  />
+             
+                
+                </WorkerDashboardActionForm>
+              </div>
+            </div>
           </main>
         </div>
       </div>

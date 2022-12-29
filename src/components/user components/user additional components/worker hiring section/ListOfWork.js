@@ -43,10 +43,9 @@ function ListOfWork(){
         setAllWork(res.data);
         console.log("this is all work");
         console.log(allWork);
-        setIsLoading(false);
-      //   setTimeout(() => {
-      //     setIsLoading(false);
-      //   }, 1 * 60 * 1000);
+        setTimeout(() => {
+          setIsLoading(false);
+        },  3000);
       })
       .catch((err) => {
         console.log(err);
