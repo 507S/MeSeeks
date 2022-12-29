@@ -43,6 +43,7 @@ import Appointment from "./components/user components/user additional components
 import ListOfWork from "./components/user components/user additional components/worker hiring section/ListOfWork";
 import SubmitAppointment from "./components/user components/user additional components/worker hiring section/submitAppointment";
 import UserServices from "./components/user components/user additional components/worker hiring section/UserServices";
+import AdminDashboardBanWorkerPage from "./pages/admin pages/AdminDashboardBanWorkerPage";
 import AdminDashboardComposeMessageForUserAndWorkerPage from "./pages/admin pages/AdminDashboardComposeMessageForUserAndWorkerPage";
 import AdminDashboardNotifyingMessageForWorkerPage from "./pages/admin pages/AdminDashboardNotifyingMessageForWorkerPage";
 import AdminDashboardServiceUpdatingPage from "./pages/admin pages/AdminDashboardServiceUpdatingPage";
@@ -279,6 +280,10 @@ function App() {
           <Route
             path="/admin-dashboard/remove-service-category"
             element={<AdminDashboardRemoveServiceCategoryPage />}
+          />
+           <Route
+            path="/admin-dashboard/ban-worker"
+            element={<AdminDashboardBanWorkerPage />}
           />
           {/* admin compose message */}
           <Route

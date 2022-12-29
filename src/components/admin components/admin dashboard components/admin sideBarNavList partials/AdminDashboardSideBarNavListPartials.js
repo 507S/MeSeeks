@@ -215,7 +215,7 @@ export default function AdminDashboardSideBarNavListPartials() {
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="#"
+        sideBarNavListRedirectLink="/admin-dashboard/ban-worker"
         sideBarNavListIconClassName="bx bxs-user-minus"
         sideBarNavListText="Ban Worker"
         ariaCurrent="page"

@@ -9,8 +9,8 @@ import UserAuthFormTextInputCredentials from "./UserAuthFormTextInputCredentials
 import UserLoginRegisterFormLink from "./UserLoginRegisterFormLink";
 
 import axios from "axios";
-import UserRegistrationSideImage from "./UserRegistrationFormSideImage";
 import { useNavigate } from "react-router-dom";
+import UserRegistrationSideImage from "./UserRegistrationFormSideImage";
 
 export default function UserRegistrationFormLayout() {
   const [formData, setFormData] = React.useState({
@@ -42,6 +42,7 @@ export default function UserRegistrationFormLayout() {
         alert("Registration Successful");
         navigate('/users/login')
       }
+      
     }
     catch(e)
     {
