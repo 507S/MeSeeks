@@ -97,15 +97,17 @@ const {id} = useParams("");
     formData.append("description", newSubService.description);
 
     axios
-      .patch(`http://localhost:8003/api/subservices//updateSubService/${id}`, formData)
+      .patch(`http://localhost:8003/api/subservices/updateSubService/${id}`, formData)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
+        alert("service updated");
+        navigate("/admin-dashboard/active-services", { replace: true });
       })
       .catch((err) => {
         console.log(err);
+        alert("didnt happen");
       });
-    alert("service updated");
-    navigate("/admin-dashboard/active-services", { replace: true });
+    
   };
 
   const handleChange = (e) => {
