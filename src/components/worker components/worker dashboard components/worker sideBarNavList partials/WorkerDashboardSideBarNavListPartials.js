@@ -13,6 +13,14 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListText="Dashboard"
         ariaCurrent="page"
       />
+        <WorkerDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/workers/profile-setup"
+        sideBarNavListIconClassName="fa fa-wrench"
+        sideBarNavListText="Setup Profile"
+        ariaCurrent="page"
+      />
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
