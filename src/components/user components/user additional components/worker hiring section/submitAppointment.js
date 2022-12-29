@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../../../../styles/global/worker global/WorkerProfileDynamicInputFieldStyle.css";
-import SelectAreaInput from "../../../admin components/admin dashboard additional components/admin dashboard actionForm components/SelectAreaInput";
+import SelectInput from "./SelectInput";
 import UserHomeSectionFooter from "../user home section/user footerSection/UserHomeSectionFooter";
 import UserNavList from "../user home section/user navList section/UserNavList";
 import AppointmentListSubmissionImage from "./AppointmentListSubmissionImage";
@@ -132,7 +132,7 @@ function SubmitAppointment() {
                     value={formData.workerType}
                     onChange={handleEvent}
                 /> */}
-                <SelectAreaInput
+                <SelectInput
                     name="workerType"
                     value={formData.workerType} 
                     onChange={handleEvent}
