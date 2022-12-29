@@ -49,7 +49,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListText=" Work History"
         ariaCurrent="page"
       />
-      <WorkerDashboardSideBarNavList
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
@@ -57,7 +57,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="fa fa-star"
         sideBarNavListText="Rating List"
         ariaCurrent="page"
-      />
+      /> */}
       {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
