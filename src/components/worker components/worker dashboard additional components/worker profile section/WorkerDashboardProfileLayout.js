@@ -4,15 +4,12 @@ import { NavLink } from "react-router-dom";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
-import workerProfileImage from "../../../../assets/worker assets/images/ep2.jpg";
+import workerProfileImage from "../../../../assets/worker assets/images/profile1.png";
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
 import "../../../../styles/global/admin global/bootstrap.min.css";
 import WorkerProfileActionButton from "../../worker additional components/worker profile section/WorkerProfileActionButton";
-import WorkerProfileSelectInput from "../../worker additional components/worker profile section/WorkerProfileSelectInput";
-import WorkerProfileTextAreaInput from "../../worker additional components/worker profile section/WorkerProfileTextAreaInput";
-import WorkerProfileTextInput from "../../worker additional components/worker profile section/WorkerProfileTextInput";
 import WorkerDashboardSideBarNavListPartials from "../../worker dashboard components/worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
 import WorkerDashboardAuthenticationButton from "../../worker dashboard components/WorkerDashboardAuthenticationButton";
 import WorkerDashboardHeaderContent from "../../worker dashboard components/WorkerDashboardHeaderContent";
@@ -96,6 +93,7 @@ export default function WorkerDashboardProfileLayout() {
                 src={workerProfileImage}
                 class="rounded"
                 height="auto"
+                width="350px"
                 style={{
                   boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)",
                   maxWidth: "30%",
@@ -106,91 +104,61 @@ export default function WorkerDashboardProfileLayout() {
             </div>
             {/* update profile from here */}
 
-            <div className="container " style={{ marginTop: "5%" }}>
-              <form class="row g-3 ">
-                <WorkerProfileTextInput
-                  labelFor="username"
-                  labelIconClassName="fa fa-user"
-                  labelName="Username"
-                  textInputType="text"
-                  inputName="username"
-                  value=""
-                  // placeholder="Username..."
-                />
-                <WorkerProfileTextInput
-                  labelFor="email"
-                  labelIconClassName="fa fa-envelope"
-                  labelName="Email"
-                  textInputType="email"
-                  inputName="email"
-                  value=""
-                  // placeholder="Email..."
-                />
-                <WorkerProfileTextInput
-                  labelFor="phoneNumber"
-                  labelIconClassName="fa fa-phone"
-                  labelName="Phone Number"
-                  textInputType="text"
-                  inputName="phoneNumber"
-                  value=""
-                  // placeholder="Phone Number..."
-                />
-                <WorkerProfileTextInput
-                  labelFor="workerType"
-                  labelIconClassName="fa fa-wrench"
-                  labelName="Worker Genre"
-                  textInputType="text"
-                  inputName="workerType"
-                  value=""
-                  // placeholder="Worker Type..."
-                />
-                {/* <WorkerProfileImageChooseInput
-                  imageInputFieldClassName="col-md-6"
-                  labelFor="formFile"
-                  labelIconClassName="fa fa-picture-o"
-                  labelName="Change Avatar"
-                  inputType="file"
-                  inputName="profileImage"
-                /> */}
-                <WorkerProfileSelectInput
-                  labelFor="areaSelection"
-                  labelIconClassName="bx bxs-map"
-                  labelName="Select Working Area"
-                  selectNamesFetchedFromDatabase="Uttara"
-                />
-                <WorkerProfileSelectInput
-                  labelFor="workingShift"
-                  labelIconClassName="fa fa-clock-o"
-                  labelName="Select Working Shift"
-                  selectNamesFetchedFromDatabase="Day"
-                />
+            <div class="card" style={{marginTop:"4%"}}>
+            <h5 class="card-header">Profile Information</h5>
+             <div class="card-body">
+            <h5 class="card-title"> </h5>
 
-                {/* <WorkerProfileImageChooseInput
-                  labelFor="formFile"
-                  labelIconClassName="fa fa-picture-o"
-                  labelName="Upload your profile picture"
-                  inputType="file"
-                  inputName="profileImage"
-                /> */}
+            <div class="row g-3">
+            <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"><i className="fa fa-user"></i>&nbsp; Username : </label>
+            <p class="card-text">{"data"}</p>
 
-                <WorkerProfileTextAreaInput
-                  labelFor="address"
-                  labelIconClassName="fa fa-home"
-                  labelName="Address"
-                  textInputRow="3"
-                  inputName="address"
-                  value=""
-                  placeholder="Your Address..."
-                />
-                <NavLink to="/worker-dashboard/update-profile">
+            </div>
+            <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"><i className="fa fa-envelope"></i>&nbsp;Email : </label>
+            <p class="card-text">{"data"}</p>
+
+            </div>
+            <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"><i className="fa fa-phone"></i>&nbsp; Phone Number : </label>
+            <p class="card-text">{"data"}</p>
+
+            </div>
+            <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"><i className="fa fa-wrench"></i>&nbsp;Worker Genre :</label>
+            <p class="card-text">{"data"}</p>
+
+            </div>
+            
+          <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"><i className="bx bxs-map"></i>&nbsp; Working Area : </label>
+            <p class="card-text">{"data"}</p>
+
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"><i className="fa fa-clock-o"></i>&nbsp;Working Shift : </label>
+            <p class="card-text">{"data"}</p>
+
+            </div>
+            <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"><i className="fa fa-home"></i>&nbsp;Address : </label>
+            <p class="card-text">{"data"}</p>
+
+            </div>
+            </div>
+            
+            <NavLink to="/worker-dashboard/update-profile">
                   <WorkerProfileActionButton
                     buttonType="submit"
                     workerProfileActionButtonIcon="fa fa-wrench"
                     workerProfileActionButtonText=" Update Profile "
                   />
                 </NavLink>
-              </form>
             </div>
+            </div>
+
+
           </main>
         </div>
       </div>

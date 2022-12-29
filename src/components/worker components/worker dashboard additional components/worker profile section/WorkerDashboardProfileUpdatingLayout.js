@@ -100,6 +100,7 @@ export default function WorkerDashboardProfileUpdatingLayout() {
                 src={workerProfileImage}
                 class="rounded"
                 height="auto"
+                width="350px"
                 style={{
                   boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)",
                   maxWidth: "30%",
