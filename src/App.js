@@ -88,7 +88,7 @@ function App() {
             element={<PlatformSelectionPage />}
           />
           {/* //User Pages */}
-          <Route path="/" element={<TestaPageLayout />} />
+          <Route path="/" element={<PlatformSelectionPage />} />
           <Route path="/users/home" element={<UserHomePage />} />
           <Route path="/users/login" element={<UserLoginPage />} />
           <Route

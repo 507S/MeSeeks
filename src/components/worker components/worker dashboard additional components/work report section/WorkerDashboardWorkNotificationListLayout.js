@@ -23,6 +23,11 @@ import WorkerDashboardDataTableRowSection from "../worker dashboard data table/W
 import ModalButton from "../worker dashboard popup components/ModalButton";
 import WorkDetailsByCustomer from "../worker dashboard popup components/WorkDetailsByCustomer";
 export default function WorkerDashboardWorkNotificationListLayout() {
+  const handleLogout = () =>{
+    console.log("the button is clicked")
+    localStorage.clear()
+    window.location.href = '/platform-selection'
+  }
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -35,7 +40,13 @@ export default function WorkerDashboardWorkNotificationListLayout() {
             placeholder="Search"
             aria-label="Search"
           />
+          
         </WorkerDashboardNavBarSearchForm> */}
+        <div className="navbar-nav">
+          <div className="nav-item text-nowrap">
+            <button onClick = {handleLogout}> Logout </button>
+          </div>
+        </div>
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <WorkerDashboardAuthenticationButton
