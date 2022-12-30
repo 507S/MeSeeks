@@ -11,6 +11,7 @@ export default function WorkerInformationModal({
   workerName,
   modalClosingButtonText,
   modalClosingButtonIcon,
+  id,
 
   ...rest
 }) {
@@ -60,7 +61,8 @@ export default function WorkerInformationModal({
             {/* unban/ban button submit form */}
             {/* <form action="POST">
               <button
-                type="button"
+                type="submit"
+                onClick={id}
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
                 style={{ backgroundColor: "black" }}

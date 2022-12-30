@@ -17,7 +17,64 @@ import AdminDashboardActionButton from "../../admin dashboard actionForm compone
 import AdminDashboardActionForm from "../../admin dashboard actionForm components/AdminDashboardActionForm";
 import TextAreaInput from "../../admin dashboard actionForm components/TextAreaInput";
 import TextInput from "../../admin dashboard actionForm components/TextInput";
+import axios from "axios";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 export default function AdminDashboardWorkerBanPageLayout() {
+  const navigate = useNavigate();
+
+  const [inpval, setINP] = useState({
+    id: "",
+    msg: "",
+})
+
+const setdata = (e) => {
+    const { name, value } = e.target;
+    console.log(name)
+    console.log(value)
+    setINP((preval) => {
+        return {
+            ...preval,
+            [name]: value
+        }
+    })
+}
+const addinpdata = async(e) =>{
+  e.preventDefault();
+
+   try{
+    console.log(inpval)
+    const res = await axios.post("http://localhost:8003/api/admin/sendadminmsg", inpval);
+    // console.log(res)
+    // const data = await res.json();
+    console.log(res);
+  
+    if(res.status === 422){
+        alert("error");
+        console.log("error");
+    }
+    else if(res.status === 401){
+      alert("this worker is already banned");
+    }
+    else if(res.status === 201){
+      alert("data added");
+    }
+    else{
+      alert("this worker is already banned");
+        navigate("/admin-dashboard/ban-worker", { replace: true });
+
+    }
+    // else if{
+    //     alert("data added");
+    //     console.log("data added");
+    //     navigate("/admin-dashboard/active-service-category", { replace: true });
+    // }
+   }
+   catch(error){
+    alert(error)
+   }
+  
+}
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -78,21 +135,21 @@ export default function AdminDashboardWorkerBanPageLayout() {
                 {/* <form method="POST" enctype="multipart/form-data"> */}
                 <AdminDashboardActionForm method="POST" >
                   <TextInput
-                    name="workerID"
+                    name="id"
                     labelName="Worker ID : "
                     type="text"
                     placeholder="Provide a Worker ID"
-                    // value={inpval.name} 
-                    // onChange={setdata} 
+                    value={inpval.id} 
+                    onChange={setdata} 
                   />
                   <TextAreaInput
-                    name="description"
+                    name="msg"
                     type="text"
                     labelName="Provide Ban Message :"
                     placeholder="Add a ban message..."
                     textAreaInputRow="4"
-                    // value={inpval.description}
-                    // onChange={setdata} 
+                    value={inpval.msg}
+                    onChange={setdata} 
                     style={{ reSize: "none" }}
                   />
 
@@ -104,7 +161,7 @@ export default function AdminDashboardWorkerBanPageLayout() {
                       adminActionButtonText="Add Service Category"
                       type="submit"
                       value="Submit" 
-                      // onClick={addinpdata}
+                      onClick={addinpdata}
                     />
                   </div>
                 </AdminDashboardActionForm>
