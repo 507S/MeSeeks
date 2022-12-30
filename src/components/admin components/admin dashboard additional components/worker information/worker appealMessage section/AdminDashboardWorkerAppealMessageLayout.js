@@ -24,8 +24,9 @@ import AdminDashboardSideBarNavListEndSection from "../../../admin dashboard com
 import AdminDashboardActionButton from "../../admin dashboard actionForm components/AdminDashboardActionButton";
 import AdminDashboardActionForm from "../../admin dashboard actionForm components/AdminDashboardActionForm";
 export default function AdminDashboardWorkerAppealMessageLayout() {
-  const [getServicedata, setServicedata] = useState([]);
   const navigate = useNavigate();
+  const [getServicedata, setServicedata] = useState([]);
+  
   useEffect(() => {
     fetch("http://localhost:8003/api/worker/getappealmsg")
       .then((res) => {
@@ -34,13 +35,78 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
       .then((jsonResponse) => setServicedata(jsonResponse));
   }, []);
   const deleteService = async (id) => {
+    // axios.delete(`http://localhost:8003/api/bannedworker/unbanworker/${id}`)
+    //   .then((res2)=>{
+    //     console.log(res2.data)
+    //     axios.delete(`http://localhost:8003/api/bannedworker/unbanworker2/${id}`)
+    //       .then((res3)=>{
+    //         console.log("for 2:",res3.data)
+    //         if(res2.status === 422 || res3.status === 422){
+    //           console.log("error");
+    //         }else{
+    //           alert("unbanned worker");
+    //           navigate("/admin-dashboard/remove-service-category", { replace: true });
+    //           getServicedata();
+    //         }
+    //       })
+    //       .catch((err)=>{
+    //         console.log("for 2:", err)
+    //       })
+    //   })
+    //   .catch((err)=>{
+    //     console.log(err)
+    //   })
+
     try{
       const res2 = await axios.delete(`http://localhost:8003/api/bannedworker/unbanworker/${id}`);
+      // const res3 = await axios.delete(`http://localhost:8003/api/bannedworker/unbanworker2/${id}`);
 
       // const deleteduser = await res2.json();
       // console.log(deleteduser);
   
-      if(res2.status === 422){
+      if(res2.status === 422 ){
+        console.log("error");
+      }else{
+        // alert("unbanned worker");
+        // navigate("/admin-dashboard/remove-service-category", { replace: true });
+        // getServicedata();
+      }
+  }catch(error){
+    console.log(error);
+  }
+    
+  }
+  const deleteService2 = async (id) => {
+    // axios.delete(`http://localhost:8003/api/bannedworker/unbanworker/${id}`)
+    //   .then((res2)=>{
+    //     console.log(res2.data)
+    //     axios.delete(`http://localhost:8003/api/bannedworker/unbanworker2/${id}`)
+    //       .then((res3)=>{
+    //         console.log("for 2:",res3.data)
+    //         if(res2.status === 422 || res3.status === 422){
+    //           console.log("error");
+    //         }else{
+    //           alert("unbanned worker");
+    //           navigate("/admin-dashboard/remove-service-category", { replace: true });
+    //           getServicedata();
+    //         }
+    //       })
+    //       .catch((err)=>{
+    //         console.log("for 2:", err)
+    //       })
+    //   })
+    //   .catch((err)=>{
+    //     console.log(err)
+    //   })
+
+    try{
+      // const res2 = await axios.delete(`http://localhost:8003/api/bannedworker/unbanworker/${id}`);
+      const res3 = await axios.delete(`http://localhost:8003/api/bannedworker/unbanworker2/${id}`);
+
+      // const deleteduser = await res2.json();
+      // console.log(deleteduser);
+  
+      if(res3.status === 422){
         console.log("error");
       }else{
         alert("unbanned worker");
@@ -232,11 +298,12 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
                           <div style={{float:"right"}} >
                             <AdminDashboardActionButton
                               adminActionButtonClassName="btn btn-danger"
-                        
                               buttonType="submit"
                               adminActionButtonIcon="bx bxs-trash"
-                              adminActionButtonText="Remove"
-                              // onClick={()=>deleteService(element._id)}
+                              adminActionButtonText="UNBAN"
+                              onClick={()=>{
+                                deleteService(element.worker_uid)
+                                deleteService2(element.worker_uid)}}
                             />
                             </div>
                           </AdminDashboardActionForm>
@@ -253,7 +320,7 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
                         <WorkerInformationModal
                           //   {/* //fetch from db */}
                           // id={`modal-${element._id}`}
-                          id={()=>deleteService(element.worker_uid)}
+                          // id={()=>deleteService(element.worker_uid)}
                           workerGenre="Plumber"
                           workerAverageRating="2.88"
                           workerPhoneNumber="01306989478"
