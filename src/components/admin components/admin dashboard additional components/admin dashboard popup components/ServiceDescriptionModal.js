@@ -1,5 +1,4 @@
 import React from "react";
-import workerProfileImage from "../../../user components/user additional components/images/akib.jpg";
 
 export default function ServiceDescriptionModal({
   serviceTitle,
@@ -30,7 +29,7 @@ export default function ServiceDescriptionModal({
                 src={source}
                 alt="workerProfileImage"
                 width="100%"
-                height="100%"
+                height="50%"
                 // style={{}}
               />
                  {/* <button

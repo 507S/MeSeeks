@@ -13,8 +13,6 @@ import AdminDashboardGraphHeaderContent from "./admin dashboard graph/AdminDashb
 import AdminDashboardSideBarNavListPartials from "./admin sideBarNavList partials/AdminDashboardSideBarNavListPartials";
 import AdminDashboardAuthenticationButton from "./AdminDashboardAuthenticationButton";
 import AdminDashboardHeaderContent from "./AdminDashboardHeaderContent";
-import AdminDashboardNavBarSearchForm from "./AdminDashboardNavBarSearchForm";
-import AdminDashboardNavBarSearchTextInput from "./AdminDashboardNavBarSearchTextInput";
 import AdminDashboardNavBarTogglerButton from "./AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "./AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "./AdminDashboardSideBarNavListEndSection";
@@ -24,14 +22,14 @@ export default function AdminDashboardLayout() {
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
         <AdminDashboardNavBarTogglerButton togglerIconClassName="navbar-toggler-icon" />
-        <AdminDashboardNavBarSearchForm action="">
+        {/* <AdminDashboardNavBarSearchForm action="">
           <AdminDashboardNavBarSearchTextInput
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </AdminDashboardNavBarSearchForm>
+        </AdminDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <AdminDashboardAuthenticationButton

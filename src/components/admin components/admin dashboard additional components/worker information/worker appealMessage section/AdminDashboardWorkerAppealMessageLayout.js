@@ -18,11 +18,11 @@ import ModalButton from "../../../../worker components/worker dashboard addition
 import AdminDashboardSideBarNavListPartials from "../../../admin dashboard components/admin sideBarNavList partials/AdminDashboardSideBarNavListPartials";
 import AdminDashboardAuthenticationButton from "../../../admin dashboard components/AdminDashboardAuthenticationButton";
 import AdminDashboardHeaderContent from "../../../admin dashboard components/AdminDashboardHeaderContent";
-import AdminDashboardNavBarSearchForm from "../../../admin dashboard components/AdminDashboardNavBarSearchForm";
-import AdminDashboardNavBarSearchTextInput from "../../../admin dashboard components/AdminDashboardNavBarSearchTextInput";
 import AdminDashboardNavBarTogglerButton from "../../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
+import AdminDashboardActionButton from "../../admin dashboard actionForm components/AdminDashboardActionButton";
+import AdminDashboardActionForm from "../../admin dashboard actionForm components/AdminDashboardActionForm";
 export default function AdminDashboardWorkerAppealMessageLayout() {
   const [getServicedata, setServicedata] = useState([]);
   const navigate = useNavigate();
@@ -57,14 +57,14 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
         <AdminDashboardNavBarTogglerButton togglerIconClassName="navbar-toggler-icon" />
-        <AdminDashboardNavBarSearchForm action="">
+        {/* <AdminDashboardNavBarSearchForm action="">
           <AdminDashboardNavBarSearchTextInput
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </AdminDashboardNavBarSearchForm>
+        </AdminDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <AdminDashboardAuthenticationButton
@@ -227,7 +227,21 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
                         {element.msg}
                       </p>
                       <div className="row">
-                        <div class="col-sm"></div>
+                        <div class="col-sm">
+                        <AdminDashboardActionForm actionFormClassName="form-floating">
+                          <div style={{float:"right"}} >
+                            <AdminDashboardActionButton
+                              adminActionButtonClassName="btn btn-danger"
+                        
+                              buttonType="submit"
+                              adminActionButtonIcon="bx bxs-trash"
+                              adminActionButtonText="Remove"
+                              // onClick={()=>deleteService(element._id)}
+                            />
+                            </div>
+                          </AdminDashboardActionForm>
+                        </div>
+                     
 
                         <ModalButton
                           modalButtonText="View Worker Profile"
