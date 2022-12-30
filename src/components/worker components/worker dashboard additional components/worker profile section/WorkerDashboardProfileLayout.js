@@ -16,7 +16,24 @@ import WorkerDashboardHeaderContent from "../../worker dashboard components/Work
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 export default function WorkerDashboardProfileLayout() {
+  const [getSubServicedata, setSubServicedata] = useState([]);
+  let userInfo = false
+  if (localStorage.getItem("userInfo")) {
+    userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  }
+  const uid = userInfo.id;
+  // const 
+  useEffect(() => {
+    fetch(`http://localhost:8003/api/worker/getworker/${uid}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((jsonResponse) => setSubServicedata(jsonResponse));
+  }, []);
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -110,38 +127,38 @@ export default function WorkerDashboardProfileLayout() {
             <div class="row g-3">
             <div class="col-md-6">
             <label for="inputEmail4" class="form-label"><i className="fa fa-user"></i>&nbsp; Username : </label>
-            <p class="card-text">{"data"}</p>
+            <p class="card-text">{getSubServicedata.username}</p>
 
             </div>
             <div class="col-md-6">
             <label for="inputEmail4" class="form-label"><i className="fa fa-envelope"></i>&nbsp;Email : </label>
-            <p class="card-text">{"data"}</p>
+            <p class="card-text">{getSubServicedata.email}</p>
 
             </div>
             <div class="col-md-6">
             <label for="inputEmail4" class="form-label"><i className="fa fa-phone"></i>&nbsp; Phone Number : </label>
-            <p class="card-text">{"data"}</p>
+            <p class="card-text">{getSubServicedata.phoneNumber}</p>
 
             </div>
             <div class="col-md-6">
             <label for="inputEmail4" class="form-label"><i className="fa fa-wrench"></i>&nbsp;Worker Genre :</label>
-            <p class="card-text">{"data"}</p>
+            <p class="card-text">{getSubServicedata.professionusername}</p>
 
             </div>
             
           <div class="col-md-6">
           <label for="inputPassword4" class="form-label"><i className="bx bxs-map"></i>&nbsp; Working Area : </label>
-            <p class="card-text">{"data"}</p>
+            <p class="card-text">{getSubServicedata.location}</p>
 
           </div>
-          <div class="col-md-6">
+          {/* <div class="col-md-6">
             <label for="inputEmail4" class="form-label"><i className="fa fa-clock-o"></i>&nbsp;Working Shift : </label>
             <p class="card-text">{"data"}</p>
 
-            </div>
+            </div> */}
             <div class="col-md-6">
             <label for="inputEmail4" class="form-label"><i className="fa fa-home"></i>&nbsp;Address : </label>
-            <p class="card-text">{"data"}</p>
+            <p class="card-text">{getSubServicedata.location}</p>
 
             </div>
             </div>
