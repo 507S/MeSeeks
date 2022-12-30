@@ -43,11 +43,9 @@ export default function WorkerDashboardWorkNotificationListLayout() {
           
         </WorkerDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
-          <div className="nav-item text-nowrap">
             <button onClick = {handleLogout}> Logout </button>
-          </div>
         </div>
-        <div className="navbar-nav">
+        {/* <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <WorkerDashboardAuthenticationButton
               buttonClassName="btn btn-dark px-3"
@@ -57,7 +55,7 @@ export default function WorkerDashboardWorkNotificationListLayout() {
               spaceInBetweenButtonAndText="&nbsp;"
             />
           </div>
-        </div>
+        </div> */}
       </header>
 
       {/* // header ends */}

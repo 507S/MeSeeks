@@ -3,7 +3,8 @@ const Protected = ({ isLoggedIn }) => {
     if (!isLoggedIn) {
         console.log("here before alert")
         alert("not Authorized, redirecting back to homepage")
-        return <Navigate to="/users/homepage" replace />;
+        // window.location.href = '/'
+        return <Navigate to="/" replace />;
     }
 };
 export default Protected;   

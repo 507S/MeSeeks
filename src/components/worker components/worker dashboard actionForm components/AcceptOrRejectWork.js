@@ -90,6 +90,12 @@ function AcceptOrRejectWork() {
 
     };
 
+    const handleLogout = () =>{
+        console.log("the button is clicked")
+        localStorage.clear()
+        window.location.href = '/platform-selection'
+      }
+
     const AcceptWork = (id) => {
         console.log("work id:", id)
         console.log("worker id: ", uid)
@@ -170,6 +176,7 @@ function AcceptOrRejectWork() {
               {/* <FontAwesomeIcon icon="fa-solid fa-grid-2" /> */}
 
               <div className="btn-toolbar mb-2 mb-md-0"></div>
+              <button onClick={handleLogout}> Logout </button>
             </div>
 
           
