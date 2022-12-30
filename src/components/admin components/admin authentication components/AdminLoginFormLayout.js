@@ -44,11 +44,11 @@ export default function AdminLoginFormLayout() {
                 adminPrivateCodeFormLink="#"
                 adminPrivateCodeFormLinkText="Forgot Private Code ?"
               />
-              <AdminLoginRegisterRedirectLink
+              {/* <AdminLoginRegisterRedirectLink
                 adminLoginRegisterRedirectLinkHeadline="  Don't have an account ?"
                 adminLoginRegisterRedirectLink="/admins/registration"
                 adminLoginRegisterRedirectLinkText="Register here"
-              />
+              /> */}
             </div>
           </div>
           <AdminLoginFormSideImage />

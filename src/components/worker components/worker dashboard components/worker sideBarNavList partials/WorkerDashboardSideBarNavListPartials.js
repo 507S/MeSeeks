@@ -108,7 +108,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
-        sideBarNavListRedirectLink="/worker-dashboard/work-notification"
+        sideBarNavListRedirectLink="/workers/a-r"
         sideBarNavListIconClassName="fa fa-bell"
         sideBarNavListText="Work Notification"
         ariaCurrent="page"

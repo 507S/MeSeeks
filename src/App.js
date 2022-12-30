@@ -61,6 +61,7 @@ import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPag
 import Protected from "./components/protectedComponent/Protected";
 import WorkerRequest from "./components/worker components/worker dashboard components/WorkRequest";
 import AcceptOrRejectWork from "./components/worker components/worker dashboard actionForm components/AcceptOrRejectWork";
+import Logout from "./components/logout/logout";
 function App() {
   let varToken = false;
   // const isLoggedIn = useRef(false);
@@ -315,6 +316,11 @@ function App() {
           <Route
             path="/admin-dashboard/worker-appeal-messages"
             element={<AdminDashboardWorkerAppealMessagePage />}
+          />
+
+          <Route
+            path="/logout"
+            element={<Logout />}
           />
         </Routes>
       </Router>

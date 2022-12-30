@@ -28,7 +28,7 @@ export default function LoginPlatformSelectionComponent() {
           Choose your Platform
         </h2>
         <div className="position" style={{ margin: "15%" }}>
-          <NavLink to="/users/homepage" style={{ marginRight: "10px" }}>
+          <NavLink to="/users/home" style={{ marginRight: "10px" }}>
             <button type="button" class="btn btn-dark btn-lg">
               User Field
             </button>
@@ -38,7 +38,7 @@ export default function LoginPlatformSelectionComponent() {
               Worker Field
             </button>
           </NavLink>
-          <NavLink to="/admins/login">
+          <NavLink to="/admin-dashboard">
             <button type="button" class="btn btn-dark btn-lg">
               Admin Field
             </button>

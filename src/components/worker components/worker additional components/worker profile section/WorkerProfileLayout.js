@@ -10,10 +10,17 @@ import WorkerProfileSelectInput from "./WorkerProfileSelectInput";
 import WorkerProfileTextAreaInput from "./WorkerProfileTextAreaInput";
 import WorkerProfileTextInput from "./WorkerProfileTextInput";
 import WorkerProfileWorkExperienceDurationInput from "./WorkerProfileWorkExperienceDurationInput";
+import { useNavigate } from "react-router-dom";
 export default function WorkerProfileLayout() {
   const [workExperienceList, setWorkExperienceList] = useState([
     { experienceList: "" },
   ]);
+
+  const navigate = useNavigate()
+
+  const handleNavigate = () =>{
+      navigate('/workers/a-r')
+  }
 
   const handleExperienceChange = (e, index) => {
     const { name, value } = e.target;
@@ -38,6 +45,9 @@ export default function WorkerProfileLayout() {
       <div className="container bootstrap snippet mt-lg-1 text-black-50">
         <div className="row mt-5">
           <WorkerProfileHeadline profileHeadlineText="Set up your Profile" />
+
+          <button onClick={handleNavigate}>Remind me Later</button>
+
           <div className="col-sm-2"></div>
         </div>
 
@@ -185,6 +195,7 @@ export default function WorkerProfileLayout() {
                   value=""
                   placeholder="Your Address..."
                 />
+                  
                 <WorkerProfileActionButton
                   buttonType="submit"
                   workerProfileActionButtonIcon="fa fa-wrench"

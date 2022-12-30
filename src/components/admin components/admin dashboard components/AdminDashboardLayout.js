@@ -17,6 +17,13 @@ import AdminDashboardNavBarTogglerButton from "./AdminDashboardNavBarTogglerButt
 import AdminDashboardSideBarHeaderSection from "./AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "./AdminDashboardSideBarNavListEndSection";
 export default function AdminDashboardLayout() {
+
+  const handleLogout = () =>{
+    console.log("the button is clicked")
+    localStorage.clear()
+    window.location.href = '/platform-selection'
+  }
+
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -32,13 +39,7 @@ export default function AdminDashboardLayout() {
         </AdminDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
-            <AdminDashboardAuthenticationButton
-              buttonClassName="btn btn-dark px-3"
-              buttonType="submit"
-              buttonLogoClassName="bx bx-log-out-circle"
-              buttonText="Logout"
-              spaceInBetweenButtonAndText="&nbsp;"
-            />
+            <button onClick = {handleLogout}> Logout </button>
           </div>
         </div>
       </header>

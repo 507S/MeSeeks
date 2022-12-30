@@ -39,6 +39,10 @@ function SubmitAppointment() {
 
     const handleSubmit = (e) => {
         // e.preventDefault(); 
+        if(formData.phone.length != 11){
+          alert("Please enter a valid phone number")
+          return;
+        }
         let allData = { formData: formData, workList: inputList };
         try {
             const { data } = axios.post(`http://localhost:8003/api/appointment-status`, allData)
@@ -124,14 +128,14 @@ function SubmitAppointment() {
           <i className="fa-solid fa-helmet-safety"></i>&nbsp;Worker Type
         </h5>
       </label>
-                {/* <input
-                    name="workerType"
-                    label="workerType"
-                    className="form-control"
-                    type="text"
-                    value={formData.workerType}
-                    onChange={handleEvent}
-                /> */}
+                  {/* <input
+                      name="workerType"
+                      label="workerType"
+                      className="form-control"
+                      type="text"
+                      value={formData.workerType}
+                      onChange={handleEvent}
+                  /> */}
                 <SelectInput
                     name="workerType"
                     value={formData.workerType} 

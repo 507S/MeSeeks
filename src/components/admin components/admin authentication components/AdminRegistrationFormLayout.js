@@ -19,7 +19,7 @@ export default function AdminLoginFormLayout() {
               <AdminAuthFormHeaderText adminAuthFormHeaderText="Welcome to MeSeeks!" />
             </div>
             <div class="login-wrapper my-auto">
-              <AdminAuthFormTitle authFormTitleText="Log in" />
+              <AdminAuthFormTitle authFormTitleText="Register" />
               <AdminAuthForm>
                 <AdminAuthFormTextInput
                   labelName="Username"

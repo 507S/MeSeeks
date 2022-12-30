@@ -26,37 +26,43 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
   const [getServicedata, setServicedata] = useState([])
   useEffect(() => {
     fetch("http://localhost:8003/api/services/getservice").then(res => {
-        return res.json();
+      return res.json();
     }).then(jsonResponse => setServicedata(jsonResponse));
-}, []);
+  }, []);
+  const handleLogout = () => {
+    console.log("the button is clicked")
+    localStorage.clear()
+    window.location.href = '/platform-selection'
+  }
+
   // const getdata = async (e) => {
   //   try{
   //     axios.get("http://localhost:8003/api/services/getservice")
   //    .then(res=>setServicedata(res) )
   //    .catch(err=>console.log(err))
-      // const res = await axios.get("http://localhost:8003/api/services/getservice");
-    //   const res = await fetch("http://localhost:8003/api/services/getservice",{
-    //     method:"GET",
-    //     headers:{
-    //         "Content-Type":"application/json"
-    //     },
-    // });
-    // const data = await res.json();
-    // console.log(res);
-  
-    //   if (res.status === 422) {
-    //     alert("error");
-    //     console.log("error ");
-    //   }
-    //   else {
-    //     setServicedata(res);
-    //     console.log("got data");
-    //   }
+  // const res = await axios.get("http://localhost:8003/api/services/getservice");
+  //   const res = await fetch("http://localhost:8003/api/services/getservice",{
+  //     method:"GET",
+  //     headers:{
+  //         "Content-Type":"application/json"
+  //     },
+  // });
+  // const data = await res.json();
+  // console.log(res);
+
+  //   if (res.status === 422) {
+  //     alert("error");
+  //     console.log("error ");
+  //   }
+  //   else {
+  //     setServicedata(res);
+  //     console.log("got data");
+  //   }
   //   }
   //   catch(error){
   //     alert(error);
   //   }
-    
+
   // }
   // useEffect(() => {
   //   getdata();
@@ -76,13 +82,7 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
         </AdminDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
-            <AdminDashboardAuthenticationButton
-              buttonClassName="btn btn-dark px-3"
-              buttonType="submit"
-              buttonLogoClassName="bx bx-log-out-circle"
-              buttonText="Logout"
-              spaceInBetweenButtonAndText="&nbsp;"
-            />
+            <button onClick = {handleLogout}> Logout </button>
           </div>
         </div>
       </header>
@@ -153,52 +153,52 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                     {/* //table data body starts */}
                     <tbody>
                       {
-                        getServicedata.map((element,id) => {
+                        getServicedata.map((element, id) => {
                           return (
-                    <>
-                    
-                    {/* <td>{element._id}</td>
+                            <>
+
+                              {/* <td>{element._id}</td>
                     <td>{element.name}</td>
                     <td>{element.createdAt}</td> */}
 
-                      <AdminDashboardDataTableRowSection>
-                        
-                        <AdminDashboardDataTableRowContent>
-                          {id+1}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {element.name}
-                        </AdminDashboardDataTableRowContent>
-                        {/* const date= new Date(element.createdAt)
-                        res = date..toLocaleDateString(); */}
-                        <AdminDashboardDataTableRowContent>
-                          {Date(element.createdAt).slice(0,16)}
-                        </AdminDashboardDataTableRowContent>
-                        <AdminDashboardDataTableRowContent>
-                          {
-                            <>
-                              <ModalButton
-                                modalButtonText="Open"
-                                modalButtonType="button"
-                                modalButtonClassName="btn btn-dark w-25 "
-                                modalPopUpButtonIcon="fa fa-info-circle"
-                                targetId={`#modal-${element._id}`}
-                              />
-                              <ServiceDescriptionModal
-                                id={`modal-${element._id}`}
-                                serviceTitle={element.name}
-                                serviceTitleIcon="fa fa-wrench"
-                                serviceDescription={element.description}
-                                modalClosingButtonText="Close"
-                                modalClosingButtonIcon="fa fa-close"
-                              />
-                            </>
-                          }
-                          
-                        </AdminDashboardDataTableRowContent>
+                              <AdminDashboardDataTableRowSection>
 
-                        {/* <AdminDashboardDataTableRowContent> */}
-                          {/* <AdminDashboardActionForm actionFormClassName="form-floating">
+                                <AdminDashboardDataTableRowContent>
+                                  {id + 1}
+                                </AdminDashboardDataTableRowContent>
+                                <AdminDashboardDataTableRowContent>
+                                  {element.name}
+                                </AdminDashboardDataTableRowContent>
+                                {/* const date= new Date(element.createdAt)
+                        res = date..toLocaleDateString(); */}
+                                <AdminDashboardDataTableRowContent>
+                                  {Date(element.createdAt).slice(0, 16)}
+                                </AdminDashboardDataTableRowContent>
+                                <AdminDashboardDataTableRowContent>
+                                  {
+                                    <>
+                                      <ModalButton
+                                        modalButtonText="Open"
+                                        modalButtonType="button"
+                                        modalButtonClassName="btn btn-dark w-25 "
+                                        modalPopUpButtonIcon="fa fa-info-circle"
+                                        targetId={`#modal-${element._id}`}
+                                      />
+                                      <ServiceDescriptionModal
+                                        id={`modal-${element._id}`}
+                                        serviceTitle={element.name}
+                                        serviceTitleIcon="fa fa-wrench"
+                                        serviceDescription={element.description}
+                                        modalClosingButtonText="Close"
+                                        modalClosingButtonIcon="fa fa-close"
+                                      />
+                                    </>
+                                  }
+
+                                </AdminDashboardDataTableRowContent>
+
+                                {/* <AdminDashboardDataTableRowContent> */}
+                                {/* <AdminDashboardActionForm actionFormClassName="form-floating">
                             <AdminDashboardActionButton
                               adminActionButtonClassName="btn btn-danger"
                               buttonType="submit"
@@ -206,14 +206,14 @@ export default function AdminDashboardActiveServiceCategoryLayout() {
                               adminActionButtonText="Ban"
                             />
                           </AdminDashboardActionForm> */}
-                        {/* </AdminDashboardDataTableRowContent> */}
-                       
-                      </AdminDashboardDataTableRowSection>
-                      </>
-                        
-                        )
-                      })
-                    }
+                                {/* </AdminDashboardDataTableRowContent> */}
+
+                              </AdminDashboardDataTableRowSection>
+                            </>
+
+                          )
+                        })
+                      }
                       {/* <AdminDashboardDataTableRowContent>
                           <AdminDashboardActionForm actionFormClassName="form-floating">
                             <AdminDashboardActionButton
