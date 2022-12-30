@@ -22,8 +22,67 @@ import WorkerDashboardHeaderContent from "../../worker dashboard components/Work
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
-
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 export default function WorkerDashboardProfileUpdatingLayout() {
+  const navigate = useNavigate();
+  let userInfo = false
+  if (localStorage.getItem("userInfo")) {
+    userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  }
+  const uid = userInfo.id;
+  const [newSubService, setNewSubService] = useState({
+    username: "",
+    phoneNumber: "",
+    image: "",
+    email:"",
+    location: "",
+  });
+  const toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
+// const {id} = useParams("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(newSubService.image);
+    const formData = new FormData();
+    formData.append("username", newSubService.username);
+    formData.append("phoneNumber", newSubService.phoneNumber);
+    formData.append("email", newSubService.email);
+    // formData.append("image", newSubService.image);
+    // formData.append('image', URL.createObjectURL(newSubService.image));
+    formData.append('image', await toBase64(newSubService.image) );
+
+    //, URL.createObjectURL(newSubService.image)
+    formData.append("location", newSubService.location);
+
+    axios
+      .patch(`http://localhost:8003/api/worker/updateProfile/${uid}`, formData)
+      .then((res) => {
+        console.log(res);
+        alert("profile updated");
+        navigate("/admin-dashboard/active-services", { replace: true });
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("update failed");
+      });
+    
+  };
+
+  const handleChange = (e) => {
+    console.log(e);
+    setNewSubService({ ...newSubService, [e.target.name]: e.target.value });
+  };
+
+  const handlePhoto = (e) => {
+    console.log(e.target.files[0]);
+    setNewSubService({ ...newSubService, image: e.target.files[0] });
+  };
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -110,14 +169,17 @@ export default function WorkerDashboardProfileUpdatingLayout() {
             {/* update profile from here */}
 
             <div className="container " style={{ marginTop: "5%" }}>
-              <form class="row g-3 " action="">
+              <form class="row g-3 " method="POST"
+                  onsubmit={handleSubmit}
+                  enctype="multipart/form-data">
                 <WorkerProfileTextInput
                   labelFor="username"
                   labelIconClassName="fa fa-user"
                   labelName="Username"
                   textInputType="text"
                   inputName="username"
-                  value=""
+                  value={newSubService.username}
+                  onChange={handleChange}
                   // placeholder="Username..."
                 />
                 <WorkerProfileTextInput
@@ -126,7 +188,8 @@ export default function WorkerDashboardProfileUpdatingLayout() {
                   labelName="Email"
                   textInputType="email"
                   inputName="email"
-                  value=""
+                  value={newSubService.email}
+                  onChange={handleChange}
                   // placeholder="Email..."
                 />
                 <WorkerProfileTextInput
@@ -135,23 +198,26 @@ export default function WorkerDashboardProfileUpdatingLayout() {
                   labelName="Phone Number"
                   textInputType="text"
                   inputName="phoneNumber"
-                  value=""
+                  value={newSubService.phoneNumber}
+                  onChange={handleChange}
                   // placeholder="Phone Number..."
                 />
                 <WorkerProfileImageChooseInput
+                  accept=".png, .jpg, .jpeg"
+                  onChange={handlePhoto}
                   imageInputFieldClassName="col-md-6"
                   labelFor="formFile"
                   labelIconClassName="fa fa-picture-o"
                   labelName="Change Avatar"
                   inputType="file"
-                  inputName="profileImage"
+                  inputName="photo"
                 />
-                <WorkerProfileSelectInput
+                {/* <WorkerProfileSelectInput
                   labelFor="areaSelection"
                   labelIconClassName="bx bxs-map"
                   labelName="Select Working Area"
                   selectNamesFetchedFromDatabase="Uttara"
-                />
+                /> */}
                 {/* <WorkerProfileSelectInput
                   labelFor="workingShift"
                   labelIconClassName="fa fa-clock-o"
@@ -164,8 +230,9 @@ export default function WorkerDashboardProfileUpdatingLayout() {
                   labelIconClassName="fa fa-home"
                   labelName="Address"
                   textInputRow="3"
-                  inputName="address"
-                  value=""
+                  inputName="location"
+                  value={newSubService.location}
+                  onChange={handleChange}
                   placeholder="Your Address..."
                 />
 
@@ -175,13 +242,7 @@ export default function WorkerDashboardProfileUpdatingLayout() {
                   workerProfileActionButtonText="Confirm Update  "
                 /> */}
                 <div className="col-md-6 mt-3">
-                  <ProfileUpdateConfirmButton
-                    type="submit"
-                    workerProfileActionButtonIcon="fa fa-check"
-                    workerProfileActionButtonText="Confirm Update "
-                    btnClassName="btn btn-info w-100"
-                    // onClick={submitHandler}
-                  />
+                  <button onClick={handleSubmit}>Confirm Update</button>
                 </div>
                 <div className="col-md-6 mt-3">
                   <NavLink to="/worker-dashboard/worker-profile">

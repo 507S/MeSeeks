@@ -8,6 +8,8 @@ export default function WorkerProfileImageChooseInput({
   labelFor,
   inputType,
   inputName,
+  accept,
+  onChange,
   ...rest
 }) {
   return (
@@ -19,10 +21,13 @@ export default function WorkerProfileImageChooseInput({
       </label>
 
       <input
+        accept={accept}
+        onChange={onChange}
         type={inputType}
         className="form-control"
         name={inputName}
         id="formFile"
+        multiple
         {...rest}
       />
     </div>

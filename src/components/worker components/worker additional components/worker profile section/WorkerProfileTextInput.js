@@ -8,6 +8,7 @@ export default function WorkerProfileTextInput({
   inputName,
   value,
   placeholder,
+  onChange,
   ...rest
 }) {
   return (
@@ -23,6 +24,7 @@ export default function WorkerProfileTextInput({
         name={inputName}
         id="username"
         placeholder={placeholder}
+        onChange={onChange}
         {...rest}
       />
     </div>

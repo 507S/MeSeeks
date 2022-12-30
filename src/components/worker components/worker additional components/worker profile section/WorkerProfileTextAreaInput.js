@@ -7,6 +7,7 @@ export default function WorkerProfileTextAreaInput({
   textInputRow,
   inputName,
   value,
+  onChange,
   placeholder,
   ...rest
 }) {
@@ -24,6 +25,7 @@ export default function WorkerProfileTextAreaInput({
         rows={textInputRow}
         style={{ resize: "none" }}
         placeholder={placeholder}
+        onChange={onChange}
         {...rest}
       ></textarea>
     </div>
