@@ -43,14 +43,20 @@ import Appointment from "./components/user components/user additional components
 import ListOfWork from "./components/user components/user additional components/worker hiring section/ListOfWork";
 import SubmitAppointment from "./components/user components/user additional components/worker hiring section/submitAppointment";
 import UserServices from "./components/user components/user additional components/worker hiring section/UserServices";
+import AdminDashboardBanWorkerPage from "./pages/admin pages/AdminDashboardBanWorkerPage";
+import AdminDashboardComposeMessageForUserAndWorkerPage from "./pages/admin pages/AdminDashboardComposeMessageForUserAndWorkerPage";
+import AdminDashboardNotifyingMessageForWorkerPage from "./pages/admin pages/AdminDashboardNotifyingMessageForWorkerPage";
+import AdminDashboardServiceUpdatingPage from "./pages/admin pages/AdminDashboardServiceUpdatingPage";
 import AdminDashboardWorkerAppealMessagePage from "./pages/admin pages/AdminDashboardWorkerAppealMessagePage";
 import PlatformSelectionPage from "./pages/platformSelectionPages/PlatformSelectionPage";
 import UserFAQPage from "./pages/user pages/UserFAQPage";
 import UserListOfWorkPage from "./pages/user pages/UserListOfWorkPage";
+import UserProfilePage from "./pages/user pages/UserProfilePage";
 import UserServiceFeedbackFormPage from "./pages/user pages/UserServiceFeedbackFormPage";
 import UserServiceHistoryPage from "./pages/user pages/UserServiceHistoryPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
+import UserUpdateProfilePage from "./pages/user pages/UserUpdateProfilePage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
 import Protected from "./components/protectedComponent/Protected";
 import WorkerRequest from "./components/worker components/worker dashboard components/WorkRequest";
@@ -108,6 +114,16 @@ function App() {
           <Route path="/users/submit-work" element={<SubmitAppointment />} />
           <Route path="/users/services" element={<UserServicePage />} />
           <Route
+            path="/users/profile"
+            element={<UserProfilePage />}
+          />
+          
+          <Route
+            path="/users/update-profile"
+            element={<UserUpdateProfilePage />}
+          />
+
+          <Route
             path="/users/worker-hiring-form"
             element={<UserWorkerHiringFormPage />}
           />
@@ -142,7 +158,8 @@ function App() {
             path="/workers/profile-setup"
             element={<WorkerProfilePage />}
           />
-          <Route path="/worker-dashboard" element={<WorkerDashboardPage />} />
+
+          <Route path="/worker-dashboard/:id" element={<WorkerDashboardPage />} />
           <Route
             path="/worker-dashboard/worker-profile"
             element={<WorkerDashboardProfilePage />}
@@ -250,6 +267,15 @@ function App() {
               // </Protected>
             }
           />
+           <Route
+            path="/admin-dashboard/ban-worker"
+            element={
+              // <Protected isLoggedIn={isLoggedIn.current}>
+              <AdminDashboardBanWorkerPage />
+              // </Protected>
+            }
+          />
+         
           <Route
             path="/admin-dashboard/worker-banlist"
             element={

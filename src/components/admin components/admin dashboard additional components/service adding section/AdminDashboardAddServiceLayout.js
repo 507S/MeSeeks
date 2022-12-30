@@ -10,8 +10,6 @@ import "../../../../styles/global/admin global/bootstrap.min.css";
 import AdminDashboardSideBarNavListPartials from "../../admin dashboard components/admin sideBarNavList partials/AdminDashboardSideBarNavListPartials";
 import AdminDashboardAuthenticationButton from "../../admin dashboard components/AdminDashboardAuthenticationButton";
 import AdminDashboardHeaderContent from "../../admin dashboard components/AdminDashboardHeaderContent";
-import AdminDashboardNavBarSearchForm from "../../admin dashboard components/AdminDashboardNavBarSearchForm";
-import AdminDashboardNavBarSearchTextInput from "../../admin dashboard components/AdminDashboardNavBarSearchTextInput";
 import AdminDashboardNavBarTogglerButton from "../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
@@ -20,11 +18,11 @@ import AdminDashboardActionForm from "../admin dashboard actionForm components/A
 import ChooseServiceImage from "../admin dashboard actionForm components/ChooseServiceImage";
 import SelectAreaInput from "../admin dashboard actionForm components/SelectAreaInput";
 // import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm"
-import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
-import TextInput from "../admin dashboard actionForm components/TextInput";
 import axios from "axios";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
+import TextInput from "../admin dashboard actionForm components/TextInput";
 
 export default function AdminDashboardAddServiceLayout() {
     const navigate = useNavigate();
@@ -88,26 +86,24 @@ export default function AdminDashboardAddServiceLayout() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(newSubService.image);
+    // console.log(newSubService.image);
     const formData = new FormData();
     formData.append('serviceName', newSubService.serviceName);
     formData.append('subServiceName', newSubService.subServiceName);
     formData.append('image', await toBase64(newSubService.image) );
-    // formData.append('image', URL.createObjectURL(newSubService.image));
-
-    //, URL.createObjectURL(newSubService.image)
     formData.append('description', newSubService.description);
     
 
-    axios.post('http://localhost:8003/api/subservices//updateSubService/:id', formData)
+    axios.post('http://localhost:8003/api/subservices/upload', formData)
       .then(res => {
-        console.log(res);
+        // console.log(res);
+        alert("service added")
+        navigate("/admin-dashboard/active-services", { replace: true });
       })
       .catch(err => {
         console.log(err);
       });
-      alert("service added")
-      navigate("/admin-dashboard/active-services", { replace: true });
+      
   }
 
   const handleChange = (e) => {
@@ -125,14 +121,14 @@ export default function AdminDashboardAddServiceLayout() {
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
         <AdminDashboardNavBarTogglerButton togglerIconClassName="navbar-toggler-icon" />
-        <AdminDashboardNavBarSearchForm action="">
+        {/* <AdminDashboardNavBarSearchForm action="">
           <AdminDashboardNavBarSearchTextInput
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </AdminDashboardNavBarSearchForm>
+        </AdminDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <AdminDashboardAuthenticationButton
@@ -213,7 +209,7 @@ export default function AdminDashboardAddServiceLayout() {
                   />
                   <ChooseServiceImage
                     accept=".png, .jpg, .jpeg"
-                    name="photo"
+                    name="image"
                     onChange={handlePhoto}
                     type="file"
                     labelName="Choose Service Image :"

@@ -10,8 +10,6 @@ import "../../../../styles/global/admin global/bootstrap.min.css";
 import AdminDashboardSideBarNavListPartials from "../../admin dashboard components/admin sideBarNavList partials/AdminDashboardSideBarNavListPartials";
 import AdminDashboardAuthenticationButton from "../../admin dashboard components/AdminDashboardAuthenticationButton";
 import AdminDashboardHeaderContent from "../../admin dashboard components/AdminDashboardHeaderContent";
-import AdminDashboardNavBarSearchForm from "../../admin dashboard components/AdminDashboardNavBarSearchForm";
-import AdminDashboardNavBarSearchTextInput from "../../admin dashboard components/AdminDashboardNavBarSearchTextInput";
 import AdminDashboardNavBarTogglerButton from "../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
@@ -97,15 +95,17 @@ const {id} = useParams("");
     formData.append("description", newSubService.description);
 
     axios
-      .patch(`http://localhost:8003/api/subservices//updateSubService/${id}`, formData)
+      .patch(`http://localhost:8003/api/subservices/updateSubService/${id}`, formData)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
+        alert("service updated");
+        navigate("/admin-dashboard/active-services", { replace: true });
       })
       .catch((err) => {
         console.log(err);
+        alert("didnt happen");
       });
-    alert("service updated");
-    navigate("/admin-dashboard/active-services", { replace: true });
+    
   };
 
   const handleChange = (e) => {
@@ -123,14 +123,14 @@ const {id} = useParams("");
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
         <AdminDashboardNavBarTogglerButton togglerIconClassName="navbar-toggler-icon" />
-        <AdminDashboardNavBarSearchForm action="">
+        {/* <AdminDashboardNavBarSearchForm action="">
           <AdminDashboardNavBarSearchTextInput
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </AdminDashboardNavBarSearchForm>
+        </AdminDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <AdminDashboardAuthenticationButton

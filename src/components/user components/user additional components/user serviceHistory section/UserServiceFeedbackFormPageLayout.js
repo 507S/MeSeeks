@@ -41,25 +41,8 @@ export default function UserServiceFeedbackFormPageLayout() {
       <form class="row g-3" 
       // onSubmit={handleSubmit}
       >
-      <div class="col-md-6">
-      <label for="email" class="form-label"><i className='fa fa-user'></i>&nbsp;Your Email</label>
-      <input type="email" 
-      //  value={formData.workerType}
-      //  onChange={handleEvent}
-      class="form-control" 
-      required
-      />
-    </div>
-     <div class="col-md-6">
-      <label for="feedbackAgainstWorkerName" class="form-label"><i className='fa fa-wrench'></i>&nbsp;Feedback against Worker</label>
-      <input type="text" 
-      // value={formData.workerType}
-      // onChange={handleEvent}
-      class="form-control" 
-      
-    />
-      </div>
-    <div class="col-md-6">
+
+    <div class="col-12">
     <label for="rating" class="form-label"><i className='fa fa-star'></i>&nbsp;Provide Rating <b style={{color:"red",fontWeight:"100px"}}>*(between 1 and 5)</b> </label>
     <input type="number" 
     min="1" 
@@ -74,39 +57,20 @@ export default function UserServiceFeedbackFormPageLayout() {
       
     </input>
     </div>
-    <div class="col-md-6">
-    <label for="location" class="form-label"><i className='fa fa-map-marker'></i>&nbsp;Provide your location</label>
-    <input type="text" 
-    // value={formData.workerType}
-    // onChange={handleEvent}
-    class="form-control" 
-    id="inputAddress" 
-    placeholder="Location"
-    required
-    />
-    </div>
-    <div class="col-12">
-    <label for="address" class="form-label"><i className='fa fa-home'></i>&nbsp;Provide your Address</label>
-    <input type="text" 
-    // value={formData.workerType}
-    // onChange={handleEvent}
-    class="form-control" 
-    id="inputAddress" 
-    placeholder="Address" 
-    required
-    />
-  </div>
+ 
   <div class="col-12">
-    <label for="comments" class="form-label"  ><i className='fa fa-comments'></i>&nbsp;Provide reason for your rating</label>
-    <input type="text" 
-    class="form-control" 
-    // value={formData.workerType}
-    //   onChange={handleEvent}
-    id="inputAddress2" 
-    placeholder="Comments"
-    style={{height:"60px"}}
-    required />
+     <label for="userReview" class="form-label"  ><i className='fa fa-comments'></i>&nbsp;Provide us your review</label>
+     <div class="form-floating">
+     <textarea class="form-control" 
+      id="floatingTextarea2" 
+          // value={formData.workerType}
+    // onChange={handleEvent}
+      style={{height: "100px",resize:"none"}}></textarea>
+      <label for="floatingTextarea2">Your Feedback...</label>
   </div>
+  </div>
+
+  
   
   <div class="col-md-6">
     <button type="submit" class="btn btn-info w-100"><i className='fa fa-send'></i>&nbsp;Send</button>

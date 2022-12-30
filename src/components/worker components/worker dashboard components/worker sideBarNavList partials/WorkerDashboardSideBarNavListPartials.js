@@ -13,6 +13,14 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListText="Dashboard"
         ariaCurrent="page"
       />
+        <WorkerDashboardSideBarNavList
+        sideBarNavListClassName="nav-item"
+        sideBarNavLinkClassName="nav-link active"
+        sideBarNavListRedirectLink="/workers/profile-setup"
+        sideBarNavListIconClassName="fa fa-wrench"
+        sideBarNavListText="Setup Profile"
+        ariaCurrent="page"
+      />
       <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
@@ -41,7 +49,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListText=" Work History"
         ariaCurrent="page"
       />
-      <WorkerDashboardSideBarNavList
+      {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
@@ -49,7 +57,7 @@ export default function WorkerDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="fa fa-star"
         sideBarNavListText="Rating List"
         ariaCurrent="page"
-      />
+      /> */}
       {/* <WorkerDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"

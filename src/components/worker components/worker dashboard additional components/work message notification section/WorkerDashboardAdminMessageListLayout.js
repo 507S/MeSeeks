@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import "../../../styles/global/admin global/AdminDashboardCards.css";
 // import "../../../styles/global/admin global/AdminDashboardStyles.css";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
-import AdminImage from "../../../../assets/worker assets/images/admin.png";
+import AdminMessage from "../../../../assets/worker assets/images/management.png";
+
 import classes from "../../../../styles/admin styles/AdminDashboardSideBarNavListSize.module.css";
 import "../../../../styles/global/admin global/AdminDashboardCards.css";
 import "../../../../styles/global/admin global/AdminDashboardStyles.css";
@@ -11,28 +12,67 @@ import "../../../../styles/global/admin global/bootstrap.min.css";
 import WorkerDashboardSideBarNavListPartials from "../../worker dashboard components/worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
 import WorkerDashboardAuthenticationButton from "../../worker dashboard components/WorkerDashboardAuthenticationButton";
 import WorkerDashboardHeaderContent from "../../worker dashboard components/WorkerDashboardHeaderContent";
-import WorkerDashboardNavBarSearchForm from "../../worker dashboard components/WorkerDashboardNavBarSearchForm";
-import WorkerDashboardNavBarSearchTextInput from "../../worker dashboard components/WorkerDashboardNavBarSearchTextInput";
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
-import TextAreaInput from "../worker dashboard actionForm components/TextAreaInput";
-import WorkerDashboardActionForm from "../worker dashboard actionForm components/WorkerDashboardActionForm";
 
 export default function WorkerDashboardAdminMessageListLayout() {
-  return (
-    <>
+  const [getServicedata, setServicedata] = useState([]);
+  let userInfo = false
+  if (localStorage.getItem("userInfo")) {
+    userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  }
+  const uid = userInfo.id;
+  useEffect(() => {
+    fetch(`http://localhost:8003/api/admin/getadminmsg/${uid}`)
+      .then((res) => {
+        console.log("broooooooooooooo");
+        return res.json();
+      })
+      .then((jsonResponse) => setServicedata(jsonResponse));
+  }, [uid]);
+  // const [isLoading, setIsLoading] = React.useState(true)
+
+  // useEffect(()=>{
+  //   console.log("here bro")
+  //   adminMsg();
+  // },[])
+
+  // const adminMsg = () => {
+  //   console.log("here again")
+  //   axios.get(`http://localhost:8003/api/admin/getadminmsg/${uid}`)
+  //     .then((res) => {
+  //       console.log("**********************8")
+  //       console.log(res.data)
+  //       setServicedata(res.data)
+  //       setIsLoading(false)
+  //     })
+  //     .catch((error)=>{
+  //       console.log(error)
+  //     })
+  // }
+
+  // if (isLoading) {
+  //   return (
+  //     <div>
+  //       Loading...
+  //     </div>
+  //   )
+  // }
+  // else {
+    return (
+      <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <WorkerDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
         <WorkerDashboardNavBarTogglerButton togglerIconClassName="navbar-toggler-icon" />
-        <WorkerDashboardNavBarSearchForm action="">
+        {/* <WorkerDashboardNavBarSearchForm action="">
           <WorkerDashboardNavBarSearchTextInput
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </WorkerDashboardNavBarSearchForm>
+        </WorkerDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <WorkerDashboardAuthenticationButton
@@ -73,11 +113,12 @@ export default function WorkerDashboardAdminMessageListLayout() {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               {/* //button test */}
-
               <WorkerDashboardHeaderContent
                 adminHeaderContentText="Admin Messages"
-                workerDashboardHeaderContentImage="fa-sharp fa-solid fa-user-gear"
+                workerDashboardHeaderContentImage="fa-sharp fa-solid fa-bullhorn"
               />
+
+              {/* <i class="fa-sharp fa-solid fa-bullhorn"></i> */}
               {/* <i class="fa-sharp fa-solid fa-user-gear"></i> */}
               {/* <i class="fa-solid fa-user-headset"></i> */}
               <div className="btn-toolbar mb-2 mb-md-0"></div>
@@ -88,17 +129,20 @@ export default function WorkerDashboardAdminMessageListLayout() {
               <WorkerDashboardGraphHeaderContent dashboardGraphHeaderContentText="Statistics" />
               <WorkerDashboardGraphCanvas />
             </div> */}
-                <div class="card w-100" style={{ height: "auto" }}>
+             {getServicedata.map((element, id) => {
+              return (
+                <>
+                     <div class="card w-100 mt-3" style={{ height: "auto" }}>
               <div class=" card-body w-100" style={{ height: "auto" }}>
                 {/* <form method="POST" enctype="multipart/form-data"> */}
 
-                <WorkerDashboardActionForm method="GET">
+                {/* <WorkerDashboardActionForm method="GET"> */}
                  
 
                   
-                  <h5>Message received : {"Timestamp"} <img src={AdminImage} width="50px" height="50px" style={{float:"right"}} alt="admin"  /> </h5>
-                  
-                  <TextAreaInput
+                  <h5>Message received : {element.createdAt} <img src={AdminMessage} width="50px" height="50px" style={{float:"right"}} alt="admin"  /> </h5>
+                   <p>{element.msg}</p>
+                  {/* <TextAreaInput
                     labelName="Admin Message "
                     placeholder=""
                     // value={inpval.msg}
@@ -106,15 +150,20 @@ export default function WorkerDashboardAdminMessageListLayout() {
                     //get admin message here
                     name="msg"
                     textAreaInputRow="3"
-                  />
-             
+                  /> */}
+                {/* <NavLink to="/worker-dashboard/appeal-message"><button type="submit" class="btn btn-danger">Appeal</button></NavLink> */}
                 
-                </WorkerDashboardActionForm>
+                {/* </WorkerDashboardActionForm> */}
               </div>
             </div>
+             
+            </>
+              );
+            })}
           </main>
         </div>
       </div>
     </>
-  );
-}
+    );
+  }
+// }

@@ -19,8 +19,6 @@ import ProfileUpdateConfirmButton from "../../worker additional components/worke
 import WorkerDashboardSideBarNavListPartials from "../../worker dashboard components/worker sideBarNavList partials/WorkerDashboardSideBarNavListPartials";
 import WorkerDashboardAuthenticationButton from "../../worker dashboard components/WorkerDashboardAuthenticationButton";
 import WorkerDashboardHeaderContent from "../../worker dashboard components/WorkerDashboardHeaderContent";
-import WorkerDashboardNavBarSearchForm from "../../worker dashboard components/WorkerDashboardNavBarSearchForm";
-import WorkerDashboardNavBarSearchTextInput from "../../worker dashboard components/WorkerDashboardNavBarSearchTextInput";
 import WorkerDashboardNavBarTogglerButton from "../../worker dashboard components/WorkerDashboardNavBarTogglerButton";
 import WorkerDashboardSideBarHeaderSection from "../../worker dashboard components/WorkerDashboardSideBarHeaderSection";
 import WorkerDashboardSideBarNavListEndSection from "../../worker dashboard components/WorkerDashboardSideBarNavListEndSection";
@@ -31,14 +29,14 @@ export default function WorkerDashboardProfileUpdatingLayout() {
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <WorkerDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
         <WorkerDashboardNavBarTogglerButton togglerIconClassName="navbar-toggler-icon" />
-        <WorkerDashboardNavBarSearchForm action="">
+        {/* <WorkerDashboardNavBarSearchForm action="">
           <WorkerDashboardNavBarSearchTextInput
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </WorkerDashboardNavBarSearchForm>
+        </WorkerDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <WorkerDashboardAuthenticationButton
@@ -100,6 +98,7 @@ export default function WorkerDashboardProfileUpdatingLayout() {
                 src={workerProfileImage}
                 class="rounded"
                 height="auto"
+                width="350px"
                 style={{
                   boxShadow: "0 24px 8px 0 rgba(0, 0, 0, 0.2)",
                   maxWidth: "30%",
