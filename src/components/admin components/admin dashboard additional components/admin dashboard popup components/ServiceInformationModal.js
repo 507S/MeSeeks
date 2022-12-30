@@ -32,7 +32,7 @@ export default function ServiceInformationModal({
                 src={workerProfileImage}
                 alt="workerProfileImage"
                 width="100%"
-                height="100%"
+                height="50%"
               />
               {/* {workerGenre}&nbsp; */}
             </h5>

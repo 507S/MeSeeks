@@ -32,7 +32,7 @@ export default function WorkerInformationModal({
                 src={workerProfileImage}
                 alt="workerProfileImage"
                 width="100%"
-                height="100%"
+                height="50%"
               />
               {/* {workerGenre}&nbsp; */}
             </h5>
@@ -58,7 +58,7 @@ export default function WorkerInformationModal({
           </div>
           <div class="modal-footer">
             {/* unban/ban button submit form */}
-            <form action="POST">
+            {/* <form action="POST">
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -67,7 +67,7 @@ export default function WorkerInformationModal({
               >
                 <i className="fa-solid fa-wrench"></i>&nbsp;{banDecisionText}
               </button>
-            </form>
+            </form> */}
 
             <button
               type="button"

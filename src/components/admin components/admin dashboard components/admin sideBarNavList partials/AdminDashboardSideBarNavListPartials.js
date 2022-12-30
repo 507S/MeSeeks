@@ -42,7 +42,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListText="Current Services"
         ariaCurrent="page"
       />
-      <AdminDashboardSideBarNavList
+      {/* <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
@@ -50,8 +50,8 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="bx bxs-time"
         sideBarNavListText="Ongoing Works"
         ariaCurrent="page"
-      />
-      <AdminDashboardSideBarNavList
+      /> */}
+      {/* <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"
         sideBarNavListTextColor="white"
@@ -59,7 +59,7 @@ export default function AdminDashboardSideBarNavListPartials() {
         sideBarNavListIconClassName="bx bxs-bar-chart-alt-2"
         sideBarNavListText="Revenues"
         ariaCurrent="page"
-      />
+      /> */}
       <AdminDashboardSideBarNavList
         sideBarNavListClassName="nav-item"
         sideBarNavLinkClassName="nav-link active"

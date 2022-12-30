@@ -13,15 +13,13 @@ import "../../../../styles/global/admin global/bootstrap.min.css";
 import AdminDashboardSideBarNavListPartials from "../../admin dashboard components/admin sideBarNavList partials/AdminDashboardSideBarNavListPartials";
 import AdminDashboardAuthenticationButton from "../../admin dashboard components/AdminDashboardAuthenticationButton";
 import AdminDashboardHeaderContent from "../../admin dashboard components/AdminDashboardHeaderContent";
-import AdminDashboardNavBarSearchForm from "../../admin dashboard components/AdminDashboardNavBarSearchForm";
-import AdminDashboardNavBarSearchTextInput from "../../admin dashboard components/AdminDashboardNavBarSearchTextInput";
 import AdminDashboardNavBarTogglerButton from "../../admin dashboard components/AdminDashboardNavBarTogglerButton";
 import AdminDashboardSideBarHeaderSection from "../../admin dashboard components/AdminDashboardSideBarHeaderSection";
 import AdminDashboardSideBarNavListEndSection from "../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
 import AdminDashboardActionButton from "../admin dashboard actionForm components/AdminDashboardActionButton";
+import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm";
 import TextAreaInput from "../admin dashboard actionForm components/TextAreaInput";
 import TextInput from "../admin dashboard actionForm components/TextInput";
-import AdminDashboardActionForm from "../admin dashboard actionForm components/AdminDashboardActionForm"
 export default function AdminDashboardAddServiceCategoryLayout() {
   
   const navigate = useNavigate();
@@ -110,14 +108,14 @@ return (
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <AdminDashboardSideBarHeaderSection adminSideBarHeaderText="MeSeeks" />
         <AdminDashboardNavBarTogglerButton togglerIconClassName="navbar-toggler-icon" />
-        <AdminDashboardNavBarSearchForm action="">
+        {/* <AdminDashboardNavBarSearchForm action="">
           <AdminDashboardNavBarSearchTextInput
             className="form-control mr-sm-2"
             inputType="search"
             placeholder="Search"
             aria-label="Search"
           />
-        </AdminDashboardNavBarSearchForm>
+        </AdminDashboardNavBarSearchForm> */}
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             <AdminDashboardAuthenticationButton
