@@ -25,7 +25,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 export default function WorkerDashboardAppealMessageLayout() {
   const navigate = useNavigate();
-
+  let userInfo = false
+  if (localStorage.getItem("userInfo")) {
+    userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  }
+  const uid = userInfo.id;
 
   const [inpval, setINP] = useState({
     name: "",
@@ -49,7 +53,7 @@ export default function WorkerDashboardAppealMessageLayout() {
     try {
       console.log(inpval)
       console.log("I am here")
-      const res = await axios.post("http://localhost:8003/api/worker/sendappealmsg", inpval);
+      const res = await axios.post(`http://localhost:8003/api/worker/sendappealmsg/${uid}`, inpval);
       // console.log(res)
       // const data = await res.json();
       console.log(res);
@@ -59,9 +63,9 @@ export default function WorkerDashboardAppealMessageLayout() {
         console.log("error");
       }
       else {
-        alert("data added");
+        alert("your request has been placed");
         console.log("data added");
-        navigate("/admin-dashboard/active-service-category", { replace: true });
+        navigate("/worker-dashboard/worker-profile", { replace: true });
       }
     }
     catch (error) {

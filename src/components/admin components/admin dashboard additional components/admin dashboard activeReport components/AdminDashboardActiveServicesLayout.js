@@ -29,6 +29,7 @@ import ServiceDescriptionModal from "../admin dashboard popup components/Service
 
 export default function AdminDashboardActiveServicesLayout() {
   const [getSubServicedata, setSubServicedata] = useState([]);
+  // const 
   useEffect(() => {
     fetch("http://localhost:8003/api/subservices/getsubservices")
       .then((res) => {
@@ -189,7 +190,7 @@ export default function AdminDashboardActiveServicesLayout() {
                                       id={`modal-${element._id}`}
                                       serviceTitle={element.subServiceName}
                                       serviceTitleIcon="fa fa-wrench"
-                                      // source={element.image.data}
+                                      source={element.image.data}
                                       serviceDescription={element.description}
                                       modalClosingButtonText="Close"
                                       modalClosingButtonIcon="fa fa-close"

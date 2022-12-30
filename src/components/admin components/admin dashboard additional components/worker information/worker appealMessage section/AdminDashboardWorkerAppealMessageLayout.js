@@ -4,6 +4,8 @@ import React from "react";
 // import "../../../styles/global/admin global/bootstrap.min.css";
 // import "../../../styles/global/admin global/bootstrap.min.css.map";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import clockImage from "../../../../../assets/worker assets/images/clock.png";
 import feedbackimage from "../../../../../assets/worker assets/images/feedback.png";
 import userImage from "../../../../../assets/worker assets/images/user.png";
@@ -23,6 +25,7 @@ import AdminDashboardSideBarHeaderSection from "../../../admin dashboard compone
 import AdminDashboardSideBarNavListEndSection from "../../../admin dashboard components/AdminDashboardSideBarNavListEndSection";
 export default function AdminDashboardWorkerAppealMessageLayout() {
   const [getServicedata, setServicedata] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("http://localhost:8003/api/worker/getappealmsg")
       .then((res) => {
@@ -30,6 +33,25 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
       })
       .then((jsonResponse) => setServicedata(jsonResponse));
   }, []);
+  const deleteService = async (id) => {
+    try{
+      const res2 = await axios.delete(`http://localhost:8003/api/bannedworker/unbanworker/${id}`);
+
+      // const deleteduser = await res2.json();
+      // console.log(deleteduser);
+  
+      if(res2.status === 422){
+        console.log("error");
+      }else{
+        alert("unbanned worker");
+        navigate("/admin-dashboard/remove-service-category", { replace: true });
+        getServicedata();
+      }
+  }catch(error){
+    console.log(error);
+  }
+    
+  }
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -212,10 +234,12 @@ export default function AdminDashboardWorkerAppealMessageLayout() {
                           modalButtonType="button"
                           modalButtonClassName="btn btn-dark w-25 "
                           modalPopUpButtonIcon="fa fa-info-circle"
+                          targetId={`#modal-${element._id}`}
                         />
                         <WorkerInformationModal
                           //   {/* //fetch from db */}
-
+                          // id={`modal-${element._id}`}
+                          id={()=>deleteService(element.worker_uid)}
                           workerGenre="Plumber"
                           workerAverageRating="2.88"
                           workerPhoneNumber="01306989478"
