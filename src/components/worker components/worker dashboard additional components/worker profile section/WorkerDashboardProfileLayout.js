@@ -142,7 +142,7 @@ export default function WorkerDashboardProfileLayout() {
             </div>
             <div class="col-md-6">
             <label for="inputEmail4" class="form-label"><i className="fa fa-wrench"></i>&nbsp;Worker Genre :</label>
-            <p class="card-text">{getSubServicedata.professionusername}</p>
+            <p class="card-text">{getSubServicedata.profession}</p>
 
             </div>
             
