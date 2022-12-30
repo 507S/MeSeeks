@@ -56,6 +56,7 @@ import UserServiceFeedbackFormPage from "./pages/user pages/UserServiceFeedbackF
 import UserServiceHistoryPage from "./pages/user pages/UserServiceHistoryPage";
 import UserServicePage from "./pages/user pages/UserServicePage";
 import UserSiteWorkerListPage from "./pages/user pages/UserSiteWorkerListPage";
+import UserUpdateProfilePage from "./pages/user pages/UserUpdateProfilePage";
 import UserWorkerHiringFormPage from "./pages/user pages/UserWorkerHiringFormPage";
 import WorkerDashboardProfileUpdatingPage from "./pages/worker pages/WorkerDashboardProfileUpdatingPage";
 
@@ -108,6 +109,11 @@ function App() {
           <Route
             path="/users/profile"
             element={<UserProfilePage />}
+          />
+          
+          <Route
+            path="/users/update-profile"
+            element={<UserUpdateProfilePage />}
           />
 
           <Route
