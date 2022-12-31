@@ -1,4 +1,4 @@
-# HandyMan
+# MeSeeks
 MeSeeks is an Online platform where users can hire verified workers for doing some particular
 household tasks like fixing electrical equipment, wooden stuff etc in a negotiable price.
 
