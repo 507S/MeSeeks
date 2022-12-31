@@ -96,9 +96,9 @@ npm start
 
 ## Authors
 Contributors names and contact info 
-* [@IftyKhan-911](https://mail.google.com/mail/salmanahsan@iut-dhaka.edu )
+* [@salmanahsan](https://mail.google.com/mail/salmanahsan@iut-dhaka.edu )
 * [@mdmuktadir](https://mail.google.com/mail/muktadir@iut-dhaka.edu)
-* [@sadmanmehedi](https://mail.google.com/mail/ahnafakibiut-dhaka.edu)
+* [@ahnafakib](https://mail.google.com/mail/ahnafakibiut-dhaka.edu)
 
 ## Project Status
 
